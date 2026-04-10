@@ -2,6 +2,24 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
+// ─── Upstash Redis helper (uses fetch — no extra package required) ─────────────
+const REDIS_URL   = process.env.UPSTASH_REDIS_REST_URL;
+const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+async function redis(command, ...args) {
+  if (!REDIS_URL || !REDIS_TOKEN) return null;
+  try {
+    const res = await fetch(`${REDIS_URL}/${[command, ...args].map(encodeURIComponent).join('/')}`, {
+      headers: { Authorization: `Bearer ${REDIS_TOKEN}` },
+    });
+    const json = await res.json();
+    return json.result;
+  } catch (e) {
+    console.error('Redis error:', e.message);
+    return null;
+  }
+}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -91,6 +109,56 @@ app.get('/api/concepts/:topic', (req, res) => {
     console.error(`Error reading ${topic}.json:`, err);
     res.status(500).json({ error: 'Failed to load topic.' });
   }
+});
+
+// ─── API: Track a visit (called silently from every page) ────────────────────
+app.post('/api/track-visit', async (req, res) => {
+  const ip =
+    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.socket.remoteAddress ||
+    'unknown';
+
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const dayKey   = `visitors:${today}`;
+  const totalKey = 'total_visitors';
+
+  // Add IP to today's set (SADD returns 1 if new, 0 if already present)
+  const isNewToday = await redis('SADD', dayKey, ip);
+
+  // Expire day key after 35 days (keeps ~30 days of history)
+  await redis('EXPIRE', dayKey, 35 * 24 * 60 * 60);
+
+  // Track all-time unique visitors: use a separate lifetime set
+  const isNewEver = await redis('SADD', 'all_visitors', ip);
+  if (isNewEver === 1) {
+    await redis('INCR', totalKey);
+  }
+
+  res.json({ ok: true, isNewToday: isNewToday === 1, isNewEver: isNewEver === 1 });
+});
+
+// ─── API: Stats dashboard data ───────────────────────────────────────────────
+app.get('/api/stats', async (req, res) => {
+  if (!REDIS_URL || !REDIS_TOKEN) {
+    return res.status(503).json({ error: 'Redis not configured.' });
+  }
+
+  // Total unique visitors (all time)
+  const total = (await redis('GET', 'total_visitors')) || 0;
+
+  // Build last 14 days breakdown
+  const days = [];
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const dateStr = d.toISOString().slice(0, 10);
+    const count = (await redis('SCARD', `visitors:${dateStr}`)) || 0;
+    days.push({ date: dateStr, count: Number(count) });
+  }
+
+  const todayCount = days[days.length - 1].count;
+
+  res.json({ total: Number(total), today: todayCount, days });
 });
 
 // ─── Fallback: serve index.html for any unknown HTML route ──────────────────

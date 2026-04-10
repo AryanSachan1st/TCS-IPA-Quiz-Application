@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stats — TCS IPA Prep</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; margin: 0; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+    .gradient-text { background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: radial-gradient(rgba(99,102,241,0.07) 1px, transparent 1px); background-size: 32px 32px; }
+    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
+
+    /* Stat cards */
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      border-color: rgba(99,102,241,0.35);
+      box-shadow: 0 20px 40px rgba(99,102,241,0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Chart bars */
+    .bar-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+    .bar-track { width: 100%; background: rgba(255,255,255,0.05); border-radius: 6px; position: relative; overflow: hidden; }
+    .bar-fill {
+      width: 100%; border-radius: 6px;
+      background: linear-gradient(180deg, #6366f1, #22d3ee);
+      transition: height 0.8s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
+    }
+    .bar-fill::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
+      border-radius: 6px;
+    }
+    .bar-fill.today { background: linear-gradient(180deg, #22d3ee, #06b6d4); }
+    .bar-label { font-size: 10px; color: #475569; text-align: center; white-space: nowrap; }
+    .bar-count { font-size: 11px; color: #94a3b8; font-weight: 600; }
+
+    /* PIN lock overlay */
+    #lockOverlay {
+      position: fixed; inset: 0; z-index: 50;
+      background: rgba(10,15,30,0.97);
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(12px);
+    }
+    .pin-box { width: 10px; height: 10px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); transition: all 0.2s ease; }
+    .pin-box.filled { background: #6366f1; border-color: #6366f1; box-shadow: 0 0 10px rgba(99,102,241,0.6); }
+    .pin-box.error { background: #ef4444; border-color: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.6); }
+
+    /* Pulse animation for live dot */
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .live-dot { animation: pulse 2s infinite; }
+
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    .fade-in  { animation: fadeIn  0.5s ease both; }
+    .slide-up { animation: slideUp 0.5s ease both; }
+  </style>
+</head>
+<body class="min-h-screen text-white bg-grid">
+
+  <!-- PIN Lock Overlay -->
+  <div id="lockOverlay">
+    <div class="glass rounded-3xl p-10 flex flex-col items-center gap-6 max-w-sm w-full mx-4" style="animation: slideUp 0.45s ease both;">
+      <div class="text-4xl">🔐</div>
+      <div class="text-center">
+        <h2 class="text-xl font-bold text-white mb-1">Admin Access</h2>
+        <p class="text-slate-500 text-sm">Enter your 4-digit PIN to view stats</p>
+      </div>
+      <!-- PIN dots -->
+      <div id="pinDots" class="flex gap-3">
+        <div class="pin-box" id="dot0"></div>
+        <div class="pin-box" id="dot1"></div>
+        <div class="pin-box" id="dot2"></div>
+        <div class="pin-box" id="dot3"></div>
+      </div>
+      <!-- Numpad -->
+      <div class="grid grid-cols-3 gap-3 w-full max-w-[220px]">
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(1)">1</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(2)">2</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(3)">3</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(4)">4</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(5)">5</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(6)">6</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(7)">7</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(8)">8</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition" onclick="pressPin(9)">9</button>
+        <button class="numkey glass rounded-2xl py-3 text-lg font-semibold text-white hover:bg-white/10 transition col-start-2" onclick="pressPin(0)">0</button>
+        <button class="numkey glass rounded-2xl py-3 text-sm font-semibold text-slate-400 hover:bg-white/10 transition" onclick="clearPin()">⌫</button>
+      </div>
+      <p id="pinError" class="text-red-400 text-xs opacity-0 transition">Incorrect PIN. Try again.</p>
+    </div>
+  </div>
+
+  <!-- Ambient orbs -->
+  <div class="orb w-[500px] h-[500px] bg-indigo-600 -top-32 -left-32 opacity-10"></div>
+  <div class="orb w-[400px] h-[400px] bg-cyan-400 bottom-0 right-0 opacity-[0.07]"></div>
+
+  <div class="relative z-10 min-h-screen flex flex-col">
+
+    <!-- Nav -->
+    <nav class="px-4 pt-6 pb-2 flex items-center justify-between fade-in">
+      <a href="/" class="glass rounded-xl px-3 py-2 text-sm text-slate-400 hover:text-white hover:border-indigo-500/40 transition flex items-center gap-1.5">
+        ← Home
+      </a>
+      <div class="flex items-center gap-2 glass rounded-full px-3 py-1.5 text-xs text-emerald-400 font-medium">
+        <span class="w-2 h-2 bg-emerald-400 rounded-full live-dot"></span>
+        Live Stats
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="px-4 pt-8 pb-4 text-center slide-up">
+      <h1 class="text-4xl sm:text-5xl font-black mb-2">
+        <span class="gradient-text">Analytics</span>
+      </h1>
+      <p class="text-slate-500 text-sm">Unique visitor tracking via Upstash Redis</p>
+    </header>
+
+    <!-- Stat Cards -->
+    <main class="flex-1 max-w-4xl mx-auto w-full px-4 pb-16">
+
+      <!-- Top stat cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8" style="animation: slideUp 0.5s ease 0.1s both;">
+
+        <div class="stat-card p-6 flex flex-col gap-2">
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-500">Total Unique Users</p>
+          <p id="statTotal" class="text-4xl font-black text-white">—</p>
+          <p class="text-xs text-slate-600">All-time, deduplicated by IP</p>
+        </div>
+
+        <div class="stat-card p-6 flex flex-col gap-2" style="border-color: rgba(34,211,238,0.2);">
+          <p class="text-xs font-semibold uppercase tracking-widest text-cyan-500">Today's Visitors</p>
+          <p id="statToday" class="text-4xl font-black text-cyan-300">—</p>
+          <p class="text-xs text-slate-600" id="todayDate">—</p>
+        </div>
+
+        <div class="stat-card p-6 flex flex-col gap-2">
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-500">Peak Day (14d)</p>
+          <p id="statPeak" class="text-4xl font-black text-white">—</p>
+          <p id="statPeakDate" class="text-xs text-slate-600">—</p>
+        </div>
+
+      </div>
+
+      <!-- 14-day bar chart -->
+      <div class="glass rounded-3xl p-6 sm:p-8" style="animation: slideUp 0.5s ease 0.2s both;">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h2 class="text-lg font-bold text-white">Daily Unique Visitors</h2>
+            <p class="text-slate-500 text-xs mt-0.5">Last 14 days · <span class="text-cyan-400">Today</span> highlighted</p>
+          </div>
+          <button onclick="loadStats()" class="glass rounded-xl px-3 py-1.5 text-xs text-slate-400 hover:text-white transition">↻ Refresh</button>
+        </div>
+
+        <!-- Chart area -->
+        <div id="chart" class="flex items-end gap-1.5 sm:gap-2 h-40">
+          <!-- bars injected by JS -->
+          <div class="text-slate-600 text-sm mx-auto self-center">Loading…</div>
+        </div>
+      </div>
+
+      <!-- No Redis notice (shown if Redis not configured) -->
+      <div id="redisError" class="hidden mt-6 glass rounded-2xl p-5 border border-red-500/20 text-center">
+        <p class="text-red-400 text-sm font-semibold mb-1">Redis not configured</p>
+        <p class="text-slate-500 text-xs">Make sure <code class="text-slate-300">UPSTASH_REDIS_REST_URL</code> and <code class="text-slate-300">UPSTASH_REDIS_REST_TOKEN</code> are set in your Railway environment variables.</p>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 text-center text-slate-600 text-xs pb-8">
+      TCS IPA Prep Hub · Admin Dashboard · Data stored in Upstash Redis
+    </footer>
+  </div>
+
+  <script>
+    // ── PIN gate ────────────────────────────────────────────────────────────────
+    const CORRECT_PIN = '1234'; // ← Change this to your own PIN
+    let pinEntry = '';
+
+    function pressPin(digit) {
+      if (pinEntry.length >= 4) return;
+      pinEntry += digit;
+      updateDots();
+      if (pinEntry.length === 4) checkPin();
+    }
+
+    function clearPin() {
+      if (pinEntry.length === 0) return;
+      pinEntry = pinEntry.slice(0, -1);
+      updateDots();
+    }
+
+    function updateDots(state = 'normal') {
+      for (let i = 0; i < 4; i++) {
+        const dot = document.getElementById(`dot${i}`);
+        dot.classList.remove('filled', 'error');
+        if (i < pinEntry.length) {
+          dot.classList.add(state === 'error' ? 'error' : 'filled');
+        }
+      }
+    }
+
+    function checkPin() {
+      if (pinEntry === CORRECT_PIN) {
+        document.getElementById('lockOverlay').style.display = 'none';
+        loadStats();
+      } else {
+        updateDots('error');
+        document.getElementById('pinError').style.opacity = '1';
+        setTimeout(() => {
+          pinEntry = '';
+          updateDots();
+          document.getElementById('pinError').style.opacity = '0';
+        }, 900);
+      }
+    }
+
+    // Keyboard support for PIN
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lockOverlay').style.display || document.getElementById('lockOverlay').style.display !== 'none') {
+        if (e.key >= '0' && e.key <= '9') pressPin(Number(e.key));
+        if (e.key === 'Backspace') clearPin();
+      }
+    });
+
+    // ── Stats loader ────────────────────────────────────────────────────────────
+    async function loadStats() {
+      try {
+        const data = await fetch('/api/stats').then(r => r.json());
+
+        if (data.error) {
+          document.getElementById('redisError').classList.remove('hidden');
+          return;
+        }
+
+        // Top cards
+        document.getElementById('statTotal').textContent = data.total.toLocaleString();
+        document.getElementById('statToday').textContent = data.today.toLocaleString();
+        document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' });
+
+        // Peak day
+        const peak = data.days.reduce((a, b) => b.count > a.count ? b : a, { count: 0, date: '—' });
+        document.getElementById('statPeak').textContent = peak.count.toLocaleString();
+        document.getElementById('statPeakDate').textContent = peak.date !== '—'
+          ? new Date(peak.date + 'T00:00:00').toLocaleDateString('en-US', { month:'short', day:'numeric' })
+          : '—';
+
+        // Bar chart
+        renderChart(data.days);
+
+      } catch (err) {
+        console.error('Failed to load stats:', err);
+        document.getElementById('redisError').classList.remove('hidden');
+      }
+    }
+
+    function renderChart(days) {
+      const chart = document.getElementById('chart');
+      chart.innerHTML = '';
+
+      const maxCount = Math.max(...days.map(d => d.count), 1);
+      const today = new Date().toISOString().slice(0, 10);
+
+      days.forEach(day => {
+        const isToday = day.date === today;
+        const pct = Math.max((day.count / maxCount) * 100, day.count > 0 ? 4 : 0);
+
+        const shortDate = new Date(day.date + 'T00:00:00').toLocaleDateString('en-US', { month:'numeric', day:'numeric' });
+
+        const wrap = document.createElement('div');
+        wrap.className = 'bar-wrap';
+
+        wrap.innerHTML = `
+          <span class="bar-count" style="color:${isToday ? '#22d3ee' : '#64748b'}">${day.count > 0 ? day.count : ''}</span>
+          <div class="bar-track" style="height:120px;">
+            <div class="bar-fill${isToday ? ' today' : ''}" style="height:${pct}%; position:absolute; bottom:0; width:100%;"></div>
+          </div>
+          <span class="bar-label" style="color:${isToday ? '#22d3ee' : '#475569'}; font-weight:${isToday ? '700' : '400'}">${shortDate}</span>
+        `;
+
+        // Fix: bar-track needs relative positioning
+        const track = wrap.querySelector('.bar-track');
+        track.style.position = 'relative';
+
+        chart.appendChild(wrap);
+      });
+    }
+  </script>
+</body>
+</html>
