@@ -4,13 +4,37 @@
   "icon": "🖥️",
   "color": "pink",
   "sections": [
-    { "title": "UI Design Fundamentals", "content": "" },
-    { "title": "Color Theory in UI", "content": "" },
-    { "title": "Typography", "content": "" },
-    { "title": "Layout & Grid Systems", "content": "" },
-    { "title": "UX vs UI", "content": "" },
-    { "title": "Accessibility (a11y)", "content": "" },
-    { "title": "Wireframing & Prototyping", "content": "" },
-    { "title": "Web Technologies in UI", "content": "" }
+    {
+      "title": "UI Design Fundamentals",
+      "content": "UI (User Interface) is the visual and interactive layer through which users interact with a digital product. Good UI focuses on clarity, consistency, simplicity, and feedback. The main goal is to make actions obvious and easy to perform. Core principles include alignment, contrast, repetition, proximity, hierarchy, balance, and spacing. Consistency in buttons, icons, colors, and navigation reduces user confusion. Feedback is important: the interface should respond when the user clicks, types, submits, or makes an error. Common UI components include buttons, forms, menus, cards, dialogs, tabs, and navigation bars. MCQ trap: UI is about how something looks and behaves on screen, not the full user journey."
+    },
+    {
+      "title": "Color Theory in UI",
+      "content": "Color is used to create visual hierarchy, brand identity, emotion, and usability. Primary, secondary, and accent colors help organize content. Contrast is critical for readability and accessibility, especially for text on backgrounds. Warm colors often feel active or energetic, while cool colors often feel calm or professional, but context matters. Colors should not be the only way to convey meaning because some users may be color-blind. A good palette usually includes a base color, supporting neutrals, and one or two accent colors. MCQ traps: too many colors make the interface noisy; low contrast reduces readability; red and green alone should not communicate important status."
+    },
+    {
+      "title": "Typography",
+      "content": "Typography is the arrangement and styling of text in the interface. Good typography improves readability, scanability, and hierarchy. Important elements include font family, font size, line height, letter spacing, weight, and alignment. Sans-serif fonts are commonly used in digital interfaces because they are clean and easy to read on screens. Hierarchy is created using different sizes and weights for headings, subheadings, and body text. Readable line length and sufficient spacing improve user comfort. Avoid using too many fonts in one interface; usually one or two font families are enough. MCQ trap: typography is not only about choosing a font, but also about spacing and readability."
+    },
+    {
+      "title": "Layout & Grid Systems",
+      "content": "Layout is the arrangement of elements on the screen. Grid systems help align content consistently and create structure. A grid divides the screen into rows and columns so elements line up cleanly. Common layout patterns include single-column, two-column, cards, dashboards, and responsive layouts. Whitespace is not empty waste; it improves readability and focuses attention. Visual hierarchy guides the user to the most important information first. Responsive design ensures the interface adapts to different screen sizes such as mobile, tablet, and desktop. MCQ traps: good layout is not crowded layout; grids improve alignment and consistency; responsive UI changes with screen size."
+    },
+    {
+      "title": "UX vs UI",
+      "content": "UI and UX are related but not the same. UI is the visual and interactive presentation layer. UX (User Experience) is the overall experience of using the product. UI answers how the product looks and how elements behave. UX answers how easy, efficient, and satisfying the product feels to use. A product can have a beautiful UI but poor UX if tasks are confusing or slow. A strong UX focuses on user needs, task flow, usability, and problem-solving. UI is one part of UX, not the whole thing. MCQ trap: UI is about interface design; UX is about the complete user journey and experience."
+    },
+    {
+      "title": "Accessibility (a11y)",
+      "content": "Accessibility means designing interfaces that people with disabilities can use effectively. It includes support for screen readers, keyboard navigation, sufficient contrast, readable text, and clear labels. Images should have meaningful alt text when they convey information. Forms should have labels, error messages should be clear, and interactive elements should be reachable without a mouse. Semantic HTML improves accessibility because it gives meaning to page structure. Color should not be the only signal; icons, text, and patterns can help communicate status or errors. MCQ traps: accessibility benefits everyone, not just users with disabilities; keyboard accessibility is important; alt text is for meaningful images, not decoration."
+    },
+    {
+      "title": "Wireframing & Prototyping",
+      "content": "Wireframes are low-fidelity layouts that show the structure of a screen without detailed visual styling. They are used early in the design process to plan content placement and user flow. Prototypes are interactive representations of the product used to test behavior, navigation, and usability. Prototypes can be low-fidelity or high-fidelity depending on how close they are to the final design. Wireframing helps designers and developers agree on structure before investing in full design or code. MCQ traps: wireframes focus on structure, not final visuals; prototypes simulate interaction; a prototype is more detailed than a wireframe."
+    },
+    {
+      "title": "Web Technologies in UI",
+      "content": "UI on the web is built mainly with HTML, CSS, and JavaScript. HTML provides structure, CSS handles presentation and layout, and JavaScript adds interactivity and dynamic behavior. Modern UI often uses frameworks and libraries such as React, Angular, or Vue for building reusable components. Responsive design uses techniques like flexible grids, media queries, and scalable units. Semantic HTML elements such as header, nav, main, section, article, and footer improve structure and accessibility. CSS concepts commonly tested in MCQs include box model, positioning, flexbox, grid, and z-index. MCQ traps: HTML is not used for styling; CSS does not handle business logic; JavaScript is used for behavior and interactivity."
+    }
   ]
 }

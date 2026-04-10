@@ -4,13 +4,37 @@
   "icon": "🗄️",
   "color": "blue",
   "sections": [
-    { "title": "SQL Basics & Syntax", "content": "" },
-    { "title": "DDL — Data Definition Language", "content": "" },
-    { "title": "DML — Data Manipulation Language", "content": "" },
-    { "title": "SELECT & Filtering", "content": "" },
-    { "title": "Joins", "content": "" },
-    { "title": "Aggregate Functions & GROUP BY", "content": "" },
-    { "title": "Subqueries & Views", "content": "" },
-    { "title": "Indexes & Normalization", "content": "" }
+    {
+      "title": "SQL Basics & Syntax",
+      "content": "SQL (Structured Query Language) is used to store, retrieve, update, and manage data in relational databases. A database stores data in tables made of rows and columns. A row represents one record, and a column represents one attribute. SQL is mostly case-insensitive for keywords, but string values are case-sensitive depending on collation. Common SQL statement types are DDL, DML, DQL, DCL, and TCL. Basic query order is usually SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY. Important MCQ facts: SQL works on sets of data, not one record at a time; NULL means unknown or missing value, and it is not equal to 0, empty string, or another NULL in normal comparisons."
+    },
+    {
+      "title": "DDL — Data Definition Language",
+      "content": "DDL is used to define and modify database structure. Main commands are CREATE, ALTER, DROP, TRUNCATE, and RENAME. CREATE is used to create tables, databases, indexes, or other objects. ALTER modifies existing structure, such as adding or dropping a column. DROP removes the table or object completely, including its definition. TRUNCATE removes all rows from a table quickly but usually keeps the table structure. Primary key uniquely identifies each row and cannot contain NULL. Foreign key establishes a relationship between tables. Constraints such as NOT NULL, UNIQUE, CHECK, DEFAULT, PRIMARY KEY, and FOREIGN KEY are used to enforce data integrity. MCQ traps: DROP removes structure, TRUNCATE clears data fast, and DELETE is DML, not DDL. Auto-increment behavior depends on the DBMS."
+    },
+    {
+      "title": "DML — Data Manipulation Language",
+      "content": "DML is used to change data inside tables. Main commands are INSERT, UPDATE, and DELETE. INSERT adds new rows, UPDATE changes existing rows, and DELETE removes selected rows. INSERT INTO table_name(column1, column2) VALUES (...). UPDATE uses SET and usually a WHERE clause. DELETE also usually uses WHERE to avoid deleting all rows. MCQ traps: UPDATE without WHERE changes all matching rows; DELETE without WHERE removes all rows from the table; INSERT adds records but does not change table structure."
+    },
+    {
+      "title": "SELECT & Filtering",
+      "content": "SELECT retrieves data from one or more tables. DISTINCT removes duplicate rows from the result. WHERE filters rows before grouping. HAVING filters groups after GROUP BY. ORDER BY sorts the final result, ascending by default. Common filtering operators include =, <>, >, <, >=, <=, BETWEEN, IN, LIKE, IS NULL, and IS NOT NULL. LIKE uses wildcards: % for many characters and _ for exactly one character. Logical operators AND, OR, and NOT combine conditions. Parentheses are important because AND has higher precedence than OR. LIMIT or TOP may be used to restrict output depending on the database. MCQ traps: WHERE cannot use aggregate functions directly, HAVING can; NULL is checked with IS NULL, not = NULL; BETWEEN is inclusive on both ends."
+    },
+    {
+      "title": "Joins",
+      "content": "Joins combine rows from two or more tables based on related columns. The most common join types are INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN. INNER JOIN returns only matching rows from both tables. LEFT JOIN returns all rows from the left table and matching rows from the right table; unmatched right-side values become NULL. RIGHT JOIN is the opposite of LEFT JOIN. FULL OUTER JOIN returns all rows from both tables, with NULLs where no match exists. CROSS JOIN returns the Cartesian product. SELF JOIN joins a table to itself. Join conditions are usually written using ON. NATURAL JOIN matches columns with the same name automatically, but it should be used carefully. MCQ traps: INNER JOIN removes non-matching rows; LEFT JOIN keeps all rows from the left table; CROSS JOIN can create a very large result set because it multiplies rows."
+    },
+    {
+      "title": "Aggregate Functions & GROUP BY",
+      "content": "Aggregate functions summarize multiple rows into one value. Common aggregates are COUNT, SUM, AVG, MIN, and MAX. COUNT(*) counts all rows, including rows with NULL values in non-key columns. COUNT(column) counts only non-NULL values in that column. GROUP BY groups rows that share the same values in one or more columns. HAVING filters grouped results after aggregation. Example use cases include total salary by department, average marks by class, or maximum salary per role. MCQ traps: WHERE filters before grouping, HAVING filters after grouping; non-aggregated selected columns should generally appear in GROUP BY; COUNT(column) ignores NULL, COUNT(*) does not."
+    },
+    {
+      "title": "Subqueries & Views",
+      "content": "A subquery is a query inside another query. It can appear in WHERE, FROM, or SELECT clauses. Types of subqueries include single-row, multiple-row, and correlated subqueries. A correlated subquery depends on the outer query and runs row by row conceptually. IN, EXISTS, ANY, and ALL are common operators used with subqueries. EXISTS checks whether the subquery returns at least one row. A view is a virtual table created from a SELECT query. It does not usually store data separately; it presents data from underlying tables. Views can simplify complex queries, improve security by hiding columns, and provide reusable logic. MCQ traps: a view is not always physically stored like a table; subqueries can be nested; EXISTS is often efficient for checking presence."
+    },
+    {
+      "title": "Indexes & Normalization",
+      "content": "An index improves query speed by helping the database find rows faster, similar to a book index. It is useful for searching and joining, but it adds storage overhead and can slow down INSERT, UPDATE, and DELETE. Indexes are often created on columns used frequently in WHERE, JOIN, ORDER BY, or GROUP BY. Primary key indexes are commonly created automatically by many DBMSs. Unique indexes help enforce uniqueness. Normalization is the process of organizing tables to reduce redundancy and avoid update anomalies. First Normal Form (1NF) requires atomic values and no repeating groups. Second Normal Form (2NF) requires 1NF and no partial dependency on a composite key. Third Normal Form (3NF) requires 2NF and no transitive dependency. BCNF is a stricter version of 3NF. MCQ traps: normalization reduces redundancy but may increase the number of tables; denormalization is sometimes used for performance; indexes help read speed but can hurt write performance."
+    }
   ]
 }
