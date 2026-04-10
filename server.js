@@ -136,22 +136,18 @@ app.post('/api/track-visit', async (req, res) => {
     'unknown';
 
   const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-  const dayKey   = `visitors:${today}`;
-  const totalKey = 'total_visitors';
+  const dayKey = `visitors:${today}`;
 
-  // Add IP to today's set (SADD returns 1 if new, 0 if already present)
-  const isNewToday = await redis('SADD', dayKey, ip);
+  // Add IP to today's set (Upstash REST returns result as a string "1" or "0")
+  const isNewToday = Number(await redis('SADD', dayKey, ip)) === 1;
 
   // Expire day key after 35 days (keeps ~30 days of history)
   await redis('EXPIRE', dayKey, 35 * 24 * 60 * 60);
 
-  // Track all-time unique visitors: use a separate lifetime set
-  const isNewEver = await redis('SADD', 'all_visitors', ip);
-  if (isNewEver === 1) {
-    await redis('INCR', totalKey);
-  }
+  // Track all-time unique visitors in a lifetime set
+  const isNewEver = Number(await redis('SADD', 'all_visitors', ip)) === 1;
 
-  res.json({ ok: true, isNewToday: isNewToday === 1, isNewEver: isNewEver === 1 });
+  res.json({ ok: true, isNewToday, isNewEver });
 });
 
 // ─── API: Stats dashboard data ───────────────────────────────────────────────
@@ -160,8 +156,8 @@ app.get('/api/stats', async (req, res) => {
     return res.status(503).json({ error: 'Redis not configured.' });
   }
 
-  // Total unique visitors (all time)
-  const total = (await redis('GET', 'total_visitors')) || 0;
+  // Total unique visitors (all time) — use SCARD on the set directly
+  const total = Number(await redis('SCARD', 'all_visitors')) || 0;
 
   // Build last 14 days breakdown
   const days = [];
@@ -169,13 +165,14 @@ app.get('/api/stats', async (req, res) => {
     const d = new Date();
     d.setDate(d.getDate() - i);
     const dateStr = d.toISOString().slice(0, 10);
-    const count = (await redis('SCARD', `visitors:${dateStr}`)) || 0;
-    days.push({ date: dateStr, count: Number(count) });
+    const count = Number(await redis('SCARD', `visitors:${dateStr}`)) || 0;
+    days.push({ date: dateStr, count });
   }
 
   const todayCount = days[days.length - 1].count;
 
-  res.json({ total: Number(total), today: todayCount, days });
+  res.json({ total, today: todayCount, days });
+
 });
 
 // ─── Fallback: serve index.html for any unknown HTML route ──────────────────
