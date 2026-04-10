@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "question": "What is the output of: print(type([])) in Python?",
+    "options": ["<class 'tuple'>", "<class 'list'>", "<class 'array'>", "<class 'dict'>"],
+    "correct": [1],
+    "explanation": "[] creates an empty list in Python, so type([]) returns <class 'list'>."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following are mutable data types in Python?",
+    "options": ["int", "list", "tuple", "dict"],
+    "correct": [1, 3],
+    "explanation": "Lists and dicts are mutable (can be changed after creation). int and tuple are immutable."
+  },
+  {
+    "id": 3,
+    "question": "What is the output of: print(2 ** 3 ** 2)?",
+    "options": ["64", "512", "36", "18"],
+    "correct": [1],
+    "explanation": "** is right-associative, so 3**2=9 first, then 2**9=512."
+  },
+  {
+    "id": 4,
+    "question": "What does the 'is' operator check in Python?",
+    "options": ["Value equality", "Type equality", "Identity (same object in memory)", "Both value and type"],
+    "correct": [2],
+    "explanation": "'is' checks if two variables point to the same object in memory, not if they have equal values."
+  },
+  {
+    "id": 5,
+    "question": "What is the output of: print(bool('') or bool(0) or bool([]) or 'hello')?",
+    "options": ["False", "True", "hello", "None"],
+    "correct": [2],
+    "explanation": "All of '', 0, and [] are falsy. Python's 'or' returns the first truthy value or the last value, so it returns 'hello'."
+  },
+  {
+    "id": 6,
+    "question": "Which of the following correctly creates a set in Python?",
+    "options": ["{}", "set()", "{1, 2, 3}", "[]"],
+    "correct": [1, 2],
+    "explanation": "{} creates an empty dict, not a set. set() creates an empty set. {1, 2, 3} creates a set with elements."
+  },
+  {
+    "id": 7,
+    "question": "What is the output of: x = [1, 2, 3]; print(x[-1])?",
+    "options": ["1", "3", "-1", "IndexError"],
+    "correct": [1],
+    "explanation": "Negative indexing in Python starts from the end. x[-1] returns the last element, which is 3."
+  },
+  {
+    "id": 8,
+    "question": "Which built-in function returns the memory address of an object in Python?",
+    "options": ["ref()", "address()", "id()", "mem()"],
+    "correct": [2],
+    "explanation": "id() returns the identity (memory address) of an object in CPython implementation."
+  },
+  {
+    "id": 9,
+    "question": "What is the output of: print(list(range(1, 10, 3)))?",
+    "options": ["[1, 4, 7]", "[1, 3, 6, 9]", "[1, 4, 7, 10]", "[3, 6, 9]"],
+    "correct": [0],
+    "explanation": "range(1, 10, 3) starts at 1, ends before 10, with step 3: 1, 4, 7."
+  },
+  {
+    "id": 10,
+    "question": "What will be the output of: print(10 // 3, 10 % 3)?",
+    "options": ["3 1", "3.33 1", "3 0.33", "4 1"],
+    "correct": [0],
+    "explanation": "// is floor division (10//3 = 3), % is modulus (10%3 = 1)."
+  },
+  {
+    "id": 11,
+    "question": "Which of the following statements about Python lambda functions are TRUE?",
+    "options": ["They can contain multiple expressions", "They are anonymous functions", "They can have default arguments", "They support multiple return statements"],
+    "correct": [1, 2],
+    "explanation": "Lambda functions are anonymous and can have default arguments, but they are limited to a single expression and have an implicit return."
+  },
+  {
+    "id": 12,
+    "question": "What is the output of: d = {'a': 1, 'b': 2}; print(d.get('c', 99))?",
+    "options": ["None", "KeyError", "99", "0"],
+    "correct": [2],
+    "explanation": "dict.get(key, default) returns the default value (99) if the key 'c' does not exist in the dictionary."
+  },
+  {
+    "id": 13,
+    "question": "What is the output of: print('hello'[1:4])?",
+    "options": ["hel", "ell", "ello", "hell"],
+    "correct": [1],
+    "explanation": "Slicing [1:4] gives characters at indices 1, 2, 3 → 'e', 'l', 'l' = 'ell'."
+  },
+  {
+    "id": 14,
+    "question": "Which of the following are valid ways to define a function in Python?",
+    "options": ["def foo():", "function foo():", "lambda: None", "def foo() -> None:"],
+    "correct": [0, 2, 3],
+    "explanation": "Functions are defined with 'def' or 'lambda'. 'function foo():' is not valid Python syntax."
+  },
+  {
+    "id": 15,
+    "question": "What is the output of: print(type(1/2), type(1//2))?",
+    "options": ["<class 'int'> <class 'int'>", "<class 'float'> <class 'int'>", "<class 'float'> <class 'float'>", "<class 'int'> <class 'float'>"],
+    "correct": [1],
+    "explanation": "/ always returns float in Python 3. // (floor division) returns int when both operands are int."
+  },
+  {
+    "id": 16,
+    "question": "What does *args allow in a Python function?",
+    "options": ["Only keyword arguments", "Variable number of positional arguments", "Variable number of keyword arguments", "Exactly 2 arguments"],
+    "correct": [1],
+    "explanation": "*args collects extra positional arguments into a tuple, allowing a variable number of them."
+  },
+  {
+    "id": 17,
+    "question": "What is the output of: a = [1,2,3]; b = a; b.append(4); print(a)?",
+    "options": ["[1, 2, 3]", "[1, 2, 3, 4]", "Error", "[4]"],
+    "correct": [1],
+    "explanation": "b = a does not copy the list; both a and b point to the same object. Appending to b also modifies a."
+  },
+  {
+    "id": 18,
+    "question": "Which of the following create a shallow copy of a list?",
+    "options": ["b = a", "b = a.copy()", "b = list(a)", "b = a[:]"],
+    "correct": [1, 2, 3],
+    "explanation": "a.copy(), list(a), and a[:] all create shallow copies. b = a just creates another reference to the same list."
+  },
+  {
+    "id": 19,
+    "question": "What is the output of: print([x**2 for x in range(4) if x % 2 == 0])?",
+    "options": ["[1, 9]", "[0, 4]", "[0, 4, 16]", "[0, 2, 4]"],
+    "correct": [1],
+    "explanation": "range(4) = [0,1,2,3]. Even numbers: 0, 2. Their squares: 0, 4. Result: [0, 4]."
+  },
+  {
+    "id": 20,
+    "question": "What is the purpose of __init__ in a Python class?",
+    "options": ["To destroy an object", "To initialize object attributes when an instance is created", "To define class-level methods", "To define static methods"],
+    "correct": [1],
+    "explanation": "__init__ is a constructor method called automatically when a new instance of a class is created, used to initialize attributes."
+  },
+  {
+    "id": 21,
+    "question": "What is the output of: print('abc' * 3)?",
+    "options": ["abc3", "abcabcabc", "['abc','abc','abc']", "Error"],
+    "correct": [1],
+    "explanation": "String repetition with * replicates the string: 'abc' * 3 = 'abcabcabc'."
+  },
+  {
+    "id": 22,
+    "question": "Which of the following are characteristics of Python decorators?",
+    "options": ["They are functions that take another function as argument", "They modify or extend the behavior of functions", "They are only used with classes", "They use the @ syntax"],
+    "correct": [0, 1, 3],
+    "explanation": "Decorators are higher-order functions using @ syntax that wrap another function to extend its behavior. They are NOT limited to classes."
+  },
+  {
+    "id": 23,
+    "question": "What is the output of: try: print(1/0) except ZeroDivisionError: print('zero') finally: print('done')?",
+    "options": ["zero", "zero done", "done", "Error"],
+    "correct": [1],
+    "explanation": "The ZeroDivisionError is caught and 'zero' is printed. The finally block always executes, printing 'done'."
+  },
+  {
+    "id": 24,
+    "question": "What does the 'global' keyword do in Python?",
+    "options": ["Creates a new global variable always", "Declares that a variable inside a function refers to a global scope variable", "Makes a variable accessible only in current module", "Exports a variable to all modules"],
+    "correct": [1],
+    "explanation": "'global x' inside a function tells Python that x refers to the global-scope variable, not a new local one."
+  },
+  {
+    "id": 25,
+    "question": "What is the output of: print(sorted([3,1,4,1,5], reverse=True))?",
+    "options": ["[1, 1, 3, 4, 5]", "[5, 4, 3, 1, 1]", "[3, 1, 4, 1, 5]", "Error"],
+    "correct": [1],
+    "explanation": "sorted() returns a new sorted list. reverse=True sorts in descending order: [5, 4, 3, 1, 1]."
+  },
+  {
+    "id": 26,
+    "question": "Which of the following are valid dictionary operations in Python?",
+    "options": ["d.keys()", "d.values()", "d.items()", "d.elements()"],
+    "correct": [0, 1, 2],
+    "explanation": "keys(), values(), and items() are built-in dict methods. elements() does not exist for dicts (it exists for Counter)."
+  },
+  {
+    "id": 27,
+    "question": "What is the output of: x = (1,); print(type(x))?",
+    "options": ["<class 'int'>", "<class 'tuple'>", "<class 'list'>", "<class 'set'>"],
+    "correct": [1],
+    "explanation": "A trailing comma makes (1,) a tuple, not an integer. Without the comma, (1) would be an int."
+  },
+  {
+    "id": 28,
+    "question": "What does the zip() function do in Python?",
+    "options": ["Compresses files", "Combines multiple iterables element-wise into tuples", "Sorts two lists together", "Merges two dictionaries"],
+    "correct": [1],
+    "explanation": "zip() takes multiple iterables and returns an iterator of tuples pairing elements at the same position."
+  },
+  {
+    "id": 29,
+    "question": "What is the output of: print(list(map(lambda x: x*2, [1, 2, 3])))?",
+    "options": ["[1, 2, 3]", "[2, 4, 6]", "[1, 4, 9]", "Error"],
+    "correct": [1],
+    "explanation": "map() applies the lambda (x*2) to each element of [1,2,3], resulting in [2, 4, 6]."
+  },
+  {
+    "id": 30,
+    "question": "Which of the following statements about Python generators are TRUE?",
+    "options": ["They use the 'yield' keyword", "They return all values at once", "They are memory efficient for large sequences", "They can only be iterated once"],
+    "correct": [0, 2, 3],
+    "explanation": "Generators use 'yield', produce values lazily (memory efficient), and can only be iterated once. They do NOT return all values at once."
+  }
+]

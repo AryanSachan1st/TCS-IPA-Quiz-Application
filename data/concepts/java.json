@@ -1,0 +1,16 @@
+{
+  "id": "java",
+  "label": "Java",
+  "icon": "☕",
+  "color": "orange",
+  "sections": [
+    { "title": "Java Basics & Syntax", "content": "" },
+    { "title": "OOP Concepts", "content": "" },
+    { "title": "Data Types & Variables", "content": "" },
+    { "title": "Control Flow", "content": "" },
+    { "title": "Arrays & Strings", "content": "" },
+    { "title": "Collections Framework", "content": "" },
+    { "title": "Exception Handling", "content": "" },
+    { "title": "Multithreading & Concurrency", "content": "" }
+  ]
+}

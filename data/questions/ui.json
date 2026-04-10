@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "question": "Which of the following are core principles of good UI design? (Select all that apply)",
+    "options": ["Consistency", "Feedback", "Using as many fonts as possible", "Simplicity", "Visibility of system status"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "Good UI design follows consistency, feedback, simplicity, and visibility of system status (Nielsen's heuristics). Using excessive fonts creates visual chaos and reduces usability."
+  },
+  {
+    "id": 2,
+    "question": "Which usability heuristic is violated when a system performs an irreversible action without warning the user?",
+    "options": ["Visibility of system status", "User control and freedom", "Error prevention", "Match between system and real world"],
+    "correct": [2],
+    "explanation": "Error prevention heuristic requires that the system design prevents problems from occurring in the first place, including warnings before irreversible actions."
+  },
+  {
+    "id": 3,
+    "question": "What does the term 'affordance' mean in UI/UX design?",
+    "options": ["The cost of developing the UI", "A visual cue that suggests how an object should be used", "The number of features in a product", "The accessibility score of an interface"],
+    "correct": [1],
+    "explanation": "Affordance refers to a design property that signals to users how to interact with it — e.g., a raised button affords clicking, a handle affords pulling."
+  },
+  {
+    "id": 4,
+    "question": "Which of the following are goals of UX design? (Select all that apply)",
+    "options": ["Usability", "Desirability", "Making the UI visually complex", "Accessibility", "Findability"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "UX design aims for usability, desirability, accessibility, and findability (Morville's UX Honeycomb). Visual complexity hinders user experience."
+  },
+  {
+    "id": 5,
+    "question": "According to Fitts's Law, what makes a target easier to click?",
+    "options": ["Smaller size and greater distance", "Larger size and smaller distance", "Irregular shape and small size", "Smaller size and smaller distance"],
+    "correct": [1],
+    "explanation": "Fitts's Law states that the time to acquire a target is a function of the distance to and the size of the target. Larger targets that are closer are easier and faster to click."
+  },
+  {
+    "id": 6,
+    "question": "Which of the following are types of usability testing methods? (Select all that apply)",
+    "options": ["Moderated usability testing", "A/B testing", "Requirement gathering", "Eye-tracking", "Think-aloud protocol"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "Moderated testing, A/B testing, eye-tracking, and think-aloud protocol are all usability testing methods. Requirement gathering is a phase in software development, not a usability test."
+  },
+  {
+    "id": 7,
+    "question": "What is the primary purpose of a wireframe in the UX design process?",
+    "options": ["To show the final color scheme", "To define the visual hierarchy and layout structure", "To write backend logic", "To test the performance of the system"],
+    "correct": [1],
+    "explanation": "Wireframes are low-fidelity blueprints that define layout, structure, and visual hierarchy without focusing on design aesthetics like colors or final graphics."
+  },
+  {
+    "id": 8,
+    "question": "Hick's Law in UX states that:",
+    "options": ["User satisfaction increases with more features", "The time to make a decision increases with the number of choices", "Larger buttons are always better", "Mobile-first design improves conversion"],
+    "correct": [1],
+    "explanation": "Hick's Law states that the time and effort required to make a decision increases with the number and complexity of choices. This underpins minimalist menu and option design."
+  },
+  {
+    "id": 9,
+    "question": "Which of the following are Nielsen's 10 Usability Heuristics? (Select all that apply)",
+    "options": ["Visibility of system status", "User control and freedom", "Maximizing feature count", "Consistency and standards", "Help and documentation"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "Nielsen's heuristics include visibility, user control, consistency, and help/documentation among others. 'Maximizing feature count' contradicts good design principles."
+  },
+  {
+    "id": 10,
+    "question": "What is the difference between a prototype and a wireframe?",
+    "options": ["A prototype is static; a wireframe is interactive", "A wireframe is high-fidelity; a prototype is low-fidelity", "A prototype simulates interaction; a wireframe is a static layout sketch", "There is no difference between the two"],
+    "correct": [2],
+    "explanation": "Wireframes are static low-fidelity sketches showing layout. Prototypes simulate user interactions and workflows, allowing usability testing before development."
+  },
+  {
+    "id": 11,
+    "question": "In UX design, what does 'information architecture' refer to?",
+    "options": ["The physical setup of servers", "Organizing and structuring content so users can find information easily", "The color and font system", "The coding framework used"],
+    "correct": [1],
+    "explanation": "Information Architecture (IA) involves organizing, structuring, and labeling content effectively so users can navigate and find information efficiently."
+  },
+  {
+    "id": 12,
+    "question": "Which of the following best describes 'progressive disclosure' in UI design?",
+    "options": ["Showing all features at once", "Revealing information gradually to reduce complexity", "Hiding important information from users", "Using animations on every interaction"],
+    "correct": [1],
+    "explanation": "Progressive disclosure is a UX strategy where only essential information is shown initially, with more detail revealed as the user needs it — reducing cognitive overload."
+  },
+  {
+    "id": 13,
+    "question": "Which of the following are characteristics of a good User Persona? (Select all that apply)",
+    "options": ["Based on real user research", "Includes demographic information", "Is completely fictional with no research basis", "Includes user goals and frustrations", "Helps design teams empathize with users"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "Good personas are grounded in real research and include demographics, goals, behaviors, and pain points. Purely fictional personas without research can mislead design decisions."
+  },
+  {
+    "id": 14,
+    "question": "What is cognitive load in the context of UX design?",
+    "options": ["The processing power required to run the app", "The mental effort required for a user to use an interface", "The number of API calls a UI makes", "The loading time of a web page"],
+    "correct": [1],
+    "explanation": "Cognitive load refers to the total mental effort required to use an interface. Good UX design minimizes unnecessary cognitive load to make tasks easier."
+  },
+  {
+    "id": 15,
+    "question": "Which color model is primarily used for screen/digital UI design?",
+    "options": ["CMYK", "RGB", "Pantone", "HSL only"],
+    "correct": [1],
+    "explanation": "RGB (Red, Green, Blue) is the color model used for screens and digital displays. CMYK is used for print. HSL is a representation format derived from RGB."
+  },
+  {
+    "id": 16,
+    "question": "Which of the following describe the concept of 'responsive design'? (Select all that apply)",
+    "options": ["The layout adapts to different screen sizes", "It uses fluid grids and flexible images", "It requires a separate website for mobile", "Media queries are commonly used", "The design responds to user feedback instantly"],
+    "correct": [0, 1, 3],
+    "explanation": "Responsive design uses fluid grids, flexible images, and CSS media queries to adapt the layout to various screen sizes. It does NOT require separate mobile websites."
+  },
+  {
+    "id": 17,
+    "question": "What is the purpose of a 'User Journey Map' in UX design?",
+    "options": ["To map the server infrastructure", "To visualize the steps a user takes to achieve a goal, including emotions and pain points", "To show the database schema", "To document API endpoints"],
+    "correct": [1],
+    "explanation": "A User Journey Map is a visualization of the process a user goes through to accomplish a goal, capturing their steps, emotions, touchpoints, and pain points along the way."
+  },
+  {
+    "id": 18,
+    "question": "Which of the following are WCAG accessibility guidelines principles? (Select all that apply)",
+    "options": ["Perceivable", "Operable", "Searchable", "Understandable", "Robust"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "WCAG 2.x is built on four principles: Perceivable, Operable, Understandable, and Robust (POUR). 'Searchable' is not a WCAG principle."
+  },
+  {
+    "id": 19,
+    "question": "What is 'card sorting' used for in UX research?",
+    "options": ["Sorting bug reports by priority", "Understanding how users categorize and group information", "Designing playing card interfaces", "Ranking UI components by importance"],
+    "correct": [1],
+    "explanation": "Card sorting is a UX research technique where participants organize topics into groups, helping designers understand users' mental models and build better information architecture."
+  },
+  {
+    "id": 20,
+    "question": "Which layout principle states that elements close to each other are perceived as related?",
+    "options": ["Similarity", "Proximity", "Closure", "Continuity"],
+    "correct": [1],
+    "explanation": "The Gestalt principle of Proximity states that objects near each other are perceived as a group. This is foundational in UI design for grouping related elements."
+  },
+  {
+    "id": 21,
+    "question": "In design, what does the '3-click rule' suggest?",
+    "options": ["Every page must have exactly 3 buttons", "Users should be able to find any information within 3 clicks", "A form should not exceed 3 fields", "Navigation menus should have 3 levels"],
+    "correct": [1],
+    "explanation": "The 3-click rule suggests users should find any information within 3 clicks. While not always strictly true, it promotes simple, shallow navigation hierarchies."
+  },
+  {
+    "id": 22,
+    "question": "Which of the following are valid UX deliverables? (Select all that apply)",
+    "options": ["Wireframes", "User personas", "Entity-relationship diagrams", "Usability test reports", "User journey maps"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "Wireframes, personas, usability test reports, and journey maps are core UX deliverables. ER diagrams are database design artifacts, not UX deliverables."
+  },
+  {
+    "id": 23,
+    "question": "What is the main difference between UI and UX design?",
+    "options": ["UI focuses on visual elements; UX focuses on overall experience and usability", "UI is for mobile; UX is for web", "UX handles code; UI handles design", "There is no difference"],
+    "correct": [0],
+    "explanation": "UI (User Interface) design focuses on the visual and interactive elements of a product. UX (User Experience) design encompasses the entire experience a user has with a product, including research, flows, and satisfaction."
+  },
+  {
+    "id": 24,
+    "question": "What is meant by 'above the fold' in web design?",
+    "options": ["Content visible without scrolling when a page first loads", "The footer section of a webpage", "HTML code that appears before CSS", "Navigation menus at the top"],
+    "correct": [0],
+    "explanation": "'Above the fold' refers to the portion of a webpage visible without scrolling. It's critical real estate for key information and calls to action."
+  },
+  {
+    "id": 25,
+    "question": "Which of the following statements about 'flat design' are correct? (Select all that apply)",
+    "options": ["It avoids gradients and drop shadows", "It uses simple, two-dimensional elements", "It relies heavily on textures and bevels", "It emphasizes typography and color for hierarchy", "It is associated with Google's Material Design"],
+    "correct": [0, 1, 3],
+    "explanation": "Flat design avoids skeuomorphic elements like gradients and textures, using 2D shapes and relying on bold color and typography for hierarchy. Material Design from Google is an evolution called 'flat design 2.0' that adds subtle shadows."
+  },
+  {
+    "id": 26,
+    "question": "What is the purpose of an 'empty state' in UI design?",
+    "options": ["A loading screen with no animation", "The state of the UI when there is no content to display, with guidance for the user", "A blank canvas for developers to start from", "An error page with no message"],
+    "correct": [1],
+    "explanation": "An empty state appears when there's no content to show (e.g., empty inbox). Good empty state design informs users, reduces confusion, and guides them to take action."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following are examples of microinteractions in UI design? (Select all that apply)",
+    "options": ["A heart animation when liking a post", "A shake animation on incorrect password entry", "Redesigning the entire homepage", "A progress bar during file upload", "A toggle switch changing state visually"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "Microinteractions are small, contained moments in a UI that accomplish a single task and provide feedback — like animations, toggles, progress indicators, and error cues."
+  },
+  {
+    "id": 28,
+    "question": "According to the '80/20 rule' (Pareto Principle) applied to UX:",
+    "options": ["80% of users use 80% of the features", "80% of usability problems come from 20% of the design issues", "20% of users generate 80% of revenue always", "All of the above"],
+    "correct": [1],
+    "explanation": "The Pareto Principle in UX suggests that 80% of usability issues come from 20% of design problems. Fixing the critical 20% of issues addresses most user complaints."
+  },
+  {
+    "id": 29,
+    "question": "What is 'breadcrumb navigation' in UI design?",
+    "options": ["A feature that saves the user's last typed input", "A secondary navigation that shows the user's location within a site hierarchy", "A cookie-based tracking system", "A hamburger menu variant"],
+    "correct": [1],
+    "explanation": "Breadcrumb navigation is a secondary UI element showing the user's path/location within a website hierarchy (e.g., Home > Products > Electronics), helping orientation and easy backtracking."
+  },
+  {
+    "id": 30,
+    "question": "Which of the following are true about 'usability' as defined by ISO 9241? (Select all that apply)",
+    "options": ["Effectiveness — can users complete tasks accurately?", "Efficiency — can users complete tasks with minimum resources?", "Aesthetics — does the UI look visually appealing?", "Satisfaction — is the experience pleasant for users?", "Scalability — does the system handle high traffic?"],
+    "correct": [0, 1, 3],
+    "explanation": "ISO 9241 defines usability in terms of Effectiveness, Efficiency, and Satisfaction. Aesthetics and scalability, while important, are not part of the ISO 9241 usability definition."
+  }
+]

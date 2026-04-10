@@ -1,0 +1,16 @@
+{
+  "id": "python",
+  "label": "Python",
+  "icon": "🐍",
+  "color": "green",
+  "sections": [
+    { "title": "Python Basics & Syntax", "content": "" },
+    { "title": "Data Types & Structures", "content": "" },
+    { "title": "Control Flow", "content": "" },
+    { "title": "Functions & Scope", "content": "" },
+    { "title": "OOP in Python", "content": "" },
+    { "title": "Modules & Packages", "content": "" },
+    { "title": "File Handling & I/O", "content": "" },
+    { "title": "Error Handling & Exceptions", "content": "" }
+  ]
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topic — TCS IPA Concepts</title>
+  <meta name="description" content="Study concept notes for a TCS IPA topic." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; margin: 0; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .gradient-text { background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: radial-gradient(rgba(99,102,241,0.07) 1px, transparent 1px); background-size: 32px 32px; }
+    .orb { position: fixed; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: 0; }
+
+    /* Accordion */
+    .accordion-item { border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; transition: border-color 0.2s ease; }
+    .accordion-item.open { border-color: rgba(99,102,241,0.35); }
+    .accordion-header {
+      width: 100%; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; background: rgba(255,255,255,0.03); text-align: left;
+      transition: background 0.2s ease; border: none; color: inherit;
+    }
+    .accordion-header:hover { background: rgba(255,255,255,0.055); }
+    .accordion-header.open { background: rgba(99,102,241,0.08); }
+    .chevron { transition: transform 0.3s ease; flex-shrink: 0; opacity: 0.5; }
+    .accordion-header.open .chevron { transform: rotate(180deg); opacity: 1; }
+    .accordion-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s ease;
+      background: rgba(255,255,255,0.02);
+    }
+    .accordion-body.open { max-height: 1000px; padding: 0 20px 20px; }
+    .content-text {
+      white-space: pre-wrap; line-height: 1.75; font-size: 14px;
+      color: #94a3b8;
+    }
+    .content-empty {
+      font-style: italic; color: #475569; font-size: 13px;
+    }
+
+    /* Section number badge */
+    .section-num {
+      width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      background: rgba(99,102,241,0.15); color: #818cf8;
+      font-size: 12px; font-weight: 700; flex-shrink: 0; margin-right: 12px;
+    }
+
+    /* Read progress */
+    .read-toggle {
+      font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: all 0.2s ease;
+      background: transparent; color: #64748b; flex-shrink: 0;
+    }
+    .read-toggle.done { background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.3); }
+
+    /* Progress strip at top */
+    #topProgressStrip {
+      position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100;
+      background: linear-gradient(90deg, #6366f1, #22d3ee);
+      transform-origin: left; transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+</head>
+<body class="min-h-screen text-white bg-grid">
+
+  <!-- Reading progress strip -->
+  <div id="topProgressStrip"></div>
+
+  <div class="orb w-[400px] h-[400px] bg-indigo-600 -top-20 -right-20 opacity-[0.08]"></div>
+  <div class="orb w-72 h-72 bg-purple-700 bottom-0 left-0 opacity-[0.06]"></div>
+
+  <!-- Nav -->
+  <nav class="relative z-10 px-4 pt-6 flex items-center gap-3" style="animation: fadeIn 0.3s ease both;">
+    <a href="/concepts.html" class="glass rounded-xl px-3 py-2 text-sm text-slate-400 hover:text-white hover:border-indigo-500/40 transition flex items-center gap-1.5">
+      ← Concepts
+    </a>
+    <div id="breadcrumbTopic" class="text-sm text-slate-600"></div>
+  </nav>
+
+  <!-- Topic header -->
+  <header class="relative z-10 px-4 pt-8 pb-8 max-w-3xl mx-auto" style="animation: slideUp 0.4s ease 0.05s both;">
+    <div class="flex items-center gap-4 mb-4">
+      <div id="topicIconBox" class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl" style="background: rgba(99,102,241,0.15);">
+        📖
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-1">Concepts</p>
+        <h1 id="topicTitle" class="text-3xl font-extrabold text-white"></h1>
+      </div>
+    </div>
+
+    <!-- Read progress -->
+    <div class="glass rounded-2xl px-5 py-4 flex items-center justify-between gap-4 mt-4">
+      <div>
+        <p class="text-xs text-slate-500 mb-1">Sections read</p>
+        <p class="text-white font-bold"><span id="readCount">0</span> / <span id="totalCount">0</span></p>
+      </div>
+      <div class="flex-1 max-w-xs">
+        <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+          <div id="readProgressBar" class="h-full rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 transition-all duration-500" style="width:0%"></div>
+        </div>
+      </div>
+      <button onclick="expandAll()" class="text-xs text-indigo-400 hover:text-indigo-300 font-medium transition whitespace-nowrap">Expand all</button>
+    </div>
+  </header>
+
+  <!-- Accordion list -->
+  <main class="relative z-10 max-w-3xl mx-auto px-4 pb-24">
+    <div id="accordionList" class="flex flex-col gap-3">
+      <div class="glass rounded-2xl p-6 text-center text-slate-600 animate-pulse">Loading…</div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 text-center text-slate-600 text-xs pb-8">
+    TCS IPA Prep Hub &copy; 2025
+  </footer>
+
+  <script src="/js/concept-detail.js"></script>
+</body>
+</html>

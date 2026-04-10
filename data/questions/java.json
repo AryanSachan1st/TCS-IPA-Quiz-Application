@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "question": "Which of the following are features of Java? (Select all that apply)",
+    "options": ["Platform independence", "Object-oriented", "Pointers like C/C++", "Automatic garbage collection"],
+    "correct": [0, 1, 3],
+    "explanation": "Java is platform-independent (WORA), object-oriented, and uses automatic garbage collection. Java does not support direct pointer manipulation like C/C++."
+  },
+  {
+    "id": 2,
+    "question": "What is the default value of an instance variable of type int in Java?",
+    "options": ["null", "0", "undefined", "-1"],
+    "correct": [1],
+    "explanation": "Instance variables of type int are initialized to 0 by default in Java. Local variables, however, are not initialized and must be assigned before use."
+  },
+  {
+    "id": 3,
+    "question": "Which of the following statements about the 'final' keyword in Java are correct? (Select all that apply)",
+    "options": ["A final variable cannot be reassigned", "A final method cannot be overridden", "A final class cannot be instantiated", "A final class cannot be extended"],
+    "correct": [0, 1, 3],
+    "explanation": "A final variable cannot be reassigned, a final method cannot be overridden, and a final class cannot be subclassed/extended. A final class CAN still be instantiated."
+  },
+  {
+    "id": 4,
+    "question": "What will be the output of the following code?\n\nint x = 5;\nSystem.out.println(x++ + \" \" + ++x);",
+    "options": ["5 7", "6 7", "5 6", "6 6"],
+    "correct": [0],
+    "explanation": "x++ is post-increment: it uses x=5 then increments to 6. ++x is pre-increment: it increments x from 6 to 7 then uses 7. So output is '5 7'."
+  },
+  {
+    "id": 5,
+    "question": "Which of the following are valid ways to create a String object in Java? (Select all that apply)",
+    "options": ["String s = \"Hello\";", "String s = new String(\"Hello\");", "String s = String(\"Hello\");", "String s = new String(new char[]{'H','e','l','l','o'});"],
+    "correct": [0, 1, 3],
+    "explanation": "Strings can be created using string literals, new String(\"...\"), or new String(char[]). 'String s = String(\"Hello\")' is invalid syntax — String() cannot be called without 'new'."
+  },
+  {
+    "id": 6,
+    "question": "Which access modifier makes a member accessible only within the same class?",
+    "options": ["default", "protected", "private", "public"],
+    "correct": [2],
+    "explanation": "'private' restricts access to within the same class only. 'default' allows access within the same package, 'protected' within the package and subclasses, and 'public' everywhere."
+  },
+  {
+    "id": 7,
+    "question": "Which of the following are true about interfaces in Java 8 and later? (Select all that apply)",
+    "options": ["Interfaces can have default methods", "Interfaces can have static methods", "Interfaces can have instance variables", "Interfaces can have private methods (Java 9+)"],
+    "correct": [0, 1, 3],
+    "explanation": "Since Java 8, interfaces can have default and static methods. Java 9 added private methods. Interfaces cannot have instance variables — only public static final constants."
+  },
+  {
+    "id": 8,
+    "question": "What is the size of a 'char' data type in Java?",
+    "options": ["1 byte", "2 bytes", "4 bytes", "Depends on the platform"],
+    "correct": [1],
+    "explanation": "In Java, a char is 2 bytes (16-bit Unicode). This differs from C/C++ where char is 1 byte. Java uses UTF-16 encoding for characters."
+  },
+  {
+    "id": 9,
+    "question": "Which of the following correctly describe method overloading in Java? (Select all that apply)",
+    "options": ["Methods must have the same name", "Methods must differ in parameter type or count", "Methods can differ only by return type", "It is resolved at compile time"],
+    "correct": [0, 1, 3],
+    "explanation": "Overloading requires the same method name but different parameter lists (type or count). Return type alone is NOT sufficient to distinguish overloaded methods. Overloading is resolved at compile time (static polymorphism)."
+  },
+  {
+    "id": 10,
+    "question": "What is the output of: System.out.println(10 / 3);",
+    "options": ["3.33", "3", "3.0", "Compile error"],
+    "correct": [1],
+    "explanation": "Both operands are integers, so Java performs integer division, truncating the decimal. The result is 3, not 3.33. To get a decimal result, at least one operand must be a float or double."
+  },
+  {
+    "id": 11,
+    "question": "Which of the following are true about the 'static' keyword in Java? (Select all that apply)",
+    "options": ["Static methods can access instance variables directly", "Static variables are shared among all instances", "Static methods can be called without creating an object", "Static blocks are executed when the class is loaded"],
+    "correct": [1, 2, 3],
+    "explanation": "Static variables are class-level and shared among all instances. Static methods can be called on the class directly. Static blocks run when the class is loaded. Static methods CANNOT directly access instance (non-static) variables."
+  },
+  {
+    "id": 12,
+    "question": "Which exception is thrown when you try to access an array element with an invalid index?",
+    "options": ["NullPointerException", "ArrayIndexOutOfBoundsException", "ClassCastException", "IllegalArgumentException"],
+    "correct": [1],
+    "explanation": "ArrayIndexOutOfBoundsException is thrown when accessing an array with a negative index or an index >= array length. This is an unchecked (runtime) exception."
+  },
+  {
+    "id": 13,
+    "question": "Which of the following are characteristics of abstract classes in Java? (Select all that apply)",
+    "options": ["Cannot be instantiated", "Can have constructors", "Can have both abstract and concrete methods", "A class can extend multiple abstract classes"],
+    "correct": [0, 1, 2],
+    "explanation": "Abstract classes cannot be instantiated directly. They can have constructors (called via super()), and can mix abstract and concrete methods. Java does NOT support multiple inheritance of classes, so a class can extend only one abstract class."
+  },
+  {
+    "id": 14,
+    "question": "What does the 'super' keyword do in Java? (Select all that apply)",
+    "options": ["Refers to the parent class constructor", "Refers to the parent class methods and variables", "Can be used in a static context", "Must be the first statement in a constructor if used to call parent constructor"],
+    "correct": [0, 1, 3],
+    "explanation": "'super()' calls the parent constructor and must be the first statement. 'super.method()' accesses parent methods/variables. 'super' CANNOT be used in a static context as it refers to an instance."
+  },
+  {
+    "id": 15,
+    "question": "What is the correct way to handle checked exceptions in Java? (Select all that apply)",
+    "options": ["Use a try-catch block", "Declare the exception using 'throws'", "Wrap it in a RuntimeException", "Ignore them — the compiler will handle them"],
+    "correct": [0, 1, 2],
+    "explanation": "Checked exceptions must either be caught with try-catch or declared with 'throws'. Wrapping in RuntimeException is also a valid (though less preferred) approach. You cannot simply ignore checked exceptions."
+  },
+  {
+    "id": 16,
+    "question": "Which collection class allows duplicate elements and maintains insertion order?",
+    "options": ["HashSet", "TreeSet", "ArrayList", "HashMap"],
+    "correct": [2],
+    "explanation": "ArrayList allows duplicates and maintains the insertion order of elements. HashSet and TreeSet do not allow duplicates. HashMap stores key-value pairs, not a simple collection."
+  },
+  {
+    "id": 17,
+    "question": "Which of the following are true about the String class in Java? (Select all that apply)",
+    "options": ["String objects are immutable", "String is a primitive type", "String pool is stored in heap memory", "'+' operator creates a new String object"],
+    "correct": [0, 2, 3],
+    "explanation": "Strings are immutable objects in Java, not primitives. The String pool resides in the heap (PermGen/Metaspace area). Concatenation with '+' creates a new String object due to immutability."
+  },
+  {
+    "id": 18,
+    "question": "What is the output of:\n\nString a = \"hello\";\nString b = \"hello\";\nSystem.out.println(a == b);",
+    "options": ["true", "false", "Compile error", "Runtime error"],
+    "correct": [0],
+    "explanation": "Both 'a' and 'b' refer to the same string literal in the String pool. Since they point to the same object, '==' returns true. If created with 'new String()', == would return false."
+  },
+  {
+    "id": 19,
+    "question": "Which of the following are true about constructors in Java? (Select all that apply)",
+    "options": ["A constructor has no return type", "Constructors can be private", "A constructor can be inherited by a subclass", "Constructors can be overloaded"],
+    "correct": [0, 1, 3],
+    "explanation": "Constructors have no return type (not even void). They can be private (used in Singleton patterns). They can be overloaded. However, constructors are NOT inherited by subclasses."
+  },
+  {
+    "id": 20,
+    "question": "Which of the following correctly describe garbage collection in Java? (Select all that apply)",
+    "options": ["It automatically reclaims memory of unreferenced objects", "Programmers can force garbage collection using System.gc()", "Garbage collection guarantees immediate object destruction", "Objects with circular references can also be garbage collected"],
+    "correct": [0, 1, 3],
+    "explanation": "GC automatically frees memory of objects with no references. System.gc() is a suggestion, not a command. GC does NOT guarantee immediate destruction. Modern GC algorithms handle circular references."
+  },
+  {
+    "id": 21,
+    "question": "Which of the following is NOT a wrapper class in Java?",
+    "options": ["Integer", "Float", "String", "Character"],
+    "correct": [2],
+    "explanation": "String is not a wrapper class. Wrapper classes correspond to primitive types: Integer (int), Float (float), Character (char), Boolean (boolean), etc. String is an independent class."
+  },
+  {
+    "id": 22,
+    "question": "What is autoboxing in Java?",
+    "options": ["Converting a primitive to its wrapper class automatically", "Converting a wrapper class to a primitive automatically", "Casting between two different wrapper classes", "Creating an array of primitives automatically"],
+    "correct": [0],
+    "explanation": "Autoboxing is the automatic conversion of a primitive type to its corresponding wrapper class (e.g., int to Integer). The reverse process (Integer to int) is called unboxing."
+  },
+  {
+    "id": 23,
+    "question": "Which of the following are true about the 'this' keyword in Java? (Select all that apply)",
+    "options": ["Refers to the current object", "Can be used in static methods", "Can be used to call another constructor in the same class", "Can be passed as an argument to methods"],
+    "correct": [0, 2, 3],
+    "explanation": "'this' refers to the current instance. It can invoke another constructor (this()) and can be passed as an argument. 'this' CANNOT be used in static methods because static methods are not associated with any instance."
+  },
+  {
+    "id": 24,
+    "question": "What is the difference between '==' and '.equals()' when comparing objects in Java?",
+    "options": ["'==' compares object references; '.equals()' compares content", "'==' compares content; '.equals()' compares references", "Both compare object references", "Both compare content"],
+    "correct": [0],
+    "explanation": "'==' checks if two references point to the same object in memory. '.equals()' checks logical equality (content), though its behavior depends on whether the class overrides the method from Object."
+  },
+  {
+    "id": 25,
+    "question": "Which of the following are true about Java's 'try-with-resources' statement? (Select all that apply)",
+    "options": ["It automatically closes resources after use", "The resource class must implement AutoCloseable", "It was introduced in Java 7", "It replaces the need for a catch block entirely"],
+    "correct": [0, 1, 2],
+    "explanation": "try-with-resources (Java 7+) automatically closes resources. The resource class must implement AutoCloseable (or Closeable). A catch block is still optional and can be added for exception handling."
+  },
+  {
+    "id": 26,
+    "question": "What is the output of the following code?\n\nint[] arr = new int[3];\nSystem.out.println(arr[1]);",
+    "options": ["0", "null", "Garbage value", "ArrayIndexOutOfBoundsException"],
+    "correct": [0],
+    "explanation": "In Java, numeric array elements are initialized to 0 by default. Index 1 is within bounds (0, 1, 2), so it prints 0."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following are true about HashMap in Java? (Select all that apply)",
+    "options": ["It allows one null key", "It allows multiple null values", "It maintains insertion order", "It is not thread-safe"],
+    "correct": [0, 1, 3],
+    "explanation": "HashMap allows exactly one null key and multiple null values. It does NOT maintain insertion order (use LinkedHashMap for that). HashMap is not thread-safe; use ConcurrentHashMap for thread-safety."
+  },
+  {
+    "id": 28,
+    "question": "Which method causes the current thread to wait until another thread finishes execution?",
+    "options": ["wait()", "sleep()", "join()", "yield()"],
+    "correct": [2],
+    "explanation": "join() causes the current thread to wait until the thread on which it is called finishes execution. wait() releases a lock and waits for notify(). sleep() pauses for a fixed time. yield() hints the scheduler to pause the current thread."
+  },
+  {
+    "id": 29,
+    "question": "Which of the following are true about Java's 'finally' block? (Select all that apply)",
+    "options": ["It always executes after try-catch, even if an exception occurs", "It executes even if a return statement is in the try block", "It will NOT execute if System.exit() is called", "It can exist without a catch block"],
+    "correct": [0, 1, 2, 3],
+    "explanation": "finally always executes after try-catch regardless of exceptions or return statements. The one exception is System.exit(), which terminates the JVM immediately. finally can be used with just try (try-finally, no catch)."
+  },
+  {
+    "id": 30,
+    "question": "Which of the following are true about Java's Lambda expressions? (Select all that apply)",
+    "options": ["They were introduced in Java 8", "They can only be used with functional interfaces", "They can access local variables from the enclosing scope if they are effectively final", "They replace anonymous inner classes entirely"],
+    "correct": [0, 1, 2],
+    "explanation": "Lambdas were introduced in Java 8 and work only with functional interfaces (single abstract method). They can capture effectively final local variables. However, they do NOT entirely replace anonymous classes — anonymous classes can implement non-functional interfaces and have state."
+  }
+]

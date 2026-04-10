@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "question": "Which SQL clause is used to filter records after grouping?",
+    "options": ["WHERE", "HAVING", "FILTER", "GROUP BY"],
+    "correct": [1],
+    "explanation": "HAVING filters records after GROUP BY aggregation. WHERE filters rows before grouping."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following are valid SQL JOIN types?",
+    "options": ["INNER JOIN", "OUTER JOIN", "CROSS JOIN", "DIAGONAL JOIN"],
+    "correct": [0, 1, 2],
+    "explanation": "INNER JOIN, OUTER JOIN (LEFT/RIGHT/FULL), and CROSS JOIN are valid SQL JOIN types. DIAGONAL JOIN does not exist."
+  },
+  {
+    "id": 3,
+    "question": "What does the DISTINCT keyword do in a SELECT statement?",
+    "options": ["Sorts the result set", "Removes duplicate rows from the result", "Filters NULL values", "Groups rows by a column"],
+    "correct": [1],
+    "explanation": "DISTINCT eliminates duplicate rows from the result set of a SELECT query."
+  },
+  {
+    "id": 4,
+    "question": "Which SQL command is used to remove all rows from a table without deleting the table structure?",
+    "options": ["DROP", "DELETE", "TRUNCATE", "REMOVE"],
+    "correct": [2],
+    "explanation": "TRUNCATE removes all rows quickly without logging individual row deletions and retains the table structure. DELETE can also remove all rows but logs each deletion."
+  },
+  {
+    "id": 5,
+    "question": "Which of the following aggregate functions ignore NULL values?",
+    "options": ["COUNT(*)", "SUM()", "AVG()", "MAX()"],
+    "correct": [1, 2, 3],
+    "explanation": "SUM(), AVG(), and MAX() ignore NULL values. COUNT(*) counts all rows including those with NULLs; only COUNT(column) ignores NULLs."
+  },
+  {
+    "id": 6,
+    "question": "What is the correct order of SQL clauses in a SELECT statement?",
+    "options": [
+      "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+      "SELECT → WHERE → FROM → GROUP BY → HAVING → ORDER BY",
+      "FROM → SELECT → WHERE → GROUP BY → ORDER BY → HAVING",
+      "SELECT → FROM → HAVING → WHERE → GROUP BY → ORDER BY"
+    ],
+    "correct": [0],
+    "explanation": "The correct clause order is: SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY. The logical execution order is different (FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY)."
+  },
+  {
+    "id": 7,
+    "question": "Which constraint ensures that a column cannot have NULL values?",
+    "options": ["UNIQUE", "PRIMARY KEY", "NOT NULL", "CHECK"],
+    "correct": [1, 2],
+    "explanation": "NOT NULL explicitly prevents NULLs. PRIMARY KEY implicitly enforces NOT NULL along with uniqueness."
+  },
+  {
+    "id": 8,
+    "question": "What does a LEFT JOIN return?",
+    "options": [
+      "Only matching rows from both tables",
+      "All rows from the left table and matching rows from the right table",
+      "All rows from both tables",
+      "Only non-matching rows from the left table"
+    ],
+    "correct": [1],
+    "explanation": "LEFT JOIN returns all rows from the left table and the matched rows from the right table. Unmatched right-table columns appear as NULL."
+  },
+  {
+    "id": 9,
+    "question": "Which of the following SQL statements are DDL (Data Definition Language) commands?",
+    "options": ["CREATE", "ALTER", "INSERT", "DROP"],
+    "correct": [0, 1, 3],
+    "explanation": "CREATE, ALTER, and DROP are DDL commands that define or modify database structure. INSERT is a DML (Data Manipulation Language) command."
+  },
+  {
+    "id": 10,
+    "question": "What will the following query return?\nSELECT * FROM employees WHERE department_id = NULL;",
+    "options": [
+      "All rows where department_id is NULL",
+      "No rows",
+      "A syntax error",
+      "All rows in the table"
+    ],
+    "correct": [1],
+    "explanation": "Comparing with = NULL always evaluates to UNKNOWN (not TRUE), so no rows are returned. The correct syntax is: WHERE department_id IS NULL."
+  },
+  {
+    "id": 11,
+    "question": "Which of the following are properties of a PRIMARY KEY?",
+    "options": ["Uniqueness", "NOT NULL", "Only one per table", "Can be composite"],
+    "correct": [0, 1, 2, 3],
+    "explanation": "A PRIMARY KEY must be unique, cannot be NULL, there can be only one per table, and it can be a composite key (made of multiple columns)."
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between UNION and UNION ALL?",
+    "options": [
+      "UNION removes duplicates; UNION ALL includes duplicates",
+      "UNION ALL removes duplicates; UNION includes duplicates",
+      "UNION sorts results; UNION ALL does not",
+      "There is no difference"
+    ],
+    "correct": [0],
+    "explanation": "UNION combines result sets and removes duplicate rows. UNION ALL combines result sets and retains all duplicates, making it faster."
+  },
+  {
+    "id": 13,
+    "question": "Which SQL function returns the number of rows in a result set?",
+    "options": ["SUM()", "TOTAL()", "COUNT()", "NUM()"],
+    "correct": [2],
+    "explanation": "COUNT() returns the number of rows. COUNT(*) counts all rows; COUNT(column) counts non-NULL values in that column."
+  },
+  {
+    "id": 14,
+    "question": "A FOREIGN KEY in a table references which of the following in another table?",
+    "options": ["Any column", "A UNIQUE KEY or PRIMARY KEY", "Only a PRIMARY KEY", "An indexed column"],
+    "correct": [1],
+    "explanation": "A FOREIGN KEY must reference a PRIMARY KEY or a UNIQUE KEY in the referenced (parent) table."
+  },
+  {
+    "id": 15,
+    "question": "Which of the following correctly describes a CROSS JOIN?",
+    "options": [
+      "Returns only matching rows from both tables",
+      "Returns the Cartesian product of two tables",
+      "Returns rows from the left table with no match in the right",
+      "Joins tables on a common column automatically"
+    ],
+    "correct": [1],
+    "explanation": "A CROSS JOIN returns the Cartesian product — every row from the first table combined with every row from the second table. No join condition is specified."
+  },
+  {
+    "id": 16,
+    "question": "Which of the following SQL clauses can use window functions?",
+    "options": ["SELECT", "WHERE", "HAVING", "ORDER BY"],
+    "correct": [0, 3],
+    "explanation": "Window functions (e.g., ROW_NUMBER(), RANK()) can only be used in SELECT and ORDER BY clauses, not in WHERE or HAVING."
+  },
+  {
+    "id": 17,
+    "question": "What does the COALESCE() function do?",
+    "options": [
+      "Returns the maximum value from a list",
+      "Returns the first non-NULL value from a list",
+      "Converts NULL to zero",
+      "Concatenates strings"
+    ],
+    "correct": [1],
+    "explanation": "COALESCE(val1, val2, ...) returns the first non-NULL value in the list. It is commonly used for NULL handling."
+  },
+  {
+    "id": 18,
+    "question": "Which isolation level prevents dirty reads but allows non-repeatable reads?",
+    "options": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"],
+    "correct": [1],
+    "explanation": "READ COMMITTED prevents dirty reads (reading uncommitted data) but allows non-repeatable reads (same query returning different results within a transaction)."
+  },
+  {
+    "id": 19,
+    "question": "Which of the following statements about indexes are TRUE?",
+    "options": [
+      "Indexes speed up SELECT queries",
+      "Indexes slow down INSERT and UPDATE operations",
+      "A table can have only one index",
+      "Indexes reduce the need for full table scans"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Indexes speed up reads and reduce full table scans, but they add overhead to write operations (INSERT/UPDATE/DELETE). A table can have multiple indexes."
+  },
+  {
+    "id": 20,
+    "question": "What is the result of the following?\nSELECT 5 + NULL;",
+    "options": ["5", "NULL", "0", "Error"],
+    "correct": [1],
+    "explanation": "Any arithmetic operation involving NULL returns NULL in SQL, because NULL represents an unknown value."
+  },
+  {
+    "id": 21,
+    "question": "Which of the following are valid ways to handle NULL values in SQL?",
+    "options": ["IS NULL", "IS NOT NULL", "COALESCE()", "NULLIF()"],
+    "correct": [0, 1, 2, 3],
+    "explanation": "IS NULL and IS NOT NULL check for NULLs. COALESCE() returns the first non-NULL value. NULLIF(a, b) returns NULL if a equals b, otherwise returns a."
+  },
+  {
+    "id": 22,
+    "question": "What does the ROLLBACK statement do in SQL?",
+    "options": [
+      "Saves the current transaction permanently",
+      "Undoes all changes made in the current transaction",
+      "Deletes all rows in a table",
+      "Reverts the schema to a previous version"
+    ],
+    "correct": [1],
+    "explanation": "ROLLBACK undoes all changes made during the current transaction, reverting the database to its state before the transaction began."
+  },
+  {
+    "id": 23,
+    "question": "Which SQL keyword is used to create an alias for a table or column?",
+    "options": ["ALIAS", "AS", "RENAME", "LABEL"],
+    "correct": [1],
+    "explanation": "The AS keyword is used to assign an alias to a column or table in a query (e.g., SELECT salary AS monthly_pay). The AS keyword is optional in many databases."
+  },
+  {
+    "id": 24,
+    "question": "In which of the following scenarios would you use a subquery instead of a JOIN?",
+    "options": [
+      "When you need the result of one query as input to another",
+      "When checking existence with EXISTS",
+      "When joining large tables for performance",
+      "When filtering with IN using a dynamic list from another table"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Subqueries are ideal when using the output of one query as input to another, with EXISTS for existence checks, and with IN for dynamic filtering. JOINs are generally preferred for performance on large tables."
+  },
+  {
+    "id": 25,
+    "question": "What is a VIEW in SQL?",
+    "options": [
+      "A physical copy of a table",
+      "A stored virtual table based on a SELECT query",
+      "A type of index",
+      "A temporary table that expires after the session"
+    ],
+    "correct": [1],
+    "explanation": "A VIEW is a virtual table defined by a SELECT query. It does not store data physically (unless it's a materialized view) and reflects real-time data from the underlying tables."
+  },
+  {
+    "id": 26,
+    "question": "Which of the following window functions assign a unique rank to each row without gaps?",
+    "options": ["RANK()", "DENSE_RANK()", "ROW_NUMBER()", "NTILE()"],
+    "correct": [1, 2],
+    "explanation": "DENSE_RANK() assigns ranks without gaps (e.g., 1,2,2,3). ROW_NUMBER() assigns a unique sequential number to every row. RANK() skips numbers after ties (e.g., 1,2,2,4)."
+  },
+  {
+    "id": 27,
+    "question": "What is the purpose of the GROUP BY clause?",
+    "options": [
+      "To sort the result set",
+      "To group rows sharing a common value for aggregate functions",
+      "To filter rows based on a condition",
+      "To eliminate duplicate rows"
+    ],
+    "correct": [1],
+    "explanation": "GROUP BY groups rows that have the same values in specified columns so that aggregate functions (COUNT, SUM, AVG, etc.) can be applied to each group."
+  },
+  {
+    "id": 28,
+    "question": "Which of the following statements about STORED PROCEDURES are TRUE?",
+    "options": [
+      "They can accept input parameters",
+      "They can return multiple result sets",
+      "They are precompiled and cached",
+      "They can only perform SELECT operations"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "Stored procedures accept input/output parameters, can return multiple result sets, and are precompiled for performance. They can perform any SQL operation — not just SELECT."
+  },
+  {
+    "id": 29,
+    "question": "What is the difference between DELETE and TRUNCATE?",
+    "options": [
+      "DELETE can have a WHERE clause; TRUNCATE cannot",
+      "TRUNCATE is faster than DELETE for removing all rows",
+      "DELETE fires triggers; TRUNCATE generally does not",
+      "TRUNCATE can be rolled back in all databases"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "DELETE supports WHERE, fires triggers, and is logged row-by-row. TRUNCATE removes all rows faster by deallocating data pages, and generally does not fire row-level triggers. TRUNCATE cannot always be rolled back (database-dependent)."
+  },
+  {
+    "id": 30,
+    "question": "Which of the following are TRUE about the ACID properties of a transaction?",
+    "options": [
+      "Atomicity ensures all operations complete or none do",
+      "Consistency ensures the database moves from one valid state to another",
+      "Isolation means transactions are executed sequentially always",
+      "Durability ensures committed data persists even after a crash"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Atomicity = all or nothing. Consistency = valid state transitions. Durability = committed changes are permanent. Isolation does NOT mean sequential execution — it means concurrent transactions don't interfere, but they can execute concurrently at various isolation levels."
+  }
+]

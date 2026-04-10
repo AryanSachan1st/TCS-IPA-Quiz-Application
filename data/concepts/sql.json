@@ -1,0 +1,16 @@
+{
+  "id": "sql",
+  "label": "SQL",
+  "icon": "🗄️",
+  "color": "blue",
+  "sections": [
+    { "title": "SQL Basics & Syntax", "content": "" },
+    { "title": "DDL — Data Definition Language", "content": "" },
+    { "title": "DML — Data Manipulation Language", "content": "" },
+    { "title": "SELECT & Filtering", "content": "" },
+    { "title": "Joins", "content": "" },
+    { "title": "Aggregate Functions & GROUP BY", "content": "" },
+    { "title": "Subqueries & Views", "content": "" },
+    { "title": "Indexes & Normalization", "content": "" }
+  ]
+}

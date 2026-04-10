@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice — TCS IPA MCQ Quiz</title>
+  <meta name="description" content="Practise with section-wise MCQ quizzes — Know Your TCS, BizSkills, Java, Python, SQL, Unix/Linux, UI, and more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0a0f1e', 800: '#0d1528', 700: '#111827' },
+            brand: { DEFAULT: '#6366f1', dark: '#4f46e5', light: '#818cf8' },
+            cyan: { accent: '#22d3ee' },
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'slide-up': 'slideUp 0.4s ease forwards',
+          },
+          keyframes: {
+            fadeIn:  { from: { opacity: 0 },                              to: { opacity: 1 } },
+            slideUp: { from: { opacity: 0, transform: 'translateY(24px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .glass-hover:hover { background: rgba(255,255,255,0.07); border-color: rgba(99,102,241,0.4); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(99,102,241,0.15); }
+    .gradient-text { background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: radial-gradient(rgba(99,102,241,0.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .section-card { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); cursor: pointer; }
+    .score-badge { background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(34,211,238,0.1)); }
+    .orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.10; pointer-events: none; z-index: 0; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .float { animation: float 6s ease-in-out infinite; }
+    @keyframes slideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+</head>
+<body class="min-h-screen text-white bg-grid">
+
+  <div class="orb w-96 h-96 bg-indigo-500 top-0 left-0"></div>
+  <div class="orb w-96 h-96 bg-cyan-400 bottom-0 right-0"></div>
+
+  <!-- Top nav -->
+  <nav class="relative z-10 px-4 pt-6 flex items-center">
+    <a href="/" class="glass rounded-xl px-3 py-2 text-sm text-slate-400 hover:text-white hover:border-indigo-500/40 transition flex items-center gap-1.5">
+      ← Home
+    </a>
+  </nav>
+
+  <!-- Header -->
+  <header class="relative z-10 px-4 pt-8 pb-6 text-center">
+    <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 text-sm text-cyan-300 font-medium">
+      🎯 Practice Mode
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-extrabold mb-3">
+      MCQ <span class="gradient-text">Practice</span>
+    </h1>
+    <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto">
+      Pick a section and start your randomized quiz. Track scores and review mistakes.
+    </p>
+
+    <!-- Global stats bar -->
+    <div id="globalStats" class="flex flex-wrap justify-center gap-4 mt-8"></div>
+  </header>
+
+  <!-- Section Grid -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 pb-16">
+    <h2 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-6 text-center">Choose a section</h2>
+    <div id="sectionGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="glass rounded-2xl p-6 animate-pulse col-span-full text-center text-slate-600 py-20">Loading sections…</div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 text-center text-slate-600 text-xs pb-8">
+    TCS IPA Quiz &copy; 2025 &bull; All sections randomize on each attempt
+  </footer>
+
+  <script src="/js/practice.js"></script>
+</body>
+</html>

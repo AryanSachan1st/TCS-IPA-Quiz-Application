@@ -1,0 +1,307 @@
+[
+  {
+    "id": 1,
+    "question": "Which of the following are characteristics of effective business communication? (Select all that apply)",
+    "options": ["Clarity", "Conciseness", "Using jargon frequently", "Completeness"],
+    "correct": [0, 1, 3],
+    "explanation": "Effective business communication is Clear, Concise, and Complete. Excessive jargon reduces clarity."
+  },
+  {
+    "id": 2,
+    "question": "What does SMART stand for in the context of goal-setting?",
+    "options": [
+      "Specific, Measurable, Achievable, Relevant, Time-bound",
+      "Simple, Manageable, Accurate, Realistic, Timely",
+      "Strategic, Meaningful, Actionable, Resourceful, Trackable",
+      "Specific, Motivated, Achievable, Reliable, Trackable"
+    ],
+    "correct": [0],
+    "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — a standard framework for effective goal setting."
+  },
+  {
+    "id": 3,
+    "question": "Which of the following are components of emotional intelligence (EQ)? (Select all that apply)",
+    "options": ["Self-awareness", "Technical expertise", "Empathy", "Self-regulation"],
+    "correct": [0, 2, 3],
+    "explanation": "EQ components include self-awareness, empathy, self-regulation, motivation, and social skills. Technical expertise is IQ, not EQ."
+  },
+  {
+    "id": 4,
+    "question": "In a professional email, what should the subject line ideally be?",
+    "options": [
+      "Vague to spark curiosity",
+      "Specific and informative about the email's content",
+      "Left blank for informal communication",
+      "As long as possible to include all details"
+    ],
+    "correct": [1],
+    "explanation": "A professional subject line should clearly indicate the email's purpose, helping the recipient prioritize and respond."
+  },
+  {
+    "id": 5,
+    "question": "Which of the following best describes 'active listening'?",
+    "options": [
+      "Waiting for your turn to speak",
+      "Fully concentrating, understanding, and responding to the speaker",
+      "Listening while multitasking",
+      "Nodding continuously regardless of understanding"
+    ],
+    "correct": [1],
+    "explanation": "Active listening involves full concentration, understanding the message, and providing thoughtful feedback — not just hearing words."
+  },
+  {
+    "id": 6,
+    "question": "Which of the following are examples of non-verbal communication? (Select all that apply)",
+    "options": ["Eye contact", "Tone of voice", "Written memo", "Posture"],
+    "correct": [0, 1, 3],
+    "explanation": "Non-verbal communication includes body language, eye contact, posture, facial expressions, and tone of voice. A written memo is verbal (written) communication."
+  },
+  {
+    "id": 7,
+    "question": "What is the primary purpose of a business report?",
+    "options": [
+      "To entertain the reader",
+      "To present analyzed information to support decision-making",
+      "To express personal opinions",
+      "To replace verbal meetings entirely"
+    ],
+    "correct": [1],
+    "explanation": "Business reports present data and analysis to help stakeholders make informed decisions."
+  },
+  {
+    "id": 8,
+    "question": "Which leadership style involves the leader making decisions without consulting the team?",
+    "options": ["Democratic", "Laissez-faire", "Autocratic", "Transformational"],
+    "correct": [2],
+    "explanation": "Autocratic (authoritarian) leadership involves centralized decision-making with little or no team input."
+  },
+  {
+    "id": 9,
+    "question": "Which of the following are barriers to effective communication? (Select all that apply)",
+    "options": ["Language differences", "Information overload", "Active listening", "Physical noise"],
+    "correct": [0, 1, 3],
+    "explanation": "Barriers include language differences, information overload, physical noise, and emotional filters. Active listening is a facilitator, not a barrier."
+  },
+  {
+    "id": 10,
+    "question": "In the context of teamwork, what does 'synergy' mean?",
+    "options": [
+      "Individual effort outweighs team effort",
+      "Combined team output is greater than the sum of individual outputs",
+      "Team members work independently on all tasks",
+      "Conflict resolution within a team"
+    ],
+    "correct": [1],
+    "explanation": "Synergy means the whole is greater than the sum of its parts — teams accomplish more together than individuals working alone."
+  },
+  {
+    "id": 11,
+    "question": "Which of the following best defines 'professionalism' in the workplace?",
+    "options": [
+      "Wearing formal attire at all times",
+      "Conducting oneself with responsibility, integrity, and respect",
+      "Being the highest performer in the team",
+      "Never disagreeing with a manager"
+    ],
+    "correct": [1],
+    "explanation": "Professionalism encompasses behavior, attitude, communication, and ethics — not just appearance or performance."
+  },
+  {
+    "id": 12,
+    "question": "What is the correct sequence of Tuckman's stages of team development?",
+    "options": [
+      "Forming → Storming → Norming → Performing",
+      "Storming → Forming → Performing → Norming",
+      "Norming → Forming → Storming → Performing",
+      "Forming → Norming → Storming → Performing"
+    ],
+    "correct": [0],
+    "explanation": "Tuckman's model: Forming → Storming → Norming → Performing (→ Adjourning). Teams go through conflict before cohesion."
+  },
+  {
+    "id": 13,
+    "question": "Which of the following are effective time management techniques? (Select all that apply)",
+    "options": ["Eisenhower Matrix", "Multitasking all tasks simultaneously", "Pomodoro Technique", "Setting priorities"],
+    "correct": [0, 2, 3],
+    "explanation": "Eisenhower Matrix, Pomodoro Technique, and priority-setting are proven time management tools. Multitasking generally reduces quality and efficiency."
+  },
+  {
+    "id": 14,
+    "question": "A colleague sends an aggressive email. What is the most professional response?",
+    "options": [
+      "Reply immediately with equal aggression",
+      "Ignore the email completely",
+      "Wait, then reply calmly and factually addressing the issue",
+      "Forward the email to everyone in the office"
+    ],
+    "correct": [2],
+    "explanation": "Professional conflict resolution involves staying calm, being factual, and addressing the issue constructively — not retaliating."
+  },
+  {
+    "id": 15,
+    "question": "Which of the following are key elements of a business presentation? (Select all that apply)",
+    "options": ["Clear structure", "Audience awareness", "Reading slides word-for-word", "Strong opening and closing"],
+    "correct": [0, 1, 3],
+    "explanation": "Effective presentations have a clear structure, are tailored to the audience, and begin and end strongly. Reading slides verbatim disengages audiences."
+  },
+  {
+    "id": 16,
+    "question": "What does 'KPI' stand for in business?",
+    "options": [
+      "Key Performance Indicator",
+      "Knowledge and Productivity Index",
+      "Key Process Integration",
+      "Known Performance Interface"
+    ],
+    "correct": [0],
+    "explanation": "KPI stands for Key Performance Indicator — a measurable value that shows how effectively a company is achieving key objectives."
+  },
+  {
+    "id": 17,
+    "question": "Which of the following behaviors demonstrate workplace integrity? (Select all that apply)",
+    "options": [
+      "Admitting mistakes promptly",
+      "Taking credit for others' work",
+      "Keeping confidential information private",
+      "Meeting deadlines consistently"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "Integrity includes honesty, accountability, confidentiality, and reliability. Taking credit for others' work is unethical."
+  },
+  {
+    "id": 18,
+    "question": "In negotiation, what does 'BATNA' stand for?",
+    "options": [
+      "Best Alternative To a Negotiated Agreement",
+      "Business Approach To Neutral Arbitration",
+      "Balanced Agreement Through Negotiation Analysis",
+      "Best Accepted Terms in Negotiation Arena"
+    ],
+    "correct": [0],
+    "explanation": "BATNA (Best Alternative To a Negotiated Agreement) is the most advantageous option a party can take if negotiations fail."
+  },
+  {
+    "id": 19,
+    "question": "Which type of communication flows from subordinates to superiors?",
+    "options": ["Downward communication", "Upward communication", "Lateral communication", "Diagonal communication"],
+    "correct": [1],
+    "explanation": "Upward communication moves from employees to management — includes feedback, reports, and suggestions."
+  },
+  {
+    "id": 20,
+    "question": "Which of the following are qualities of a good team player? (Select all that apply)",
+    "options": ["Reliability", "Hoarding information", "Flexibility", "Accountability"],
+    "correct": [0, 2, 3],
+    "explanation": "Good team players are reliable, flexible, and accountable. Hoarding information undermines team collaboration."
+  },
+  {
+    "id": 21,
+    "question": "What is 'workplace etiquette'?",
+    "options": [
+      "Formal dress code only",
+      "Set of rules governing professional behavior and interaction",
+      "Following orders without question",
+      "Using formal language in all communications"
+    ],
+    "correct": [1],
+    "explanation": "Workplace etiquette refers to the code of conduct — how employees interact, communicate, and behave professionally."
+  },
+  {
+    "id": 22,
+    "question": "Which of the following are advantages of written communication over verbal? (Select all that apply)",
+    "options": [
+      "Provides a permanent record",
+      "Allows immediate feedback",
+      "Can be referenced later",
+      "Reduces misunderstanding with documented clarity"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "Written communication provides documentation, reference capability, and clarity. Immediate feedback is an advantage of verbal communication."
+  },
+  {
+    "id": 23,
+    "question": "What is 'groupthink' in an organizational context?",
+    "options": [
+      "Brainstorming sessions with diverse perspectives",
+      "A phenomenon where desire for conformity overrides critical thinking",
+      "Team collaboration on creative projects",
+      "Group decision-making using voting"
+    ],
+    "correct": [1],
+    "explanation": "Groupthink occurs when cohesion pressures suppress dissent, leading to poor decision-making without critical evaluation."
+  },
+  {
+    "id": 24,
+    "question": "Which of the following are steps in effective problem-solving? (Select all that apply)",
+    "options": [
+      "Define the problem clearly",
+      "Jump to the first solution available",
+      "Evaluate alternatives",
+      "Implement and monitor the solution"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "Effective problem-solving: define → generate options → evaluate → implement → monitor. Jumping to the first solution skips critical analysis."
+  },
+  {
+    "id": 25,
+    "question": "What is the Pareto Principle (80/20 rule) in a business context?",
+    "options": [
+      "80% of employees do 80% of the work",
+      "80% of results come from 20% of efforts",
+      "20% of goals require 80% of the budget",
+      "80% of problems are caused by 80% of people"
+    ],
+    "correct": [1],
+    "explanation": "The Pareto Principle states 80% of outcomes come from 20% of inputs — helping prioritize high-impact activities."
+  },
+  {
+    "id": 26,
+    "question": "Which communication style is considered most effective in professional settings?",
+    "options": ["Aggressive", "Passive", "Assertive", "Passive-aggressive"],
+    "correct": [2],
+    "explanation": "Assertive communication expresses needs and opinions confidently and respectfully — balancing self-advocacy with others' perspectives."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following are components of a professional business letter? (Select all that apply)",
+    "options": ["Salutation", "Subject line or reference", "Casual slang", "Complimentary close"],
+    "correct": [0, 1, 3],
+    "explanation": "Business letters include salutation, subject/reference, body, and complimentary close. Casual slang is inappropriate in formal correspondence."
+  },
+  {
+    "id": 28,
+    "question": "What does 'delegation' mean in management?",
+    "options": [
+      "Assigning all decisions to subordinates",
+      "Transferring authority and responsibility for specific tasks to another person",
+      "Avoiding accountability by passing tasks",
+      "Micromanaging every task in the team"
+    ],
+    "correct": [1],
+    "explanation": "Delegation is assigning tasks with appropriate authority to team members — enabling efficiency and employee development."
+  },
+  {
+    "id": 29,
+    "question": "Which of the following are benefits of diversity in the workplace? (Select all that apply)",
+    "options": [
+      "Wider range of perspectives and ideas",
+      "Increased creativity and innovation",
+      "Guaranteed conflict-free environment",
+      "Better understanding of diverse customer needs"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Diversity brings varied perspectives, boosts innovation, and improves customer empathy. It doesn't eliminate conflict but can lead to healthier debate."
+  },
+  {
+    "id": 30,
+    "question": "What is the most appropriate action when you receive constructive criticism from a supervisor?",
+    "options": [
+      "Dismiss it as personal bias",
+      "Listen actively, acknowledge it, and work on improvement",
+      "Immediately defend yourself",
+      "Share the feedback negatively with colleagues"
+    ],
+    "correct": [1],
+    "explanation": "Constructive criticism is a growth opportunity. Listening, acknowledging, and improving demonstrates professionalism and maturity."
+  }
+]

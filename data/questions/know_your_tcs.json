@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "question": "In which year was Tata Consultancy Services (TCS) founded?",
+    "options": ["1964", "1968", "1972", "1974"],
+    "correct": [1],
+    "explanation": "TCS was founded in 1968 as a division of Tata Sons."
+  },
+  {
+    "id": 2,
+    "question": "Where is TCS headquarters located?",
+    "options": ["Bengaluru", "New Delhi", "Mumbai", "Pune"],
+    "correct": [2],
+    "explanation": "TCS is headquartered in Mumbai, Maharashtra, India."
+  },
+  {
+    "id": 3,
+    "question": "Who is known as the 'Father of the Indian IT Industry' and served as the first General Manager of TCS?",
+    "options": ["J.R.D. Tata", "N. Chandrasekaran", "F.C. Kohli", "Rajesh Gopinathan"],
+    "correct": [2],
+    "explanation": "F.C. Kohli was the first General Manager of TCS and is widely regarded as the Father of the Indian IT Industry."
+  },
+  {
+    "id": 4,
+    "question": "On which stock exchanges is TCS listed? (Select all that apply)",
+    "options": ["BSE", "NSE", "NYSE", "LSE"],
+    "correct": [0, 1],
+    "explanation": "TCS is listed on both BSE (Bombay Stock Exchange) and NSE (National Stock Exchange) in India."
+  },
+  {
+    "id": 5,
+    "question": "Who is the current CEO & Managing Director of TCS (as of 2024)?",
+    "options": ["N. Chandrasekaran", "Rajesh Gopinathan", "K. Krithivasan", "Milind Lakkad"],
+    "correct": [2],
+    "explanation": "K. Krithivasan took over as CEO & MD of TCS in June 2023, succeeding Rajesh Gopinathan."
+  },
+  {
+    "id": 6,
+    "question": "Which of the following is TCS's AI/ML-powered cognitive automation platform?",
+    "options": ["TCS BaNCS", "ignio™", "TCS iON", "TCS MasterCraft"],
+    "correct": [1],
+    "explanation": "ignio™ is TCS's proprietary AI/ML-powered cognitive automation platform used for IT operations and business processes."
+  },
+  {
+    "id": 7,
+    "question": "TCS became the first Indian IT company to cross $10 billion in revenue in which year?",
+    "options": ["2008", "2010", "2013", "2015"],
+    "correct": [2],
+    "explanation": "TCS became the first Indian IT company to cross $10 billion in annual revenue in 2013."
+  },
+  {
+    "id": 8,
+    "question": "Which of the following is TCS's core banking and financial services platform used globally?",
+    "options": ["ignio™", "TCS iON", "TCS BaNCS", "Quartz™"],
+    "correct": [2],
+    "explanation": "TCS BaNCS is a core banking and financial services platform used by banks and insurance firms globally."
+  },
+  {
+    "id": 9,
+    "question": "In which year did TCS go public with its IPO — the largest IPO in India at that time?",
+    "options": ["2001", "2004", "2007", "2010"],
+    "correct": [1],
+    "explanation": "TCS went public in 2004 and its IPO was the largest in India at that time."
+  },
+  {
+    "id": 10,
+    "question": "Which is the largest revenue-contributing industry vertical for TCS?",
+    "options": ["Manufacturing", "Retail & Consumer Business", "Communication, Media & Technology", "Banking, Financial Services & Insurance (BFSI)"],
+    "correct": [3],
+    "explanation": "BFSI (Banking, Financial Services & Insurance) is TCS's largest industry segment, contributing approximately 32% of revenue."
+  },
+  {
+    "id": 11,
+    "question": "Which geography contributes the largest share of TCS's revenue?",
+    "options": ["Europe", "India", "North America", "Asia-Pacific"],
+    "correct": [2],
+    "explanation": "North America is the largest revenue-contributing geography for TCS, accounting for approximately 53% of its revenue."
+  },
+  {
+    "id": 12,
+    "question": "TCS achieved carbon neutrality in which year?",
+    "options": ["2018", "2019", "2020", "2022"],
+    "correct": [2],
+    "explanation": "TCS has been carbon neutral since 2020 and has set a Net Zero target by 2030."
+  },
+  {
+    "id": 13,
+    "question": "Which of the following platforms is used by TCS for digital education and assessments (e.g., NTA exams)?",
+    "options": ["TCS BaNCS", "TCS iON", "ignio™", "TCS ADD"],
+    "correct": [1],
+    "explanation": "TCS iON is a cloud-based platform used for education and assessments, including government competitive examinations."
+  },
+  {
+    "id": 14,
+    "question": "Which of the following are TCS's cloud hyperscaler partners? (Select all that apply)",
+    "options": ["AWS", "Microsoft Azure", "Google Cloud", "IBM Cloud"],
+    "correct": [0, 1, 2],
+    "explanation": "TCS has strategic partnerships with AWS, Microsoft Azure, and Google Cloud as its primary hyperscaler partners."
+  },
+  {
+    "id": 15,
+    "question": "What is the name of TCS's blockchain solutions platform?",
+    "options": ["TCS ADD", "Quartz™", "HOBS", "OmniStore"],
+    "correct": [1],
+    "explanation": "Quartz™ is TCS's blockchain solutions platform offering distributed ledger services."
+  },
+  {
+    "id": 16,
+    "question": "N. Chandrasekaran, the former CEO of TCS, currently holds which position?",
+    "options": ["CEO of Infosys", "Chairman of Tata Sons", "CFO of TCS", "MD of Tata Motors"],
+    "correct": [1],
+    "explanation": "N. Chandrasekaran served as TCS CEO from 2009–2017 and is currently the Chairman of Tata Sons."
+  },
+  {
+    "id": 17,
+    "question": "Which of the following best describes TCS's SBWS model?",
+    "options": [
+      "Secure Banking and Wealth Services",
+      "Structured Business Workflow System",
+      "Secure Borderless Workspaces — TCS's work-from-anywhere model",
+      "Software Based Web Solutions"
+    ],
+    "correct": [2],
+    "explanation": "SBWS (Secure Borderless Workspaces) is TCS's work-from-anywhere model introduced during COVID-19 and later made a permanent delivery model."
+  },
+  {
+    "id": 18,
+    "question": "Which of the following CSR/social initiatives are run by TCS? (Select all that apply)",
+    "options": ["BridgeIT", "goIT", "Ignite My Future in School", "Project Unnati"],
+    "correct": [0, 1, 2],
+    "explanation": "BridgeIT (rural digital literacy), goIT (STEM awareness), and Ignite My Future in School (computational thinking in the USA) are all TCS CSR initiatives. Project Unnati is not a TCS program."
+  },
+  {
+    "id": 19,
+    "question": "What milestone did TCS reach in 2018 that made it the first Indian company to do so?",
+    "options": [
+      "First Indian company to cross ₹1 lakh crore in profit",
+      "First Indian company to operate in 50+ countries",
+      "First Indian IT company to reach $100 billion market capitalization",
+      "First Indian company to cross $20 billion in revenue"
+    ],
+    "correct": [2],
+    "explanation": "In 2018, TCS became the first Indian IT company (and first Indian company overall) to reach a $100 billion market capitalization."
+  },
+  {
+    "id": 20,
+    "question": "Which of the following are TCS's core values? (Select all that apply)",
+    "options": ["Integrity", "Speed", "Respect for the Individual", "Excellence"],
+    "correct": [0, 2, 3],
+    "explanation": "TCS's core values include Integrity, Respect for the Individual, Excellence, Learning & Sharing, and Creativity & Innovation. 'Speed' is not one of them."
+  },
+  {
+    "id": 21,
+    "question": "In approximately how many countries does TCS have operations?",
+    "options": ["30+", "45+", "55+", "70+"],
+    "correct": [2],
+    "explanation": "TCS operates in over 55 countries with approximately 150 delivery centers globally."
+  },
+  {
+    "id": 22,
+    "question": "Which company did TCS acquire in 2007, which was a major BPO deal?",
+    "options": [
+      "Patni Computer Systems",
+      "Citigroup Global Services",
+      "iGate Corporation",
+      "Mphasis"
+    ],
+    "correct": [1],
+    "explanation": "TCS acquired Citigroup Global Services in 2007, which was the BPO arm of Citigroup — a landmark BPO acquisition."
+  },
+  {
+    "id": 23,
+    "question": "Which of the following marathons are sponsored by TCS as title sponsor? (Select all that apply)",
+    "options": [
+      "TCS New York City Marathon",
+      "TCS Amsterdam Marathon",
+      "TCS London Marathon",
+      "TCS Toronto Waterfront Marathon"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "TCS is the title sponsor of the NYC Marathon, Amsterdam Marathon, and Toronto Waterfront Marathon. The London Marathon is not a TCS-titled event."
+  },
+  {
+    "id": 24,
+    "question": "Which of the following platforms does TCS use for employee learning and development? (Select all that apply)",
+    "options": ["Fresco Play", "iEvolve", "Coursera for Teams", "Xcelerate"],
+    "correct": [0, 1, 3],
+    "explanation": "TCS uses Fresco Play, iEvolve, and Xcelerate as internal learning and development platforms. Coursera for Teams is an external platform, not TCS's internal L&D tool."
+  },
+  {
+    "id": 25,
+    "question": "What is TCS's internal employee portal called?",
+    "options": ["TCS Connect", "TCS Gateway", "Ultimatix", "TCS Hub"],
+    "correct": [2],
+    "explanation": "TCS Ultimatix is the internal enterprise portal used by all TCS employees for HR services, project management, and more."
+  },
+  {
+    "id": 26,
+    "question": "TCS's approximate employee headcount as of 2024 is:",
+    "options": ["~3 lakh", "~4.5 lakh", "~6 lakh+", "~8 lakh+"],
+    "correct": [2],
+    "explanation": "TCS employs over 6 lakh (600,000+) employees globally, making it one of the largest private sector employers in India."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following product/platforms belong to TCS? (Select all that apply)",
+    "options": ["TCS BaNCS", "TCS OmniStore", "TCS MasterCraft", "Finacle"],
+    "correct": [0, 1, 2],
+    "explanation": "TCS BaNCS, TCS OmniStore (unified commerce), and TCS MasterCraft (application modernization) are all TCS products. Finacle is Infosys's core banking platform."
+  },
+  {
+    "id": 28,
+    "question": "TCS's first software export was to which company?",
+    "options": ["IBM", "Burroughs Corporation", "Citibank", "General Electric"],
+    "correct": [1],
+    "explanation": "TCS made its first software export in 1969 to Burroughs Corporation in the USA, marking India's entry into software exports."
+  },
+  {
+    "id": 29,
+    "question": "Which of the following correctly describes TCS's approximate revenue geography split?",
+    "options": [
+      "North America ~53%, Europe ~31%",
+      "Europe ~53%, North America ~31%",
+      "India ~53%, North America ~31%",
+      "North America ~70%, Europe ~20%"
+    ],
+    "correct": [0],
+    "explanation": "North America contributes approximately 53% of TCS's revenue, followed by Europe at ~31%, making these the two dominant revenue geographies."
+  },
+  {
+    "id": 30,
+    "question": "Which of the following statements about TCS are TRUE? (Select all that apply)",
+    "options": [
+      "TCS is a subsidiary of Tata Sons",
+      "TCS was the first Indian IT company to cross $10 billion in revenue",
+      "TCS's BFSI vertical is its largest industry segment",
+      "TCS's stock is listed on the New York Stock Exchange (NYSE)"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "TCS is a subsidiary of Tata Sons (TRUE), was first Indian IT company to cross $10B revenue (TRUE), and BFSI is its largest segment (TRUE). TCS is NOT listed on NYSE — it is listed only on BSE and NSE."
+  }
+]

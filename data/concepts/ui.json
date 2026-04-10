@@ -1,0 +1,16 @@
+{
+  "id": "ui",
+  "label": "UI",
+  "icon": "🖥️",
+  "color": "pink",
+  "sections": [
+    { "title": "UI Design Fundamentals", "content": "" },
+    { "title": "Color Theory in UI", "content": "" },
+    { "title": "Typography", "content": "" },
+    { "title": "Layout & Grid Systems", "content": "" },
+    { "title": "UX vs UI", "content": "" },
+    { "title": "Accessibility (a11y)", "content": "" },
+    { "title": "Wireframing & Prototyping", "content": "" },
+    { "title": "Web Technologies in UI", "content": "" }
+  ]
+}

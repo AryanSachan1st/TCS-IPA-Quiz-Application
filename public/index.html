@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCS IPA Prep — Concepts & Practice</title>
+  <meta name="description" content="Prepare for TCS IPA with structured concept notes and section-wise MCQ practice across 8 key topics." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0a0f1e', 800: '#0d1528', 700: '#111827' },
+            brand: { DEFAULT: '#6366f1', dark: '#4f46e5', light: '#818cf8' },
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease forwards',
+            'slide-up': 'slideUp 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn:  { from: { opacity: 0 },                              to: { opacity: 1 } },
+            slideUp: { from: { opacity: 0, transform: 'translateY(28px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+            float:   { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-14px)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; margin: 0; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+    .gradient-text { background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: radial-gradient(rgba(99,102,241,0.07) 1px, transparent 1px); background-size: 32px 32px; }
+    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
+
+    /* Mode cards */
+    .mode-card {
+      position: relative; overflow: hidden; cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .mode-card::before {
+      content: ''; position: absolute; inset: 0;
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    .mode-card:hover { transform: translateY(-8px); }
+    .mode-card:hover::before { opacity: 1; }
+    .mode-card:active { transform: translateY(-4px) scale(0.99); }
+
+    /* Concepts card */
+    .card-concepts { background: linear-gradient(145deg, rgba(99,102,241,0.08), rgba(168,85,247,0.05)); }
+    .card-concepts::before { background: linear-gradient(145deg, rgba(99,102,241,0.15), rgba(168,85,247,0.1)); }
+    .card-concepts:hover { border-color: rgba(99,102,241,0.5); box-shadow: 0 32px 64px rgba(99,102,241,0.2), 0 0 0 1px rgba(99,102,241,0.3); }
+
+    /* Practice card */
+    .card-practice { background: linear-gradient(145deg, rgba(34,211,238,0.06), rgba(99,102,241,0.05)); }
+    .card-practice::before { background: linear-gradient(145deg, rgba(34,211,238,0.12), rgba(99,102,241,0.08)); }
+    .card-practice:hover { border-color: rgba(34,211,238,0.5); box-shadow: 0 32px 64px rgba(34,211,238,0.15), 0 0 0 1px rgba(34,211,238,0.25); }
+
+    /* Icon glow */
+    .icon-concepts { filter: drop-shadow(0 0 20px rgba(99,102,241,0.6)); }
+    .icon-practice { filter: drop-shadow(0 0 20px rgba(34,211,238,0.6)); }
+
+    /* Arrow */
+    .arrow-btn { transition: transform 0.2s ease; display: inline-flex; align-items: center; gap: 6px; }
+    .mode-card:hover .arrow-btn { transform: translateX(6px); }
+
+    /* Top badge */
+    .status-badge { animation: fadeIn 0.8s ease 0.2s both; }
+
+    /* Divider */
+    .divider-line { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); height: 1px; }
+
+    /* Topic pills */
+    .topic-pill {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 999px; padding: 3px 10px; font-size: 11px; color: #64748b;
+      white-space: nowrap;
+    }
+
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  </style>
+</head>
+<body class="min-h-screen text-white bg-grid">
+
+  <!-- Ambient orbs -->
+  <div class="orb w-[500px] h-[500px] bg-indigo-600 -top-32 -left-32 opacity-10"></div>
+  <div class="orb w-[400px] h-[400px] bg-cyan-400 bottom-0 right-0 opacity-[0.07]"></div>
+  <div class="orb w-64 h-64 bg-purple-600 top-1/2 left-1/2 opacity-[0.05]"></div>
+
+  <div class="relative z-10 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="px-4 pt-14 pb-4 text-center" style="animation: slideUp 0.5s ease 0s both;">
+      <div class="status-badge inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-8 text-sm text-indigo-300 font-medium">
+        <span class="w-2 h-2 bg-emerald-400 rounded-full" style="animation: pulse 2s infinite;"></span>
+        TCS IPA Preparation Platform
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-4 leading-none tracking-tight">
+        <span class="gradient-text">TCS IPA</span><br/>
+        <span class="text-white/90">Prep Hub</span>
+      </h1>
+
+      <p class="text-slate-400 text-base sm:text-lg max-w-md mx-auto leading-relaxed mt-4">
+        Master your exam with structured theory and adaptive practice quizzes across all 8 topics.
+      </p>
+
+      <!-- Topic pills -->
+      <div class="flex flex-wrap justify-center gap-2 mt-6 max-w-xl mx-auto">
+        <span class="topic-pill">Know Your TCS</span>
+        <span class="topic-pill">BizSkills</span>
+        <span class="topic-pill">UI</span>
+        <span class="topic-pill">Unix / Linux</span>
+        <span class="topic-pill">Java</span>
+        <span class="topic-pill">Python</span>
+        <span class="topic-pill">SQL</span>
+        <span class="topic-pill">General Technical</span>
+      </div>
+    </header>
+
+    <!-- Divider -->
+    <div class="divider-line max-w-2xl mx-auto w-full mt-10 mb-2 px-4"></div>
+
+    <!-- Mode label -->
+    <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-600 mt-6 mb-8">
+      Choose your mode
+    </p>
+
+    <!-- Mode Cards -->
+    <main class="flex-1 flex items-start justify-center px-4 pb-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-3xl" style="animation: slideUp 0.5s ease 0.15s both;">
+
+        <!-- Concepts Card -->
+        <div id="conceptsCard" class="mode-card card-concepts glass rounded-3xl p-8 flex flex-col gap-6"
+             onclick="window.location.href='/concepts.html'"
+             role="button" tabindex="0" aria-label="Go to Concepts section"
+             onkeydown="if(event.key==='Enter'||event.key===' ')window.location.href='/concepts.html'">
+
+          <div class="flex items-start justify-between">
+            <div class="w-16 h-16 rounded-2xl bg-indigo-600/20 flex items-center justify-center text-3xl icon-concepts"
+                 style="animation: float 6s ease-in-out infinite;">
+              📖
+            </div>
+            <span class="glass text-xs font-semibold text-indigo-300 px-3 py-1 rounded-full border border-indigo-500/20">
+              8 Topics
+            </span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-2">Concepts</h2>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Study structured theory and key notes for each topic. Build strong fundamentals before you practice.
+            </p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="divider-line mb-4"></div>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <span class="text-xs text-slate-500 bg-white/5 rounded-lg px-2 py-1">Theory</span>
+                <span class="text-xs text-slate-500 bg-white/5 rounded-lg px-2 py-1">Key Notes</span>
+                <span class="text-xs text-slate-500 bg-white/5 rounded-lg px-2 py-1">Examples</span>
+              </div>
+              <span class="text-indigo-400 font-semibold text-sm arrow-btn">
+                Explore <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Practice Card -->
+        <div id="practiceCard" class="mode-card card-practice glass rounded-3xl p-8 flex flex-col gap-6"
+             onclick="window.location.href='/practice.html'"
+             role="button" tabindex="0" aria-label="Go to Practice section"
+             onkeydown="if(event.key==='Enter'||event.key===' ')window.location.href='/practice.html'">
+
+          <div class="flex items-start justify-between">
+            <div class="w-16 h-16 rounded-2xl bg-cyan-500/15 flex items-center justify-center text-3xl icon-practice"
+                 style="animation: float 6s ease-in-out 1s infinite;">
+              🎯
+            </div>
+            <span class="glass text-xs font-semibold text-cyan-300 px-3 py-1 rounded-full border border-cyan-500/20">
+              MCQ Quiz
+            </span>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-2">Practice</h2>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Test yourself with randomized MCQ quizzes. Track your scores, review mistakes, and improve every attempt.
+            </p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="divider-line mb-4"></div>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2">
+                <span class="text-xs text-slate-500 bg-white/5 rounded-lg px-2 py-1">Randomized</span>
+                <span class="text-xs text-slate-500 bg-white/5 rounded-lg px-2 py-1">Score Track</span>
+                <span class="text-xs text-slate-500 bg-white/5 rounded-lg px-2 py-1">Review</span>
+              </div>
+              <span class="text-cyan-400 font-semibold text-sm arrow-btn">
+                Start <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 text-center text-slate-600 text-xs pb-8">
+      TCS IPA Prep Hub &copy; 2025 &bull; All quizzes randomize on each attempt
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "id": "unix_linux",
+  "label": "Unix / Linux",
+  "icon": "🐧",
+  "color": "yellow",
+  "sections": [
+    { "title": "Unix/Linux Overview", "content": "" },
+    { "title": "Essential Shell Commands", "content": "" },
+    { "title": "File Permissions", "content": "" },
+    { "title": "Text Processing Commands", "content": "" },
+    { "title": "Piping, Redirection & I/O", "content": "" },
+    { "title": "Process Management", "content": "" },
+    { "title": "Networking Commands", "content": "" },
+    { "title": "Shell Scripting Basics", "content": "" }
+  ]
+}

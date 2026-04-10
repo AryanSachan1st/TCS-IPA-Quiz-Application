@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "question": "What is the time complexity of binary search?",
+    "options": ["O(n)", "O(n²)", "O(log n)", "O(1)"],
+    "correct": [2],
+    "explanation": "Binary search halves the search space with each iteration, giving O(log n) time complexity."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following data structures use LIFO (Last In, First Out) order? (Select all that apply)",
+    "options": ["Queue", "Stack", "Deque (used as stack)", "Priority Queue"],
+    "correct": [1, 2],
+    "explanation": "Stack strictly follows LIFO. A Deque can simulate a stack (LIFO). Queue uses FIFO and Priority Queue uses priority-based ordering."
+  },
+  {
+    "id": 3,
+    "question": "What does HTTP stand for?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "High Transfer Text Protocol",
+      "HyperText Transmission Process",
+      "Host Transfer Text Protocol"
+    ],
+    "correct": [0],
+    "explanation": "HTTP stands for HyperText Transfer Protocol — the foundation of data communication on the web."
+  },
+  {
+    "id": 4,
+    "question": "Which sorting algorithm has the best average-case time complexity?",
+    "options": ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"],
+    "correct": [2],
+    "explanation": "Merge Sort has O(n log n) average and worst-case time complexity, which is optimal for comparison-based sorting."
+  },
+  {
+    "id": 5,
+    "question": "In Object-Oriented Programming, which concept allows a class to inherit properties and methods from multiple parent classes?",
+    "options": ["Single Inheritance", "Multiple Inheritance", "Polymorphism", "Encapsulation"],
+    "correct": [1],
+    "explanation": "Multiple Inheritance allows a class to inherit from more than one parent class, gaining properties and methods from all of them."
+  },
+  {
+    "id": 6,
+    "question": "Which of the following are valid properties of a Binary Search Tree (BST)? (Select all that apply)",
+    "options": [
+      "Left child is always less than the parent",
+      "Right child is always greater than the parent",
+      "All nodes have exactly two children",
+      "In-order traversal gives sorted output"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "In a BST, left < parent < right, and in-order traversal yields sorted output. Nodes need not have exactly two children."
+  },
+  {
+    "id": 7,
+    "question": "What is the default port number for HTTPS?",
+    "options": ["80", "8080", "443", "21"],
+    "correct": [2],
+    "explanation": "HTTPS uses port 443 by default. HTTP uses port 80, FTP uses 21, and 8080 is a common alternate HTTP port."
+  },
+  {
+    "id": 8,
+    "question": "Which layer of the OSI model is responsible for routing packets between networks?",
+    "options": ["Data Link Layer", "Transport Layer", "Network Layer", "Session Layer"],
+    "correct": [2],
+    "explanation": "The Network Layer (Layer 3) handles logical addressing and routing of packets across networks. IP operates at this layer."
+  },
+  {
+    "id": 9,
+    "question": "What is a deadlock in an operating system?",
+    "options": [
+      "A process that uses 100% CPU",
+      "A situation where two or more processes wait indefinitely for resources held by each other",
+      "A memory leak caused by unreleased resources",
+      "A system crash due to kernel panic"
+    ],
+    "correct": [1],
+    "explanation": "Deadlock occurs when two or more processes are stuck waiting for resources that the other holds, creating a circular dependency."
+  },
+  {
+    "id": 10,
+    "question": "Which of the following are necessary conditions for a deadlock to occur? (Select all that apply)",
+    "options": ["Mutual Exclusion", "Hold and Wait", "No Preemption", "Circular Wait"],
+    "correct": [0, 1, 2, 3],
+    "explanation": "All four Coffman conditions — Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait — must hold simultaneously for a deadlock to occur."
+  },
+  {
+    "id": 11,
+    "question": "What is the output of the following expression in most programming languages: 5 + 3 * 2?",
+    "options": ["16", "11", "10", "13"],
+    "correct": [1],
+    "explanation": "Operator precedence: multiplication (*) is evaluated before addition (+). So 3 * 2 = 6, then 5 + 6 = 11."
+  },
+  {
+    "id": 12,
+    "question": "In SQL, which clause is used to filter results after aggregation?",
+    "options": ["WHERE", "HAVING", "GROUP BY", "ORDER BY"],
+    "correct": [1],
+    "explanation": "HAVING is used to filter groups after GROUP BY aggregation. WHERE filters individual rows before aggregation."
+  },
+  {
+    "id": 13,
+    "question": "Which data structure is best suited for implementing a priority queue?",
+    "options": ["Array", "Linked List", "Heap", "Stack"],
+    "correct": [2],
+    "explanation": "A Heap (especially a binary heap) efficiently supports insert and extract-min/max in O(log n), making it ideal for priority queues."
+  },
+  {
+    "id": 14,
+    "question": "What does the acronym 'ACID' stand for in the context of databases? (Select all that apply)",
+    "options": ["Atomicity", "Consistency", "Isolation", "Durability"],
+    "correct": [0, 1, 2, 3],
+    "explanation": "ACID stands for Atomicity, Consistency, Isolation, and Durability — the four key properties that guarantee reliable database transactions."
+  },
+  {
+    "id": 15,
+    "question": "Which of the following is NOT a type of operating system scheduling algorithm?",
+    "options": ["Round Robin", "Shortest Job First", "Depth First Search", "Priority Scheduling"],
+    "correct": [2],
+    "explanation": "Depth First Search (DFS) is a graph traversal algorithm, not a CPU scheduling algorithm. Round Robin, SJF, and Priority Scheduling are valid CPU schedulers."
+  },
+  {
+    "id": 16,
+    "question": "What is the space complexity of storing an adjacency matrix for a graph with n vertices?",
+    "options": ["O(n)", "O(n + E)", "O(n²)", "O(E log n)"],
+    "correct": [2],
+    "explanation": "An adjacency matrix requires an n×n 2D array to represent all possible edges between n vertices, resulting in O(n²) space."
+  },
+  {
+    "id": 17,
+    "question": "Which OOP principle is described by: 'the same method name behaves differently based on the object'?",
+    "options": ["Abstraction", "Inheritance", "Polymorphism", "Encapsulation"],
+    "correct": [2],
+    "explanation": "Polymorphism allows the same interface or method name to behave differently depending on the object's type (achieved via method overriding or overloading)."
+  },
+  {
+    "id": 18,
+    "question": "Which of the following TCP/IP protocols operate at the Application layer? (Select all that apply)",
+    "options": ["HTTP", "FTP", "TCP", "DNS"],
+    "correct": [0, 1, 3],
+    "explanation": "HTTP, FTP, and DNS are Application layer protocols. TCP operates at the Transport layer."
+  },
+  {
+    "id": 19,
+    "question": "What is the worst-case time complexity of QuickSort?",
+    "options": ["O(n log n)", "O(n)", "O(n²)", "O(log n)"],
+    "correct": [2],
+    "explanation": "QuickSort's worst case is O(n²), which occurs when the pivot is always the smallest or largest element (e.g., already sorted array with poor pivot selection)."
+  },
+  {
+    "id": 20,
+    "question": "In a relational database, a foreign key:",
+    "options": [
+      "Uniquely identifies each row in its own table",
+      "References the primary key of another table",
+      "Cannot contain NULL values",
+      "Must be the first column of a table"
+    ],
+    "correct": [1],
+    "explanation": "A foreign key is a column (or set of columns) that references the primary key in another table, establishing a relationship between the two tables."
+  },
+  {
+    "id": 21,
+    "question": "Which memory management technique divides physical memory into fixed-size blocks?",
+    "options": ["Segmentation", "Paging", "Virtual Memory", "Swapping"],
+    "correct": [1],
+    "explanation": "Paging divides both physical memory and process address space into fixed-size blocks called frames and pages, respectively."
+  },
+  {
+    "id": 22,
+    "question": "Which of the following traversals of a binary tree visits the root node LAST?",
+    "options": ["Pre-order", "In-order", "Post-order", "Level-order"],
+    "correct": [2],
+    "explanation": "Post-order traversal follows Left → Right → Root, so the root is visited last. Pre-order visits root first; In-order visits root between children."
+  },
+  {
+    "id": 23,
+    "question": "What does 'polymorphism' literally mean in the context of OOP?",
+    "options": ["One form", "Many forms", "Hidden form", "Inherited form"],
+    "correct": [1],
+    "explanation": "Polymorphism comes from the Greek words 'poly' (many) and 'morph' (form), meaning 'many forms.' It enables one interface to represent different underlying data types."
+  },
+  {
+    "id": 24,
+    "question": "Which of the following are characteristics of a Linked List? (Select all that apply)",
+    "options": [
+      "Dynamic size",
+      "O(1) random access",
+      "Efficient insertion/deletion at head",
+      "Non-contiguous memory allocation"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "Linked lists are dynamic, support O(1) head insertions/deletions, and store elements in non-contiguous memory. Random access is O(n), not O(1)."
+  },
+  {
+    "id": 25,
+    "question": "In software engineering, what does 'DRY' stand for?",
+    "options": [
+      "Don't Repeat Yourself",
+      "Dynamic Resource Yield",
+      "Data Reuse Yield",
+      "Direct Runtime Yield"
+    ],
+    "correct": [0],
+    "explanation": "DRY stands for 'Don't Repeat Yourself' — a principle that promotes code reuse and reducing redundancy to improve maintainability."
+  },
+  {
+    "id": 26,
+    "question": "What is the result of a LEFT JOIN in SQL when there is no matching row in the right table?",
+    "options": [
+      "The row is excluded from the result",
+      "The row appears with NULL for right table columns",
+      "An error is thrown",
+      "The row is replaced by a default value"
+    ],
+    "correct": [1],
+    "explanation": "A LEFT JOIN returns all rows from the left table. If no match exists in the right table, the columns from the right table are filled with NULL."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following algorithms can detect a negative weight cycle in a graph?",
+    "options": ["Dijkstra's Algorithm", "Bellman-Ford Algorithm", "Prim's Algorithm", "Kruskal's Algorithm"],
+    "correct": [1],
+    "explanation": "Bellman-Ford can detect negative weight cycles by checking if any edge can still be relaxed after n-1 iterations. Dijkstra's does not handle negative weights."
+  },
+  {
+    "id": 28,
+    "question": "Which of the following are true about abstract classes in OOP? (Select all that apply)",
+    "options": [
+      "They cannot be instantiated directly",
+      "They can have both abstract and concrete methods",
+      "A class can extend multiple abstract classes in Java",
+      "They are used to define a template for subclasses"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Abstract classes cannot be instantiated, can have both abstract and concrete methods, and define a template. Java does not support multiple class inheritance (including abstract classes)."
+  },
+  {
+    "id": 29,
+    "question": "What is the primary purpose of the Transport Layer in the OSI model?",
+    "options": [
+      "Routing packets between networks",
+      "Providing end-to-end communication and reliability",
+      "Converting data to electrical signals",
+      "Managing sessions between applications"
+    ],
+    "correct": [1],
+    "explanation": "The Transport Layer (Layer 4) ensures end-to-end data delivery, reliability, error correction, and flow control. TCP and UDP operate at this layer."
+  },
+  {
+    "id": 30,
+    "question": "Which of the following correctly describes the difference between a process and a thread?",
+    "options": [
+      "A thread has its own memory space; a process shares memory",
+      "A process is a lightweight unit; a thread is heavyweight",
+      "Threads within a process share the same memory space",
+      "Processes are managed by the CPU; threads are managed by RAM"
+    ],
+    "correct": [2],
+    "explanation": "Threads within the same process share the process's memory space (heap, code, data). Each process has its own independent memory space. Threads are lightweight units of a process."
+  }
+]

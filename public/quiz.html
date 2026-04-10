@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz — TCS IPA MCQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0a0f1e', 800: '#0d1528', 700: '#111827' },
+            brand: { DEFAULT: '#6366f1', dark: '#4f46e5', light: '#818cf8' },
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          animation: {
+            'fade-in': 'fadeIn 0.4s ease forwards',
+            'slide-up': 'slideUp 0.35s ease forwards',
+            'bounce-in': 'bounceIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards',
+          },
+          keyframes: {
+            fadeIn:   { from: { opacity: 0 },                            to: { opacity: 1 } },
+            slideUp:  { from: { opacity: 0, transform: 'translateY(20px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+            bounceIn: { from: { opacity: 0, transform: 'scale(0.85)' },  to: { opacity: 1, transform: 'scale(1)' } },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .gradient-text { background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .bg-grid { background-image: radial-gradient(rgba(99,102,241,0.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.1; pointer-events: none; z-index: 0; }
+
+    /* Progress bar */
+    #progressBar { transition: width 0.4s cubic-bezier(0.4,0,0.2,1); background: linear-gradient(90deg, #6366f1, #22d3ee); }
+
+    /* Option buttons */
+    .option-btn {
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .option-btn:hover:not(.locked) { border-color: rgba(99,102,241,0.5); background: rgba(99,102,241,0.08); transform: translateX(4px); }
+    .option-btn.selected:not(.locked) { border-color: #6366f1; background: rgba(99,102,241,0.15); }
+    .option-btn.correct-ans  { border-color: #10b981 !important; background: rgba(16,185,129,0.12) !important; }
+    .option-btn.wrong-ans    { border-color: #ef4444 !important; background: rgba(239,68,68,0.12) !important; }
+    .option-btn.locked { cursor: default; }
+
+    /* Score ring */
+    #scoreRing { transition: stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1); }
+
+    /* Review accordion */
+    .review-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .review-body.open { max-height: 600px; }
+    .review-header { cursor: pointer; }
+    .chevron { transition: transform 0.3s ease; }
+    .review-header.open .chevron { transform: rotate(180deg); }
+
+    /* Typing indicator */
+    .loading-dots span { animation: blink 1.4s infinite both; }
+    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes blink { 0%,80%,100%{opacity:0} 40%{opacity:1} }
+  </style>
+</head>
+<body class="min-h-screen text-white bg-grid">
+
+  <div class="orb w-96 h-96 bg-indigo-500 top-0 right-0"></div>
+  <div class="orb w-64 h-64 bg-cyan-400 bottom-10 left-0"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4 py-6 min-h-screen flex flex-col">
+
+    <!-- ── QUIZ VIEW ─────────────────────────────────────────────────── -->
+    <div id="quizView" class="flex flex-col flex-1">
+
+      <!-- Top bar -->
+      <div class="flex items-center justify-between mb-4 gap-3">
+        <button id="backHome"
+          class="glass rounded-xl px-3 py-2 text-sm text-slate-400 hover:text-white hover:border-indigo-500/40 transition flex items-center gap-1.5"
+          onclick="goHome()">
+          ← Practice
+        </button>
+        <div id="sectionLabel" class="text-sm font-semibold text-indigo-300 truncate max-w-[180px] sm:max-w-none"></div>
+        <div id="qCounter" class="text-sm text-slate-500 whitespace-nowrap"></div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="h-1.5 bg-white/5 rounded-full mb-6 overflow-hidden">
+        <div id="progressBar" class="h-full rounded-full w-0"></div>
+      </div>
+
+      <!-- Loading skeleton -->
+      <div id="loadingView" class="flex-1 flex flex-col items-center justify-center gap-4">
+        <div class="loading-dots text-indigo-400 text-2xl font-bold">
+          <span>.</span><span>.</span><span>.</span>
+        </div>
+        <p class="text-slate-500 text-sm">Loading questions</p>
+      </div>
+
+      <!-- Question card -->
+      <div id="questionCard" class="hidden flex-1 flex flex-col animate-slide-up">
+        <!-- Type badge -->
+        <div id="typeBadge" class="self-start text-xs font-semibold px-3 py-1 rounded-full mb-4"></div>
+
+        <!-- Question text -->
+        <p id="questionText" class="text-lg sm:text-xl font-medium text-white leading-relaxed mb-6"></p>
+
+        <!-- Options -->
+        <div id="optionsList" class="flex flex-col gap-3 mb-6"></div>
+
+        <!-- Feedback message -->
+        <div id="feedbackMsg" class="hidden glass rounded-xl px-4 py-3 mb-4 text-sm"></div>
+
+        <!-- Navigation buttons -->
+        <div class="flex gap-3 mt-auto pt-2">
+          <button id="submitBtn"
+            class="flex-1 py-3 rounded-xl font-semibold text-sm bg-indigo-600 hover:bg-indigo-500 transition disabled:opacity-40 disabled:cursor-not-allowed"
+            onclick="handleSubmitOrNext()">
+            Check Answer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESULTS VIEW ───────────────────────────────────────────────── -->
+    <div id="resultsView" class="hidden flex-1 flex flex-col animate-fade-in">
+
+      <!-- Score hero -->
+      <div class="glass rounded-2xl p-6 sm:p-8 mb-6 text-center">
+        <p class="text-slate-400 text-sm mb-4 font-medium" id="resultSectionLabel"></p>
+
+        <!-- SVG Score Ring -->
+        <div class="relative inline-block mb-4">
+          <svg width="140" height="140" viewBox="0 0 140 140" class="transform -rotate-90">
+            <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10"/>
+            <circle id="scoreRing" cx="70" cy="70" r="58" fill="none" stroke="url(#ringGrad)"
+              stroke-width="10" stroke-linecap="round"
+              stroke-dasharray="364" stroke-dashoffset="364"/>
+            <defs>
+              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#22d3ee"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span id="scoreDisplay" class="text-3xl font-extrabold gradient-text"></span>
+            <span class="text-slate-500 text-xs">score</span>
+          </div>
+        </div>
+
+        <div id="passBadge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-2"></div>
+        <p id="scoreSubtitle" class="text-slate-400 text-sm"></p>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="flex gap-3 mb-6">
+        <button onclick="goHome()"
+          class="flex-1 py-3 glass rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:border-indigo-500/40 transition">
+          ← Home
+        </button>
+        <button onclick="retrySection()"
+          class="flex-1 py-3 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 transition">
+          ↺ Retry Section
+        </button>
+      </div>
+
+      <!-- Wrong answers review -->
+      <div id="reviewSection" class="hidden">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-3">Review incorrect answers</h3>
+        <div id="reviewList" class="flex flex-col gap-3"></div>
+      </div>
+
+      <!-- All correct message -->
+      <div id="perfectMsg" class="hidden glass rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-3">🎉</div>
+        <p class="text-emerald-400 font-semibold text-lg">Perfect Score!</p>
+        <p class="text-slate-400 text-sm mt-1">You answered every question correctly.</p>
+      </div>
+    </div>
+
+  </div><!-- /max-w-3xl -->
+
+  <script src="/js/quiz.js"></script>
+</body>
+</html>
