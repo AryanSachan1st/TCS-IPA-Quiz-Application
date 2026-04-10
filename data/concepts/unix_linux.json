@@ -4,37 +4,13 @@
   "icon": "🐧",
   "color": "yellow",
   "sections": [
-    {
-      "title": "Unix/Linux Overview",
-      "content": "Unix and Linux are multiuser, multitasking operating systems widely used for servers, development, and administration. Linux is Unix-like and open source, while Unix refers to the original family and certified variants. The system is organized around files, processes, users, and permissions. In Linux, almost everything is treated as a file, including devices and processes through special interfaces. The shell is the command interpreter between the user and the kernel. Common shells include sh, bash, and zsh. Important directories in the filesystem hierarchy include /home for user files, /etc for configuration, /bin for basic commands, /usr for user programs, /var for variable data, /tmp for temporary files, /dev for devices, and /proc for process information. MCQ trap: Linux is not the same as the shell; the shell is just the command interface, while the kernel manages core system operations."
-    },
-    {
-      "title": "Essential Shell Commands",
-      "content": "Common commands include pwd to show the current directory, ls to list files, cd to change directory, mkdir to create a directory, rmdir to remove an empty directory, touch to create empty files, cp to copy, mv to move or rename, and rm to delete. cat displays file contents, less and more view files page by page, head shows the first lines, and tail shows the last lines. uname shows system information, whoami shows the current user, who shows logged-in users, date prints the date and time, cal shows a calendar, and man opens the manual page. which helps locate the executable of a command. clear clears the terminal screen. history shows previously used commands. MCQ traps: rm deletes files permanently unless recovery tools are used; mv can rename files; rmdir works only on empty directories."
-    },
-    {
-      "title": "File Permissions",
-      "content": "Every file has permissions for three categories: user/owner, group, and others. The permissions are read (r), write (w), and execute (x). Use ls -l to view permissions. Example: -rwxr-xr-- means the owner can read, write, and execute; the group can read and execute; others can only read. chmod changes permissions, chown changes owner, and chgrp changes group. Permissions can be changed symbolically or numerically. Numeric permissions use octal values: read = 4, write = 2, execute = 1. So 7 = rwx, 6 = rw-, 5 = r-x, 4 = r--. Special bits include setuid, setgid, and sticky bit, which affect execution and directory behavior. MCQ traps: execute permission on a directory means you can enter it; read on a directory means you can list names; write on a directory means you can add or remove entries."
-    },
-    {
-      "title": "Text Processing Commands",
-      "content": "Text processing is a major Unix/Linux strength. grep searches for patterns in text. awk is used for pattern scanning and field processing. sed is used for stream editing and text transformation. sort arranges lines, uniq removes duplicate adjacent lines, cut extracts columns or fields, paste merges lines, tr sorts characters or deletes characters, and wc counts lines, words, and characters. find searches files and directories based on name, type, size, and other criteria. Common grep options include -i for case-insensitive search, -n for line numbers, and -r for recursive search. awk uses fields like $1, $2, and $NF to access columns; sed is often used for substitution with s/old/new/. MCQ traps: grep searches content, find searches file system paths, awk works on columns/fields, and sed is line-oriented stream editing."
-    },
-    {
-      "title": "Piping, Redirection & I/O",
-      "content": "Redirection changes where input and output go. Standard input is stdin, standard output is stdout, and standard error is stderr. > redirects output and overwrites the file, >> appends output, < takes input from a file, and 2> redirects error output. A pipe | sends the output of one command as input to another command. This is one of the most important Unix concepts. Examples include ls | grep txt, ps aux | grep java, and cat file.txt | sort | uniq. Command chaining with && runs the second command only if the first succeeds, while || runs the second only if the first fails. MCQ traps: piping connects commands together, redirection connects a command to a file, and > overwrites while >> appends."
-    },
-    {
-      "title": "Process Management",
-      "content": "A process is a running program. Every process has a process ID (PID). The parent process starts child processes. ps shows processes, top or htop shows live system activity, kill sends signals to processes, and kill -9 forcefully terminates a process using SIGKILL. bg sends a stopped job to the background, fg brings it to the foreground, and jobs lists background jobs in the current shell session. nohup allows a command to continue running even after the terminal is closed. Signals are used to communicate with processes. Common signals include SIGTERM for graceful termination and SIGKILL for forced termination. MCQ traps: kill does not always mean immediate termination because the signal type matters; background jobs are managed by the shell; ps shows a snapshot, while top is dynamic."
-    },
-    {
-      "title": "Networking Commands",
-      "content": "Unix/Linux provides several basic networking tools. ping checks host reachability using ICMP. ifconfig or ip shows network interface configuration. netstat and ss display network connections and listening ports. hostname shows the system name. curl and wget are used to transfer data from URLs. ssh provides secure remote login and command execution. scp copies files securely over SSH. nslookup and dig are used for DNS queries. traceroute shows the path packets take to a destination. MCQ traps: ping tests connectivity, not HTTP; ssh is secure remote shell access; scp is for secure file transfer; ip is the more modern command compared with older network tools."
-    },
-    {
-      "title": "Shell Scripting Basics",
-      "content": "Shell scripting automates command execution using files containing shell commands. A script usually starts with a shebang such as #!/bin/bash. Variables are assigned without spaces around =, and values are accessed with $. Quotes matter: double quotes allow variable expansion, while single quotes treat text literally. Control structures include if, case, for, while, and until. Positional parameters are accessed as $1, $2, and so on. $@ and $* refer to all arguments with slightly different behavior. Test conditions are often written using [ ] or [[ ]]. Exit status 0 means success, and non-zero means failure. Command substitution uses $(command). MCQ traps: spaces around = break assignment, shebang identifies the interpreter, and scripts are often made executable using chmod +x filename."
-    }
+    { "title": "Unix/Linux Overview", "content": "" },
+    { "title": "Essential Shell Commands", "content": "" },
+    { "title": "File Permissions", "content": "" },
+    { "title": "Text Processing Commands", "content": "" },
+    { "title": "Piping, Redirection & I/O", "content": "" },
+    { "title": "Process Management", "content": "" },
+    { "title": "Networking Commands", "content": "" },
+    { "title": "Shell Scripting Basics", "content": "" }
   ]
 }
