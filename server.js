@@ -7,16 +7,25 @@ const fs = require('fs');
 const REDIS_URL   = (process.env.UPSTASH_REDIS_REST_URL   || '').replace(/^["']|["']$/g, '').replace(/\/+$/, '');
 const REDIS_TOKEN = (process.env.UPSTASH_REDIS_REST_TOKEN || '').replace(/^["']|["']$/g, '');
 
+// ── Startup diagnostic ──
+console.log('[Redis] URL configured:', REDIS_URL ? `"${REDIS_URL}"` : '(not set)');
+console.log('[Redis] Token configured:', REDIS_TOKEN ? 'yes (hidden)' : '(not set)');
+
 async function redis(command, ...args) {
-  if (!REDIS_URL || !REDIS_TOKEN) return null;
+  if (!REDIS_URL || !REDIS_TOKEN) {
+    console.warn('[Redis] Skipping — URL or TOKEN not set.');
+    return null;
+  }
+  const endpoint = `${REDIS_URL}/${[command, ...args].map(encodeURIComponent).join('/')}`;
   try {
-    const res = await fetch(`${REDIS_URL}/${[command, ...args].map(encodeURIComponent).join('/')}`, {
+    const res = await fetch(endpoint, {
       headers: { Authorization: `Bearer ${REDIS_TOKEN}` },
     });
     const json = await res.json();
+    if (json.error) console.error(`[Redis] ${command} error:`, json.error);
     return json.result;
   } catch (e) {
-    console.error('Redis error:', e.message);
+    console.error(`[Redis] ${command} fetch failed:`, e.message);
     return null;
   }
 }
@@ -138,14 +147,20 @@ app.post('/api/track-visit', async (req, res) => {
   const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
   const dayKey = `visitors:${today}`;
 
+  console.log(`[track-visit] IP=${ip} date=${today}`);
+
   // Add IP to today's set (Upstash REST returns result as a string "1" or "0")
-  const isNewToday = Number(await redis('SADD', dayKey, ip)) === 1;
+  const rawToday = await redis('SADD', dayKey, ip);
+  console.log(`[track-visit] SADD ${dayKey} -> raw result:`, rawToday);
+  const isNewToday = Number(rawToday) === 1;
 
   // Expire day key after 35 days (keeps ~30 days of history)
   await redis('EXPIRE', dayKey, 35 * 24 * 60 * 60);
 
   // Track all-time unique visitors in a lifetime set
-  const isNewEver = Number(await redis('SADD', 'all_visitors', ip)) === 1;
+  const rawEver = await redis('SADD', 'all_visitors', ip);
+  console.log(`[track-visit] SADD all_visitors -> raw result:`, rawEver);
+  const isNewEver = Number(rawEver) === 1;
 
   res.json({ ok: true, isNewToday, isNewEver });
 });
