@@ -23,6 +23,8 @@ async function redis(command, ...args) {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+
 // Serve static files from /public
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -109,6 +111,20 @@ app.get('/api/concepts/:topic', (req, res) => {
     console.error(`Error reading ${topic}.json:`, err);
     res.status(500).json({ error: 'Failed to load topic.' });
   }
+});
+
+// ─── API: Verify admin PIN (PIN lives in STATS_PIN env var — never in code) ────
+app.post('/api/verify-pin', (req, res) => {
+  const { pin } = req.body || {};
+  const STATS_PIN = process.env.STATS_PIN;
+
+  if (!STATS_PIN) {
+    return res.status(503).json({ ok: false, error: 'STATS_PIN env variable not set in Railway.' });
+  }
+  if (!pin || pin !== STATS_PIN) {
+    return res.status(401).json({ ok: false });
+  }
+  res.json({ ok: true });
 });
 
 // ─── API: Track a visit (called silently from every page) ────────────────────

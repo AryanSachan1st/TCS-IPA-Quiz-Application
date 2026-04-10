@@ -196,19 +196,19 @@
   </div>
 
   <script>
-    // ── PIN gate ────────────────────────────────────────────────────────────────
-    const CORRECT_PIN = '1234'; // ← Change this to your own PIN
+    // ── PIN gate (verified server-side — PIN never stored in this file) ─────────
     let pinEntry = '';
+    let pinLocked = false; // prevents spam while awaiting server response
 
     function pressPin(digit) {
-      if (pinEntry.length >= 4) return;
+      if (pinEntry.length >= 4 || pinLocked) return;
       pinEntry += digit;
       updateDots();
       if (pinEntry.length === 4) checkPin();
     }
 
     function clearPin() {
-      if (pinEntry.length === 0) return;
+      if (pinEntry.length === 0 || pinLocked) return;
       pinEntry = pinEntry.slice(0, -1);
       updateDots();
     }
@@ -223,24 +223,42 @@
       }
     }
 
-    function checkPin() {
-      if (pinEntry === CORRECT_PIN) {
-        document.getElementById('lockOverlay').style.display = 'none';
-        loadStats();
-      } else {
-        updateDots('error');
-        document.getElementById('pinError').style.opacity = '1';
-        setTimeout(() => {
-          pinEntry = '';
-          updateDots();
-          document.getElementById('pinError').style.opacity = '0';
-        }, 900);
+    async function checkPin() {
+      pinLocked = true;
+      try {
+        const res = await fetch('/api/verify-pin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pin: pinEntry }),
+        });
+        const data = await res.json();
+
+        if (data.ok) {
+          document.getElementById('lockOverlay').style.display = 'none';
+          loadStats();
+        } else {
+          updateDots('error');
+          const errMsg = document.getElementById('pinError');
+          errMsg.textContent = data.error || 'Incorrect PIN. Try again.';
+          errMsg.style.opacity = '1';
+          setTimeout(() => {
+            pinEntry = '';
+            pinLocked = false;
+            updateDots();
+            errMsg.style.opacity = '0';
+          }, 900);
+        }
+      } catch {
+        pinEntry = '';
+        pinLocked = false;
+        updateDots();
       }
     }
 
     // Keyboard support for PIN
     document.addEventListener('keydown', e => {
-      if (!document.getElementById('lockOverlay').style.display || document.getElementById('lockOverlay').style.display !== 'none') {
+      const overlay = document.getElementById('lockOverlay');
+      if (overlay.style.display !== 'none') {
         if (e.key >= '0' && e.key <= '9') pressPin(Number(e.key));
         if (e.key === 'Backspace') clearPin();
       }
