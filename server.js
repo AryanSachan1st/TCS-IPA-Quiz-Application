@@ -3,8 +3,9 @@ const path = require('path');
 const fs = require('fs');
 
 // ─── Upstash Redis helper (uses fetch — no extra package required) ─────────────
-const REDIS_URL   = process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+// Strip accidental surrounding quotes and trailing slashes (Railway env var copy-paste quirk)
+const REDIS_URL   = (process.env.UPSTASH_REDIS_REST_URL   || '').replace(/^["']|["']$/g, '').replace(/\/+$/, '');
+const REDIS_TOKEN = (process.env.UPSTASH_REDIS_REST_TOKEN || '').replace(/^["']|["']$/g, '');
 
 async function redis(command, ...args) {
   if (!REDIS_URL || !REDIS_TOKEN) return null;
