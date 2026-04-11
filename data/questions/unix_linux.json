@@ -1,262 +1,212 @@
 [
   {
     "id": 1,
-    "question": "Which command is used to list all files (including hidden) in a directory in Linux?",
-    "options": ["ls", "ls -l", "ls -a", "dir"],
-    "correct": [2],
-    "explanation": "ls -a lists all files including hidden files (those starting with a dot . prefix)."
+    "question": "Which of the following is a key principle of the Unix philosophy?",
+    "options": ["Everything is a process", "Everything is a file", "Everything is an object", "Everything is a string"],
+    "correct": [1],
+    "explanation": "A key principle of the Unix philosophy is that everything is a file, including regular files, directories, devices, and processes."
   },
   {
     "id": 2,
-    "question": "Which of the following commands is used to change file permissions in Linux?",
-    "options": ["chown", "chmod", "chgrp", "chperm"],
-    "correct": [1],
-    "explanation": "chmod (change mode) is used to change file permissions. chown changes ownership, chgrp changes group."
+    "question": "What is the most common default shell for Linux systems?",
+    "options": ["Zsh", "Fish", "Ksh", "Bash"],
+    "correct": [3],
+    "explanation": "Most Linux systems use Bash (Bourne Again Shell) as the default shell to interpret commands and communicate with the kernel."
   },
   {
     "id": 3,
-    "question": "What does the command 'chmod 755 file.sh' do?",
-    "options": [
-      "Owner: rwx, Group: r-x, Others: r-x",
-      "Owner: rwx, Group: rwx, Others: r-x",
-      "Owner: rw-, Group: r-x, Others: r-x",
-      "Owner: rwx, Group: r-x, Others: rwx"
-    ],
-    "correct": [0],
-    "explanation": "7 = rwx (4+2+1), 5 = r-x (4+0+1), 5 = r-x. So Owner gets rwx, Group gets r-x, Others get r-x."
+    "question": "Which command is used to remove an empty directory?",
+    "options": ["rm", "del", "rmdir", "remove"],
+    "correct": [2],
+    "explanation": "The 'rmdir' command is used specifically to remove an empty directory. 'rm -r' is used for non-empty directories."
   },
   {
     "id": 4,
-    "question": "Which command displays the current working directory in Linux?",
-    "options": ["cwd", "pwd", "cd", "dir"],
-    "correct": [1],
-    "explanation": "pwd (print working directory) displays the full path of the current directory."
+    "question": "Which command creates an empty file or updates an existing file's timestamp?",
+    "options": ["create", "mkfile", "touch", "new"],
+    "correct": [2],
+    "explanation": "The 'touch' command is used to create an empty file or update the timestamp of an existing file."
   },
   {
     "id": 5,
-    "question": "Which of the following is the correct symbol for output redirection (overwrite) in Linux?",
-    "options": ["<", ">>", ">", "|"],
-    "correct": [2],
-    "explanation": "> redirects output and overwrites the file. >> appends, < is input redirection, | is pipe."
+    "question": "What does the 'which' command do in Linux?",
+    "options": ["Displays the file type", "Locates a command executable", "Searches for text in a file", "Lists directory contents"],
+    "correct": [1],
+    "explanation": "The 'which' command is used to locate a command's executable file in the system."
   },
   {
     "id": 6,
-    "question": "What is the output of the command: echo $((5 + 3 * 2))?",
-    "options": ["16", "11", "13", "10"],
+    "question": "How are the three permission categories ordered for a file?",
+    "options": ["Group, Owner, Others", "Owner, Group, Others", "Others, Group, Owner", "Owner, Others, Group"],
     "correct": [1],
-    "explanation": "Arithmetic follows precedence: 3*2=6, then 5+6=11. So the output is 11."
+    "explanation": "Permissions are grouped into three categories in this order: owner (file creator), group (users in the file's group), and others (all other users)."
   },
   {
     "id": 7,
-    "question": "Which command is used to find files in a directory hierarchy in Linux?",
-    "options": ["locate", "find", "search", "grep"],
-    "correct": [1],
-    "explanation": "find is used to search for files in a directory hierarchy. locate uses a pre-built database, grep searches within file content."
+    "question": "In numeric permission notation, what does the number 4 represent?",
+    "options": ["Execute", "Read and Write", "Write", "Read"],
+    "correct": [3],
+    "explanation": "In numeric notation, 4 represents read (r), 2 represents write (w), and 1 represents execute (x)."
   },
   {
     "id": 8,
-    "question": "What does the 'grep -i' option do?",
-    "options": [
-      "Invert match (show non-matching lines)",
-      "Case-insensitive search",
-      "Show line numbers",
-      "Recursive search"
-    ],
-    "correct": [1],
-    "explanation": "grep -i performs a case-insensitive search. -v inverts match, -n shows line numbers, -r is recursive."
+    "question": "What does the permission set 'chmod 700' mean?",
+    "options": ["Private files (owner only access)", "Full access for everyone", "Executable files for all", "Read-only for everyone"],
+    "correct": [0],
+    "explanation": "700 means rwx------, which gives the owner full access (read, write, execute) and no access to group or others, making it a private file."
   },
   {
     "id": 9,
-    "question": "Which signal number is used to forcefully kill a process in Linux?",
-    "options": ["9", "15", "1", "2"],
-    "correct": [0],
-    "explanation": "Signal 9 (SIGKILL) forcefully terminates a process and cannot be caught or ignored. Signal 15 (SIGTERM) is a graceful termination request."
+    "question": "Which text processing command is used to replace text globally in a file?",
+    "options": ["grep 's/old/new/g'", "sed 's/old/new/g'", "awk 's/old/new/g'", "tr 's/old/new/g'"],
+    "correct": [1],
+    "explanation": "The 'sed' command with the 's/old/new/g' option is used as a stream editor to globally replace occurrences of 'old' with 'new'."
   },
   {
     "id": 10,
-    "question": "Which of the following commands is used to view the last 10 lines of a file?",
-    "options": ["head", "tail", "cat", "more"],
-    "correct": [1],
-    "explanation": "tail displays the last 10 lines of a file by default. head shows the first 10 lines."
+    "question": "Which command extracts the first field using a colon as a delimiter?",
+    "options": ["cut -c 1-5 file", "grep -d: -f1 file", "awk -d: file", "cut -d: -f1 file"],
+    "correct": [3],
+    "explanation": "The 'cut' command with '-d:' sets the delimiter to a colon, and '-f1' extracts the first field."
   },
   {
     "id": 11,
-    "question": "What does 'ls -ltr' do in Linux?",
-    "options": [
-      "Lists files sorted by name in reverse",
-      "Lists files sorted by modification time in reverse (oldest first)",
-      "Lists files sorted by modification time (newest first)",
-      "Lists files with total size"
-    ],
-    "correct": [1],
-    "explanation": "-l is long listing, -t sorts by modification time (newest first), -r reverses the order. Combined, -ltr lists oldest files first."
+    "question": "Which command translates or deletes specific characters from standard input?",
+    "options": ["tr", "sed", "awk", "diff"],
+    "correct": [0],
+    "explanation": "The 'tr' command is used to translate or delete characters. For example, converting lowercase to uppercase."
   },
   {
     "id": 12,
-    "question": "Which command creates a symbolic (soft) link in Linux?",
-    "options": ["ln file link", "ln -s file link", "link -s file", "symlink file link"],
-    "correct": [1],
-    "explanation": "ln -s creates a symbolic (soft) link. ln without -s creates a hard link."
+    "question": "What does the '2>' symbol do in Linux redirection?",
+    "options": ["Redirects standard input", "Redirects both output and errors", "Redirects error output to a file", "Appends standard output to a file"],
+    "correct": [2],
+    "explanation": "The '2>' operator redirects standard error (stderr) to a file, whereas '>' redirects standard output (stdout)."
   },
   {
     "id": 13,
-    "question": "What is the PID of the init/systemd process in Linux?",
-    "options": ["0", "1", "2", "255"],
+    "question": "What is '/dev/null' used for in Linux?",
+    "options": ["To store temporary administrative files", "To discard all data written to it", "To back up important device logs", "To represent the keyboard input"],
     "correct": [1],
-    "explanation": "The init or systemd process always has PID 1. It is the first process started by the kernel and is the ancestor of all processes."
+    "explanation": "/dev/null is a special file that acts as a black hole; it discards any output written to it and is often used to hide error messages."
   },
   {
     "id": 14,
-    "question": "Which of the following commands can be used to monitor running processes in real time?",
-    "options": ["ps", "top", "jobs", "pstree"],
-    "correct": [1],
-    "explanation": "top provides a real-time dynamic view of running processes. ps gives a static snapshot."
+    "question": "Which of the following commands correctly counts the number of lines containing 'error' in file.txt?",
+    "options": ["grep 'error' file.txt > wc -l", "cat file.txt | sort 'error' | wc", "cat file.txt | grep 'error' | wc -l", "wc -l file.txt < grep 'error'"],
+    "correct": [2],
+    "explanation": "Piping (|) connects the output of cat to grep, and then grep's matching lines into 'wc -l' to count the lines."
   },
   {
     "id": 15,
-    "question": "Which file in Linux contains user account information (username, UID, GID, home directory, shell)?",
-    "options": ["/etc/shadow", "/etc/passwd", "/etc/group", "/etc/users"],
-    "correct": [1],
-    "explanation": "/etc/passwd stores user account information. /etc/shadow stores encrypted passwords. /etc/group stores group information."
+    "question": "Which command forcefully kills a process using the SIGKILL signal?",
+    "options": ["kill 1234", "kill -15 1234", "kill -9 1234", "killall 1234"],
+    "correct": [2],
+    "explanation": "The 'kill -9' command sends the SIGKILL signal to forcefully terminate a process, used when graceful termination (SIGTERM) fails."
   },
   {
     "id": 16,
-    "question": "What does the command 'df -h' display?",
-    "options": [
-      "Directory files in human-readable format",
-      "Disk free space in human-readable format",
-      "File differences in human-readable format",
-      "Dynamic filesystem information"
-    ],
-    "correct": [1],
-    "explanation": "df (disk free) displays disk space usage. -h flag makes output human-readable (KB, MB, GB)."
+    "question": "How do you resume a suspended process in the background?",
+    "options": ["fg", "resume", "ctrl+Z", "bg"],
+    "correct": [3],
+    "explanation": "The 'bg' command resumes a suspended process in the background, allowing you to use the terminal while it runs."
   },
   {
     "id": 17,
-    "question": "Which of the following are valid ways to run a shell script? (Select all that apply)",
-    "options": ["bash script.sh", "./script.sh", "source script.sh", "run script.sh"],
-    "correct": [0, 1, 2],
-    "explanation": "bash script.sh runs it with bash, ./script.sh requires execute permission, source (or .) runs it in the current shell. 'run' is not a valid command."
+    "question": "What is the purpose of the 'nohup' command?",
+    "options": ["To start a process with high priority", "To monitor real-time system activity", "To run a command that continues after logout", "To suspend the current running job"],
+    "correct": [2],
+    "explanation": "The 'nohup' (no hang up) command is used to run a command that will continue executing even if the user logs out of the terminal."
   },
   {
     "id": 18,
-    "question": "What is the default permission (umask 022) for a newly created file in Linux?",
-    "options": ["777", "755", "666", "644"],
-    "correct": [3],
-    "explanation": "Files get base permission 666. With umask 022, 666 - 022 = 644 (rw-r--r--). Directories get 777 - 022 = 755."
+    "question": "Which modern command alternative to 'ifconfig' is used to show and manipulate IP configurations?",
+    "options": ["ip", "netstat", "ifnet", "dig"],
+    "correct": [0],
+    "explanation": "Modern Linux systems use the 'ip' command (like 'ip addr') instead of the older 'ifconfig' tool to display or manage networking."
   },
   {
     "id": 19,
-    "question": "Which command is used to display the manual page of a command in Linux?",
-    "options": ["help", "info", "man", "doc"],
-    "correct": [2],
-    "explanation": "man (manual) displays the reference manual page for a command. e.g., man ls shows the manual for ls."
+    "question": "Which command is used to query DNS servers and resolve domain names to IP addresses?",
+    "options": ["ping", "ss", "ifconfig", "nslookup"],
+    "correct": [3],
+    "explanation": "The 'nslookup' and 'dig' commands are used to query DNS servers to resolve domain names to IP addresses."
   },
   {
     "id": 20,
-    "question": "In a shell script, what does '$?' represent?",
-    "options": [
-      "Total number of arguments passed",
-      "The script name",
-      "The exit status of the last executed command",
-      "The process ID of the current shell"
-    ],
-    "correct": [2],
-    "explanation": "$? holds the exit status of the last command. 0 means success, non-zero means error. $# is argument count, $0 is script name, $$ is PID."
+    "question": "How do you connect securely to a remote host using SSH on a specific port, such as 2222?",
+    "options": ["ssh user@host:2222", "ssh -port 2222 user@host", "ssh user@host -p 2222", "ssh -p 2222 user@host"],
+    "correct": [3],
+    "explanation": "The '-p' flag is used with ssh to specify a particular port, as in 'ssh -p 2222 user@host'."
   },
   {
     "id": 21,
-    "question": "Which command is used to archive files in Linux without compression?",
-    "options": ["zip", "gzip", "tar", "compress"],
-    "correct": [2],
-    "explanation": "tar (tape archive) archives files without compression by default. Use tar -z for gzip or tar -j for bzip2 compression."
+    "question": "Which command is used to securely copy files between hosts?",
+    "options": ["ftp", "wget", "curl", "scp"],
+    "correct": [3],
+    "explanation": "The 'scp' (secure copy) command securely transfers files between hosts over an SSH connection."
   },
   {
     "id": 22,
-    "question": "What does the pipe symbol '|' do in Linux?",
-    "options": [
-      "Redirects output to a file",
-      "Sends the output of one command as input to another",
-      "Executes two commands simultaneously",
-      "Appends output to a file"
-    ],
-    "correct": [1],
-    "explanation": "The pipe | connects commands by passing the stdout of the left command as stdin to the right command. e.g., ls | grep '.txt'"
+    "question": "What must be done to a newly created shell script before it can be run as an executable?",
+    "options": ["chmod +w script.sh", "chmod +r script.sh", "chmod +x script.sh", "chown root script.sh"],
+    "correct": [2],
+    "explanation": "You must make the script executable by granting the execute permission using 'chmod +x script.sh'."
   },
   {
     "id": 23,
-    "question": "Which of the following commands will display only unique lines from a sorted file?",
-    "options": ["sort -u", "uniq", "unique", "Both A and B"],
-    "correct": [3],
-    "explanation": "Both 'sort -u' and 'uniq' (on a sorted file) can display unique lines. uniq only removes adjacent duplicate lines, so the file must be sorted first."
+    "question": "In shell scripting, how do you make a variable available to child processes?",
+    "options": ["export VARNAME", "return VARNAME", "global VARNAME", "pass VARNAME"],
+    "correct": [0],
+    "explanation": "The 'export' command marks a variable to be exported to the environment of subsequently executed child processes."
   },
   {
     "id": 24,
-    "question": "What is the function of the 'cron' daemon in Linux?",
-    "options": [
-      "Manages network connections",
-      "Schedules and executes commands at specified times",
-      "Monitors system resources",
-      "Manages user permissions"
-    ],
-    "correct": [1],
-    "explanation": "cron is a time-based job scheduler. Users define jobs in crontab files to run scripts/commands at scheduled intervals."
+    "question": "Which conditional test checks if a file exists and is a regular file in a bash script?",
+    "options": ["[ -d file ]", "[ -x file ]", "[ -f file ]", "[ -e file ]"],
+    "correct": [2],
+    "explanation": "The '[ -f file ]' condition is used to ensure the specified path exists and is a regular file."
   },
   {
     "id": 25,
-    "question": "In a crontab entry '30 8 * * 1 /script.sh', when does the script run?",
-    "options": [
-      "Every day at 8:30 AM",
-      "Every Monday at 8:30 AM",
-      "At 8:30 AM on the 1st of every month",
-      "Every hour on Monday"
-    ],
-    "correct": [1],
-    "explanation": "Crontab format: minute hour day month weekday. 30=minute, 8=hour, *=any day, *=any month, 1=Monday. So: every Monday at 8:30 AM."
+    "question": "What does the special variable '$@' represent in a shell script?",
+    "options": ["The script name", "The number of parameters", "All passed parameters", "The exit status"],
+    "correct": [2],
+    "explanation": "In a bash script, '$@' represents all the parameters passed to the script."
   },
   {
     "id": 26,
-    "question": "Which of the following commands will count the number of lines, words, and characters in a file?",
-    "options": ["count file", "lc file", "wc file", "wc -lwc file"],
+    "question": "Which loop syntax is used to iterate over a list of items in bash?",
+    "options": ["while in list; do", "loop var in list; do", "for var in list; do", "foreach var in list; do"],
     "correct": [2],
-    "explanation": "wc (word count) with no options displays line count, word count, and byte count. Specific flags: -l (lines), -w (words), -c (bytes)."
+    "explanation": "The 'for var in list; do ... done' syntax is used to loop over items in a list in bash scripting."
   },
   {
     "id": 27,
-    "question": "What is the difference between a hard link and a soft (symbolic) link in Linux? (Select all that apply)",
-    "options": [
-      "A hard link shares the same inode as the original file",
-      "A soft link can span across different filesystems, a hard link cannot",
-      "Deleting the original file breaks a soft link but not a hard link",
-      "A hard link can link to directories"
-    ],
-    "correct": [0, 1, 2],
-    "explanation": "Hard links share the same inode and cannot span filesystems or link to directories (typically). Soft links can span filesystems but break if the original file is deleted."
+    "question": "How do you count matching lines of a specific text pattern dynamically using grep?",
+    "options": ["grep -c", "grep -v", "grep -n", "grep -r"],
+    "correct": [0],
+    "explanation": "The '-c' flag in grep counts the number of matching lines instead of displaying them."
   },
   {
     "id": 28,
-    "question": "Which command is used to display the network configuration (IP address, etc.) in modern Linux systems?",
-    "options": ["ifconfig", "ipconfig", "ip addr", "netconfig"],
-    "correct": [2],
-    "explanation": "ip addr (part of the iproute2 suite) is the modern command. ifconfig is legacy and deprecated in many distros. ipconfig is a Windows command."
+    "question": "Which command removes or reports duplicate lines and requires sorted data to work correctly?",
+    "options": ["tr", "uniq", "sort", "diff"],
+    "correct": [1],
+    "explanation": "The 'uniq' command removes or reports adjacent duplicate lines, which is why it generally requires sorted input to function accurately."
   },
   {
     "id": 29,
-    "question": "What does 'chmod +x filename' do?",
-    "options": [
-      "Removes execute permission from all users",
-      "Adds execute permission for all users",
-      "Adds execute permission only for the owner",
-      "Changes the file extension"
-    ],
-    "correct": [1],
-    "explanation": "chmod +x adds execute permission for the owner, group, and others (all). To add only for owner, use chmod u+x."
+    "question": "Which command changes the priority of an already running process?",
+    "options": ["nice", "kill", "ps", "renice"],
+    "correct": [3],
+    "explanation": "The 'renice' command alters the priority (niceness) of an existing, running process, whereas 'nice' starts a new process with a specific priority."
   },
   {
     "id": 30,
-    "question": "Which of the following Linux commands is used to search for a pattern within files recursively across subdirectories?",
-    "options": ["grep 'pattern' file", "grep -r 'pattern' dir/", "find 'pattern'", "awk 'pattern'"],
+    "question": "Which command displays the first 10 lines of a file?",
+    "options": ["tail", "head", "cat", "more"],
     "correct": [1],
-    "explanation": "grep -r (recursive) searches for a pattern in all files within the specified directory and its subdirectories."
+    "explanation": "The 'head' command by default shows the first 10 lines of a specified file."
   }
 ]
