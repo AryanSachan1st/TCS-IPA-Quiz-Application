@@ -1,307 +1,362 @@
 [
   {
     "id": 1,
-    "question": "Which of the following are characteristics of effective business communication? (Select all that apply)",
-    "options": ["Clarity", "Conciseness", "Using jargon frequently", "Completeness"],
+    "question": "Which of the following are key principles of business communication? (Select all that apply)",
+    "options": [
+      "Clarity",
+      "Conciseness",
+      "Complexity",
+      "Courtesy"
+    ],
     "correct": [0, 1, 3],
-    "explanation": "Effective business communication is Clear, Concise, and Complete. Excessive jargon reduces clarity."
+    "explanation": "Key principles include Clarity, Conciseness, Completeness, Correctness, Courtesy, and Consideration. Complexity should be avoided."
   },
   {
     "id": 2,
-    "question": "What does SMART stand for in the context of goal-setting?",
+    "question": "What is the role of active listening in business communication?",
     "options": [
-      "Specific, Measurable, Achievable, Relevant, Time-bound",
-      "Simple, Manageable, Accurate, Realistic, Timely",
-      "Strategic, Meaningful, Actionable, Resourceful, Trackable",
-      "Specific, Motivated, Achievable, Reliable, Trackable"
+      "Listening just to respond",
+      "Listening to understand, paying full attention, and asking clarifying questions",
+      "Interrupting to show engagement",
+      "Looking away to avoid intimidating the speaker"
     ],
-    "correct": [0],
-    "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — a standard framework for effective goal setting."
+    "correct": [1],
+    "explanation": "Active listening involves listening to understand, paying full attention, avoiding interruptions, and asking clarifying questions."
   },
   {
     "id": 3,
-    "question": "Which of the following are components of emotional intelligence (EQ)? (Select all that apply)",
-    "options": ["Self-awareness", "Technical expertise", "Empathy", "Self-regulation"],
-    "correct": [0, 2, 3],
-    "explanation": "EQ components include self-awareness, empathy, self-regulation, motivation, and social skills. Technical expertise is IQ, not EQ."
+    "question": "Which of the following are examples of non-verbal communication elements? (Select all that apply)",
+    "options": [
+      "Body language",
+      "Facial expressions",
+      "Tone of written emails",
+      "Gestures"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Body language, facial expressions, and gestures communicate non-verbally and should align with your spoken message."
   },
   {
     "id": 4,
-    "question": "In a professional email, what should the subject line ideally be?",
+    "question": "Why is it important to seek feedback after communicating?",
     "options": [
-      "Vague to spark curiosity",
-      "Specific and informative about the email's content",
-      "Left blank for informal communication",
-      "As long as possible to include all details"
+      "To show who is in charge",
+      "To ensure the message was understood correctly",
+      "To prolong the conversation",
+      "To test the listener's memory"
     ],
     "correct": [1],
-    "explanation": "A professional subject line should clearly indicate the email's purpose, helping the recipient prioritize and respond."
+    "explanation": "Feedback and confirmation, such as asking 'Does this make sense?', ensure your message was understood correctly."
   },
   {
     "id": 5,
-    "question": "Which of the following best describes 'active listening'?",
+    "question": "What is a characteristic of a clear and specific email subject line?",
     "options": [
-      "Waiting for your turn to speak",
-      "Fully concentrating, understanding, and responding to the speaker",
-      "Listening while multitasking",
-      "Nodding continuously regardless of understanding"
+      "It contains only one word, like 'Update'",
+      "It accurately describes the email content to help recipients prioritize",
+      "It is written in ALL CAPS for importance",
+      "It is left blank to spark curiosity"
     ],
     "correct": [1],
-    "explanation": "Active listening involves full concentration, understanding the message, and providing thoughtful feedback — not just hearing words."
+    "explanation": "Clear, specific subject lines accurately describe content, helping recipients prioritize and find messages later. Vague subjects like 'Update' should be avoided."
   },
   {
     "id": 6,
-    "question": "Which of the following are examples of non-verbal communication? (Select all that apply)",
-    "options": ["Eye contact", "Tone of voice", "Written memo", "Posture"],
-    "correct": [0, 1, 3],
-    "explanation": "Non-verbal communication includes body language, eye contact, posture, facial expressions, and tone of voice. A written memo is verbal (written) communication."
+    "question": "Which of the following are formatting best practices for emails? (Select all that apply)",
+    "options": [
+      "Use short paragraphs for readability",
+      "Use ALL CAPS to emphasize important points",
+      "Use bullet points to organize lists",
+      "Use simple fonts like Arial or Times New Roman"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "Best practices include using short paragraphs, bullet points, and simple fonts. ALL CAPS should be avoided as it appears like shouting."
   },
   {
     "id": 7,
-    "question": "What is the primary purpose of a business report?",
+    "question": "According to email etiquette DOs and DON'Ts, which of the following is recommended?",
     "options": [
-      "To entertain the reader",
-      "To present analyzed information to support decision-making",
-      "To express personal opinions",
-      "To replace verbal meetings entirely"
+      "Share confidential information via email if needed",
+      "Reply within 24 hours when possible",
+      "Use reply-all for every message",
+      "Write things you wouldn't want read aloud"
     ],
     "correct": [1],
-    "explanation": "Business reports present data and analysis to help stakeholders make informed decisions."
+    "explanation": "You should reply within 24 hours when possible. Using reply-all unnecessarily, sharing confidential info, and writing things you wouldn't read aloud are explicitly DON'Ts."
   },
   {
     "id": 8,
-    "question": "Which leadership style involves the leader making decisions without consulting the team?",
-    "options": ["Democratic", "Laissez-faire", "Autocratic", "Transformational"],
-    "correct": [2],
-    "explanation": "Autocratic (authoritarian) leadership involves centralized decision-making with little or no team input."
+    "question": "What should a professional email conclusion always include?",
+    "options": [
+      "A vague statement about the future",
+      "A clear call to action or next steps",
+      "A list of company policies",
+      "A personal anecdote"
+    ],
+    "correct": [1],
+    "explanation": "The conclusion of an email should include a clear call to action or outline the next steps."
   },
   {
     "id": 9,
-    "question": "Which of the following are barriers to effective communication? (Select all that apply)",
-    "options": ["Language differences", "Information overload", "Active listening", "Physical noise"],
-    "correct": [0, 1, 3],
-    "explanation": "Barriers include language differences, information overload, physical noise, and emotional filters. Active listening is a facilitator, not a barrier."
+    "question": "Which of the following describes a 'Proposal' in professional writing?",
+    "options": [
+      "Internal communications on specific topics",
+      "Formal correspondence with external parties",
+      "Persuasive documents requesting approval or resources",
+      "Detailed analysis of information or findings"
+    ],
+    "correct": [2],
+    "explanation": "Proposals are persuasive documents requesting approval or resources. Memos are internal, letters are external, and reports provide detailed analysis."
   },
   {
     "id": 10,
-    "question": "In the context of teamwork, what does 'synergy' mean?",
+    "question": "What is the recommended approach for the language and tone of professional writing?",
     "options": [
-      "Individual effort outweighs team effort",
-      "Combined team output is greater than the sum of individual outputs",
-      "Team members work independently on all tasks",
-      "Conflict resolution within a team"
+      "Use complex jargon to sound knowledgeable",
+      "Use passive voice to sound formal",
+      "Keep sentences clear and accessible, using active voice",
+      "Include long paragraphs for detail"
     ],
-    "correct": [1],
-    "explanation": "Synergy means the whole is greater than the sum of its parts — teams accomplish more together than individuals working alone."
+    "correct": [2],
+    "explanation": "You should keep sentences clear, accessible, and use active voice over passive voice. Jargon should be avoided unless writing for specialists."
   },
   {
     "id": 11,
-    "question": "Which of the following best defines 'professionalism' in the workplace?",
+    "question": "Which of the following should you do during the revision process of professional writing? (Select all that apply)",
     "options": [
-      "Wearing formal attire at all times",
-      "Conducting oneself with responsibility, integrity, and respect",
-      "Being the highest performer in the team",
-      "Never disagreeing with a manager"
+      "Set the draft aside for a while before reviewing",
+      "Focus solely on getting the first draft perfect immediately",
+      "Read aloud to catch awkward phrasing",
+      "Have someone else review if possible"
     ],
-    "correct": [1],
-    "explanation": "Professionalism encompasses behavior, attitude, communication, and ethics — not just appearance or performance."
+    "correct": [0, 2, 3],
+    "explanation": "The revision process includes setting the draft aside, reviewing with fresh eyes, reading aloud, and getting others to review. You should not worry about perfection on the first draft."
   },
   {
     "id": 12,
-    "question": "What is the correct sequence of Tuckman's stages of team development?",
+    "question": "Which core ethical principle involves treating all people equally and making unbiased decisions?",
     "options": [
-      "Forming → Storming → Norming → Performing",
-      "Storming → Forming → Performing → Norming",
-      "Norming → Forming → Storming → Performing",
-      "Forming → Norming → Storming → Performing"
+      "Integrity",
+      "Respect",
+      "Accountability",
+      "Fairness"
     ],
-    "correct": [0],
-    "explanation": "Tuckman's model: Forming → Storming → Norming → Performing (→ Adjourning). Teams go through conflict before cohesion."
+    "correct": [3],
+    "explanation": "Fairness is defined as treating all people equally and making unbiased decisions."
   },
   {
     "id": 13,
-    "question": "Which of the following are effective time management techniques? (Select all that apply)",
-    "options": ["Eisenhower Matrix", "Multitasking all tasks simultaneously", "Pomodoro Technique", "Setting priorities"],
-    "correct": [0, 2, 3],
-    "explanation": "Eisenhower Matrix, Pomodoro Technique, and priority-setting are proven time management tools. Multitasking generally reduces quality and efficiency."
+    "question": "What are key components of professional conduct in the workplace? (Select all that apply)",
+    "options": [
+      "Appropriate appearance for the culture",
+      "Arriving on time and meeting deadlines",
+      "Grumbling about heavy workloads publicly",
+      "Following through on commitments"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Professional conduct includes Appearance (dressing appropriately), Punctuality (arriving on time), Reliability (following through), Respect, and Honesty."
   },
   {
     "id": 14,
-    "question": "A colleague sends an aggressive email. What is the most professional response?",
+    "question": "How should mistakes be handled professionally?",
     "options": [
-      "Reply immediately with equal aggression",
-      "Ignore the email completely",
-      "Wait, then reply calmly and factually addressing the issue",
-      "Forward the email to everyone in the office"
+      "Ignore them and hope they go away",
+      "Make an excuse to justify the error",
+      "Acknowledge errors promptly and focus on solutions",
+      "Assign the blame to someone else"
     ],
     "correct": [2],
-    "explanation": "Professional conflict resolution involves staying calm, being factual, and addressing the issue constructively — not retaliating."
+    "explanation": "Mistakes should be handled by acknowledging errors promptly, taking responsibility without excuses, focusing on solutions, and learning from them."
   },
   {
     "id": 15,
-    "question": "Which of the following are key elements of a business presentation? (Select all that apply)",
-    "options": ["Clear structure", "Audience awareness", "Reading slides word-for-word", "Strong opening and closing"],
-    "correct": [0, 1, 3],
-    "explanation": "Effective presentations have a clear structure, are tailored to the audience, and begin and end strongly. Reading slides verbatim disengages audiences."
+    "question": "Which of the following is essential during the preparation phase of a presentation? (Select all that apply)",
+    "options": [
+      "Gathering comprehensive information and understanding it deeply",
+      "Understanding the audience's background and needs",
+      "Defining what you want the audience to learn or do",
+      "Memorizing your script word-for-word"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "Preparation involves researching your topic, knowing your audience, and defining objectives. Memorizing word-for-word is not explicitly recommended."
   },
   {
     "id": 16,
-    "question": "What does 'KPI' stand for in business?",
+    "question": "What is the 6x6 rule for presentation visual aids?",
     "options": [
-      "Key Performance Indicator",
-      "Knowledge and Productivity Index",
-      "Key Process Integration",
-      "Known Performance Interface"
+      "No more than 6 slides per presentation, 6 minutes per slide",
+      "No more than 6 lines per slide, 6 words per line",
+      "No more than 6 images per slide, 6 colors per presentation",
+      "No more than 6 headings per presentation, 6 subheadings per section"
     ],
-    "correct": [0],
-    "explanation": "KPI stands for Key Performance Indicator — a measurable value that shows how effectively a company is achieving key objectives."
+    "correct": [1],
+    "explanation": "The 6x6 rule advises having no more than 6 lines per slide and 6 words per line to keep slides uncluttered."
   },
   {
     "id": 17,
-    "question": "Which of the following behaviors demonstrate workplace integrity? (Select all that apply)",
+    "question": "What is a recommended delivery technique for presentations?",
     "options": [
-      "Admitting mistakes promptly",
-      "Taking credit for others' work",
-      "Keeping confidential information private",
-      "Meeting deadlines consistently"
+      "Read directly from the slides to ensure accuracy",
+      "Stand completely still to avoid distracting the audience",
+      "Vary tone and volume for emphasis and make eye contact",
+      "Avoid all hand gestures so you don't look nervous"
     ],
-    "correct": [0, 2, 3],
-    "explanation": "Integrity includes honesty, accountability, confidentiality, and reliability. Taking credit for others' work is unethical."
+    "correct": [2],
+    "explanation": "Effective delivery includes varying tone and volume, making eye contact, using natural hand gestures, and moving purposefully. Reading from slides and standing rigidly should be avoided."
   },
   {
     "id": 18,
-    "question": "In negotiation, what does 'BATNA' stand for?",
+    "question": "Which of the following are benefits of teamwork? (Select all that apply)",
     "options": [
-      "Best Alternative To a Negotiated Agreement",
-      "Business Approach To Neutral Arbitration",
-      "Balanced Agreement Through Negotiation Analysis",
-      "Best Accepted Terms in Negotiation Arena"
+      "Diverse perspectives bring creative solutions",
+      "Shared resources to accomplish more",
+      "Sole responsibility for all failures",
+      "Improved results on complex tasks"
     ],
-    "correct": [0],
-    "explanation": "BATNA (Best Alternative To a Negotiated Agreement) is the most advantageous option a party can take if negotiations fail."
+    "correct": [0, 1, 3],
+    "explanation": "Benefits of teamwork include diverse perspectives, shared resources, shared responsibility (not sole), and improved results."
   },
   {
     "id": 19,
-    "question": "Which type of communication flows from subordinates to superiors?",
-    "options": ["Downward communication", "Upward communication", "Lateral communication", "Diagonal communication"],
-    "correct": [1],
-    "explanation": "Upward communication moves from employees to management — includes feedback, reports, and suggestions."
+    "question": "How can team members effectively build trust? (Select all that apply)",
+    "options": [
+      "Do what you say you will do (Be Reliable)",
+      "Maintain confidentiality regarding team matters",
+      "Communicate honestly, even when it's difficult",
+      "Micromanage other teammates' tasks"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "Trust is built by being reliable, maintaining confidentiality, showing respect, and communicating honestly. Micromanagement is not part of trust building."
   },
   {
     "id": 20,
-    "question": "Which of the following are qualities of a good team player? (Select all that apply)",
-    "options": ["Reliability", "Hoarding information", "Flexibility", "Accountability"],
-    "correct": [0, 2, 3],
-    "explanation": "Good team players are reliable, flexible, and accountable. Hoarding information undermines team collaboration."
+    "question": "In clear team communication, what is required for effective collaboration?",
+    "options": [
+      "Defining roles and expectations clearly",
+      "Only communicating during formal monthly meetings",
+      "Keeping critical information secret for competitive advantage",
+      "Avoiding questions to show competence"
+    ],
+    "correct": [0],
+    "explanation": "Clear communication involves defining roles and responsibilities, sharing information openly, regular updates, and always asking questions to clarify understanding."
   },
   {
     "id": 21,
-    "question": "What is 'workplace etiquette'?",
+    "question": "Which of the following define a service-oriented mindset in client interaction? (Select all that apply)",
     "options": [
-      "Formal dress code only",
-      "Set of rules governing professional behavior and interaction",
-      "Following orders without question",
-      "Using formal language in all communications"
+      "Prioritizing client needs above all else",
+      "Delivering just the minimum requirements",
+      "Anticipating needs proactively",
+      "Focusing on long-term relationship building"
     ],
-    "correct": [1],
-    "explanation": "Workplace etiquette refers to the code of conduct — how employees interact, communicate, and behave professionally."
+    "correct": [0, 2, 3],
+    "explanation": "A service-oriented mindset involves putting the client first, going beyond expectations (not just the minimum), taking a proactive approach, and focusing on long-term relationships."
   },
   {
     "id": 22,
-    "question": "Which of the following are advantages of written communication over verbal? (Select all that apply)",
+    "question": "When managing client expectations, what principle is highly recommended?",
     "options": [
-      "Provides a permanent record",
-      "Allows immediate feedback",
-      "Can be referenced later",
-      "Reduces misunderstanding with documented clarity"
+      "Over-promise to secure the deal, then figure it out later",
+      "Under-Promise, Over-Deliver",
+      "Keep timelines ambiguous to avoid pressure",
+      "Tell the client whatever they want to hear"
     ],
-    "correct": [0, 2, 3],
-    "explanation": "Written communication provides documentation, reference capability, and clarity. Immediate feedback is an advantage of verbal communication."
+    "correct": [1],
+    "explanation": "Managing expectations involves the principle 'Under-Promise, Over-Deliver', being honest, setting clear timelines, and communicating changes immediately."
   },
   {
     "id": 23,
-    "question": "What is 'groupthink' in an organizational context?",
+    "question": "What is the recommended approach to problem-solving with clients?",
     "options": [
-      "Brainstorming sessions with diverse perspectives",
-      "A phenomenon where desire for conformity overrides critical thinking",
-      "Team collaboration on creative projects",
-      "Group decision-making using voting"
+      "Delay addressing the problem until a solution is found",
+      "Acknowledge issues quickly and focus on solutions",
+      "Assign blame to internal teams or external vendors",
+      "Wait for the client to follow up before taking action"
     ],
     "correct": [1],
-    "explanation": "Groupthink occurs when cohesion pressures suppress dissent, leading to poor decision-making without critical evaluation."
+    "explanation": "The problem-solving approach includes acknowledging issues quickly, apologizing appropriately, focusing on solutions instead of assigning blame, and following up."
   },
   {
     "id": 24,
-    "question": "Which of the following are steps in effective problem-solving? (Select all that apply)",
+    "question": "What should you do if you recognize a potential conflict of interest?",
     "options": [
-      "Define the problem clearly",
-      "Jump to the first solution available",
-      "Evaluate alternatives",
-      "Implement and monitor the solution"
+      "Keep it a secret to avoid unnecessary drama",
+      "Inform your manager or compliance officer",
+      "Proceed as usual but be extra careful",
+      "Delegate the decision to a subordinate without explanation"
     ],
-    "correct": [0, 2, 3],
-    "explanation": "Effective problem-solving: define → generate options → evaluate → implement → monitor. Jumping to the first solution skips critical analysis."
+    "correct": [1],
+    "explanation": "When recognizing a conflict of interest, you should disclose it appropriately by informing your manager or compliance officer, and recuse yourself from related decisions."
   },
   {
     "id": 25,
-    "question": "What is the Pareto Principle (80/20 rule) in a business context?",
+    "question": "What are the key aspects of workplace diversity and inclusion? (Select all that apply)",
     "options": [
-      "80% of employees do 80% of the work",
-      "80% of results come from 20% of efforts",
-      "20% of goals require 80% of the budget",
-      "80% of problems are caused by 80% of people"
+      "Appreciating diverse backgrounds and perspectives",
+      "Creating an environment where everyone feels welcome",
+      "Ignoring stereotypes to avoid awkwardness",
+      "Challenging bias and discriminatory behavior"
     ],
-    "correct": [1],
-    "explanation": "The Pareto Principle states 80% of outcomes come from 20% of inputs — helping prioritize high-impact activities."
+    "correct": [0, 1, 3],
+    "explanation": "Diversity and inclusion involve valuing differences, acting against discrimination, creating an inclusive environment, and actively challenging bias, rather than ignoring it."
   },
   {
     "id": 26,
-    "question": "Which communication style is considered most effective in professional settings?",
-    "options": ["Aggressive", "Passive", "Assertive", "Passive-aggressive"],
-    "correct": [2],
-    "explanation": "Assertive communication expresses needs and opinions confidently and respectfully — balancing self-advocacy with others' perspectives."
+    "question": "In the context of whistleblowing, what actions should an employee take? (Select all that apply)",
+    "options": [
+      "Report unethical behavior through appropriate company mechanisms",
+      "Post about the behavior on social media immediately",
+      "Keep records and document concerning issues",
+      "Understand their rights and seek proper protection"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "Whistleblowing involves reporting violations through proper channels, documenting issues, and seeking protection. Posting on social media is not going through proper company mechanisms."
   },
   {
     "id": 27,
-    "question": "Which of the following are components of a professional business letter? (Select all that apply)",
-    "options": ["Salutation", "Subject line or reference", "Casual slang", "Complimentary close"],
-    "correct": [0, 1, 3],
-    "explanation": "Business letters include salutation, subject/reference, body, and complimentary close. Casual slang is inappropriate in formal correspondence."
+    "question": "What is the recommended strategy for resolving workplace conflict?",
+    "options": [
+      "Let problems fester to see if they resolve themselves",
+      "Address issues early and seek win-win solutions",
+      "Argue until the other person admits they were wrong",
+      "Immediately escalate every disagreement to upper management"
+    ],
+    "correct": [1],
+    "explanation": "Conflict resolution strategies include addressing issues early, communicating directly, listening openly, seeking win-win solutions, and escalating to management only if direct resolution fails."
   },
   {
     "id": 28,
-    "question": "What does 'delegation' mean in management?",
+    "question": "Why is 'Work-Life Balance' included under Workplace Ethics & Professionalism?",
     "options": [
-      "Assigning all decisions to subordinates",
-      "Transferring authority and responsibility for specific tasks to another person",
-      "Avoiding accountability by passing tasks",
-      "Micromanaging every task in the team"
+      "Because tired employees are more compliant",
+      "To avoid burnout by managing workload and maintaining health",
+      "To ensure employees work more overtime",
+      "Because companies get tax breaks for healthy employees"
     ],
     "correct": [1],
-    "explanation": "Delegation is assigning tasks with appropriate authority to team members — enabling efficiency and employee development."
+    "explanation": "Work-life balance involves setting boundaries, taking breaks, managing workload to avoid burnout, and maintaining physical and mental health to sustain professional performance."
   },
   {
     "id": 29,
-    "question": "Which of the following are benefits of diversity in the workplace? (Select all that apply)",
+    "question": "Which of the following best describes the 'Body' structure of a presentation?",
     "options": [
-      "Wider range of perspectives and ideas",
-      "Increased creativity and innovation",
-      "Guaranteed conflict-free environment",
-      "Better understanding of diverse customer needs"
+      "Capturing attention with an interesting opening",
+      "Presenting information logically with 3-5 main points and supporting evidence",
+      "Summarizing key points and providing a takeaway",
+      "Outlining what the audience will learn"
     ],
-    "correct": [0, 1, 3],
-    "explanation": "Diversity brings varied perspectives, boosts innovation, and improves customer empathy. It doesn't eliminate conflict but can lead to healthier debate."
+    "correct": [1],
+    "explanation": "The body of a presentation involves presenting information logically, supporting key points with evidence, using transitions, and limiting content to 3-5 main points."
   },
   {
     "id": 30,
-    "question": "What is the most appropriate action when you receive constructive criticism from a supervisor?",
+    "question": "When building relationships with clients, what is an effective strategy?",
     "options": [
-      "Dismiss it as personal bias",
-      "Listen actively, acknowledge it, and work on improvement",
-      "Immediately defend yourself",
-      "Share the feedback negatively with colleagues"
+      "Limit contact strictly to transactions only",
+      "Learn about their industry, remember details, and maintain contact beyond immediate transactions",
+      "Share explicit personal details to build a deep emotional bond",
+      "Guarantee outcomes outside your control to win their trust"
     ],
     "correct": [1],
-    "explanation": "Constructive criticism is a growth opportunity. Listening, acknowledging, and improving demonstrates professionalism and maturity."
+    "explanation": "Building client relationships involves understanding their business, remembering details from past interactions, offering relevant suggestions, and maintaining contact. Professional boundaries should still limit personal sharing and restrict overpromising."
   }
 ]
