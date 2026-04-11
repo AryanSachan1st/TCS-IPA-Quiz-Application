@@ -22,10 +22,10 @@
   },
   {
     "id": 4,
-    "question": "Which of the following are goals of UX design? (Select all that apply)",
-    "options": ["Usability", "Desirability", "Making the UI visually complex", "Accessibility", "Findability"],
-    "correct": [0, 1, 3, 4],
-    "explanation": "UX design aims for usability, desirability, accessibility, and findability (Morville's UX Honeycomb). Visual complexity hinders user experience."
+    "question": "What is the purpose of the <!DOCTYPE html> declaration in an HTML document?",
+    "options": ["It defines the document type and instructs the browser to render in HTML5 mode", "It adds metadata like author and description", "It links an external CSS stylesheet", "It marks the beginning of the visible page body"],
+    "correct": [0],
+    "explanation": "<!DOCTYPE html> is not an HTML tag — it is a document type declaration that tells the browser to use HTML5 standards mode for rendering, preventing quirks mode."
   },
   {
     "id": 5,
@@ -50,10 +50,10 @@
   },
   {
     "id": 8,
-    "question": "Hick's Law in UX states that:",
-    "options": ["User satisfaction increases with more features", "The time to make a decision increases with the number of choices", "Larger buttons are always better", "Mobile-first design improves conversion"],
-    "correct": [1],
-    "explanation": "Hick's Law states that the time and effort required to make a decision increases with the number and complexity of choices. This underpins minimalist menu and option design."
+    "question": "Which CSS unit is relative to the font-size of the root (<html>) element?",
+    "options": ["px", "em", "rem", "%", "vh"],
+    "correct": [2],
+    "explanation": "'rem' (root em) is relative to the font-size of the root <html> element. 'em' is relative to the font-size of the parent element. 'px' is absolute, '%' is relative to the parent, 'vh' is relative to the viewport height."
   },
   {
     "id": 9,
@@ -71,10 +71,10 @@
   },
   {
     "id": 11,
-    "question": "In UX design, what does 'information architecture' refer to?",
-    "options": ["The physical setup of servers", "Organizing and structuring content so users can find information easily", "The color and font system", "The coding framework used"],
-    "correct": [1],
-    "explanation": "Information Architecture (IA) involves organizing, structuring, and labeling content effectively so users can navigate and find information efficiently."
+    "question": "Which of the following are valid HTML5 <input> type values? (Select all that apply)",
+    "options": ["email", "range", "slider", "color", "date"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "HTML5 introduced new input types: email, range, color, date, number, tel, url, and more. 'slider' is not a valid input type — the correct type for a slider is 'range'."
   },
   {
     "id": 12,
@@ -85,10 +85,10 @@
   },
   {
     "id": 13,
-    "question": "Which of the following are characteristics of a good User Persona? (Select all that apply)",
-    "options": ["Based on real user research", "Includes demographic information", "Is completely fictional with no research basis", "Includes user goals and frustrations", "Helps design teams empathize with users"],
-    "correct": [0, 1, 3, 4],
-    "explanation": "Good personas are grounded in real research and include demographics, goals, behaviors, and pain points. Purely fictional personas without research can mislead design decisions."
+    "question": "Which CSS position values take an element completely out of the normal document flow? (Select all that apply)",
+    "options": ["static", "relative", "absolute", "fixed", "sticky"],
+    "correct": [2, 3],
+    "explanation": "'absolute' and 'fixed' remove an element from the normal document flow — other elements ignore them. 'relative' keeps the element in flow but offsets it visually. 'static' is the default (in flow). 'sticky' stays in flow until a scroll threshold."
   },
   {
     "id": 14,
@@ -113,10 +113,10 @@
   },
   {
     "id": 17,
-    "question": "What is the purpose of a 'User Journey Map' in UX design?",
-    "options": ["To map the server infrastructure", "To visualize the steps a user takes to achieve a goal, including emotions and pain points", "To show the database schema", "To document API endpoints"],
-    "correct": [1],
-    "explanation": "A User Journey Map is a visualization of the process a user goes through to accomplish a goal, capturing their steps, emotions, touchpoints, and pain points along the way."
+    "question": "What does calling event.preventDefault() inside a DOM event handler do?",
+    "options": ["Removes the event listener from the element", "Stops the event from bubbling up to parent elements", "Prevents the browser's default action for that event (e.g., form submission, link navigation)", "Clears all pending DOM events"],
+    "correct": [2],
+    "explanation": "event.preventDefault() cancels the browser's built-in default behavior — for example, preventing a form from submitting or a link from navigating. It does NOT stop event propagation; use event.stopPropagation() for that."
   },
   {
     "id": 18,
@@ -127,10 +127,10 @@
   },
   {
     "id": 19,
-    "question": "What is 'card sorting' used for in UX research?",
-    "options": ["Sorting bug reports by priority", "Understanding how users categorize and group information", "Designing playing card interfaces", "Ranking UI components by importance"],
-    "correct": [1],
-    "explanation": "Card sorting is a UX research technique where participants organize topics into groups, helping designers understand users' mental models and build better information architecture."
+    "question": "Which of the following are valid ways to create a new HTML element and add it to the DOM? (Select all that apply)",
+    "options": ["document.createElement() + appendChild()", "document.newElement()", "Setting element.innerHTML to include new HTML", "element.insertAdjacentHTML()", "element.addChild()"],
+    "correct": [0, 2, 3],
+    "explanation": "createElement() + appendChild(), innerHTML assignment, and insertAdjacentHTML() are all valid DOM manipulation techniques. 'document.newElement()' and 'element.addChild()' do not exist in the DOM API."
   },
   {
     "id": 20,
@@ -141,10 +141,10 @@
   },
   {
     "id": 21,
-    "question": "In design, what does the '3-click rule' suggest?",
-    "options": ["Every page must have exactly 3 buttons", "Users should be able to find any information within 3 clicks", "A form should not exceed 3 fields", "Navigation menus should have 3 levels"],
-    "correct": [1],
-    "explanation": "The 3-click rule suggests users should find any information within 3 clicks. While not always strictly true, it promotes simple, shallow navigation hierarchies."
+    "question": "Which of the following are CSS pseudo-classes (not pseudo-elements)? (Select all that apply)",
+    "options": [":hover — styles element when the mouse is over it", "::before — inserts content before the element", ":focus — styles element when it receives keyboard focus", ":nth-child() — selects elements based on their position among siblings", ":checked — targets checked checkboxes or radio buttons"],
+    "correct": [0, 2, 3, 4],
+    "explanation": ":hover, :focus, :nth-child(), and :checked are pseudo-classes (single colon). '::before' uses a double colon and is a pseudo-ELEMENT that inserts generated content — not a pseudo-class."
   },
   {
     "id": 22,
@@ -162,10 +162,10 @@
   },
   {
     "id": 24,
-    "question": "What is meant by 'above the fold' in web design?",
-    "options": ["Content visible without scrolling when a page first loads", "The footer section of a webpage", "HTML code that appears before CSS", "Navigation menus at the top"],
-    "correct": [0],
-    "explanation": "'Above the fold' refers to the portion of a webpage visible without scrolling. It's critical real estate for key information and calls to action."
+    "question": "What is the difference between event.stopPropagation() and event.preventDefault() in JavaScript?",
+    "options": ["They are identical — both cancel the event completely", "stopPropagation() stops the event from bubbling to parent elements; preventDefault() cancels the browser's default action", "preventDefault() stops bubbling; stopPropagation() cancels the default browser action", "Both are required together to fully handle an event"],
+    "correct": [1],
+    "explanation": "stopPropagation() prevents the event from traveling up (bubbling) or down (capturing) the DOM tree. preventDefault() cancels the browser's default behavior (e.g., link navigation, form submit). They are independent and can be used together or separately."
   },
   {
     "id": 25,
@@ -208,5 +208,75 @@
     "options": ["Effectiveness — can users complete tasks accurately?", "Efficiency — can users complete tasks with minimum resources?", "Aesthetics — does the UI look visually appealing?", "Satisfaction — is the experience pleasant for users?", "Scalability — does the system handle high traffic?"],
     "correct": [0, 1, 3],
     "explanation": "ISO 9241 defines usability in terms of Effectiveness, Efficiency, and Satisfaction. Aesthetics and scalability, while important, are not part of the ISO 9241 usability definition."
+  },
+  {
+    "id": 31,
+    "question": "Which of the following are semantic HTML5 tags? (Select all that apply)",
+    "options": ["<header>", "<div>", "<article>", "<section>", "<span>"],
+    "correct": [0, 2, 3],
+    "explanation": "<header>, <article>, and <section> are semantic HTML5 elements that describe the meaning of their content. <div> and <span> are generic, non-semantic containers."
+  },
+  {
+    "id": 32,
+    "question": "What is the correct purpose of the 'alt' attribute on an <img> tag?",
+    "options": ["To set the image title shown on hover", "To provide alternative text for accessibility and when the image fails to load", "To define the image URL", "To add a CSS class to the image"],
+    "correct": [1],
+    "explanation": "The 'alt' attribute provides alternative text for an image, which is read by screen readers for accessibility and displayed when the image cannot be loaded."
+  },
+  {
+    "id": 33,
+    "question": "Which HTML form attributes are used to make an input field mandatory and provide a hint to the user? (Select all that apply)",
+    "options": ["required", "placeholder", "disabled", "readonly", "autofocus"],
+    "correct": [0, 1],
+    "explanation": "'required' makes the field mandatory before form submission, and 'placeholder' shows a hint text inside the input. 'disabled' and 'readonly' restrict editing; 'autofocus' moves focus to the field on load."
+  },
+  {
+    "id": 34,
+    "question": "In CSS, which selector has the highest specificity?",
+    "options": ["Element selector (e.g., p { })", "Class selector (e.g., .btn { })", "ID selector (e.g., #header { })", "Inline style (e.g., style=\"color:red\")"],
+    "correct": [3],
+    "explanation": "CSS specificity order (highest to lowest): Inline styles > IDs > Classes/attributes/pseudo-classes > Elements. Inline styles override all other selectors."
+  },
+  {
+    "id": 35,
+    "question": "Which CSS properties are part of the Flexbox layout model? (Select all that apply)",
+    "options": ["justify-content", "grid-template-columns", "align-items", "flex-direction", "gap"],
+    "correct": [0, 2, 3, 4],
+    "explanation": "justify-content, align-items, flex-direction, and gap are Flexbox properties applied to the flex container. grid-template-columns belongs to CSS Grid."
+  },
+  {
+    "id": 36,
+    "question": "What does the CSS 'box-sizing: border-box' property do?",
+    "options": ["Adds a border to the box model", "Makes the width and height include padding and border, not just the content area", "Removes the padding from elements", "Applies a shadow around the element box"],
+    "correct": [1],
+    "explanation": "With 'box-sizing: border-box', the element's total width and height include its padding and border, making layout sizing more predictable compared to the default 'content-box'."
+  },
+  {
+    "id": 37,
+    "question": "Which of the following JavaScript methods can be used to select elements from the DOM? (Select all that apply)",
+    "options": ["document.getElementById()", "document.querySelector()", "document.findElement()", "document.querySelectorAll()", "document.getElementsByClassName()"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "getElementById(), querySelector(), querySelectorAll(), and getElementsByClassName() are all valid DOM selection methods. 'document.findElement()' does not exist in the DOM API."
+  },
+  {
+    "id": 38,
+    "question": "What is the difference between 'textContent' and 'innerHTML' in JavaScript DOM manipulation?",
+    "options": ["There is no difference", "textContent sets plain text safely; innerHTML parses and renders HTML markup", "innerHTML is safer against XSS attacks", "textContent can execute embedded scripts"],
+    "correct": [1],
+    "explanation": "textContent sets or returns text only, treating any HTML as plain text (safer). innerHTML parses HTML markup and renders it, which can be a security risk (XSS) if inserting user-provided content."
+  },
+  {
+    "id": 39,
+    "question": "Which of the following are valid DOM events that can be listened to with addEventListener()? (Select all that apply)",
+    "options": ["click", "submit", "hover", "input", "keydown"],
+    "correct": [0, 1, 3, 4],
+    "explanation": "'click', 'submit', 'input', and 'keydown' are valid DOM event names. 'hover' is a jQuery shorthand, not a native DOM event — the native equivalents are 'mouseover' and 'mouseout'."
+  },
+  {
+    "id": 40,
+    "question": "In JavaScript, which classList methods allow toggling and checking CSS classes on an element? (Select all that apply)",
+    "options": ["classList.toggle()", "classList.contains()", "classList.swap()", "classList.add()", "classList.flip()"],
+    "correct": [0, 1, 3],
+    "explanation": "classList.toggle() adds/removes a class, classList.contains() checks if a class exists, and classList.add() adds a class. 'classList.swap()' and 'classList.flip()' are not part of the DOM API."
   }
 ]
