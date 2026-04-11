@@ -1,282 +1,362 @@
 [
   {
     "id": 1,
-    "question": "Which SQL clause is used to filter records after grouping?",
-    "options": ["WHERE", "HAVING", "FILTER", "GROUP BY"],
-    "correct": [1],
-    "explanation": "HAVING filters records after GROUP BY aggregation. WHERE filters rows before grouping."
+    "question": "Which of the following statements about SQL basics are TRUE?",
+    "options": [
+      "SQL keywords are case-sensitive",
+      "SQL keywords are case-insensitive (SELECT = select)",
+      "Values in SQL are always case-insensitive",
+      "Single-line comments start with --"
+    ],
+    "correct": [1, 3],
+    "explanation": "SQL keywords are case-insensitive, but values within the database are typically case-sensitive. Single-line comments are denoted by -- and multi-line by /* */."
   },
   {
     "id": 2,
-    "question": "Which of the following are valid SQL JOIN types?",
-    "options": ["INNER JOIN", "OUTER JOIN", "CROSS JOIN", "DIAGONAL JOIN"],
-    "correct": [0, 1, 2],
-    "explanation": "INNER JOIN, OUTER JOIN (LEFT/RIGHT/FULL), and CROSS JOIN are valid SQL JOIN types. DIAGONAL JOIN does not exist."
+    "question": "What is the logical sequence of execution for SQL clauses containing WHERE, GROUP BY, HAVING, and ORDER BY?",
+    "options": [
+      "WHERE → GROUP BY → HAVING → ORDER BY",
+      "GROUP BY → WHERE → HAVING → ORDER BY",
+      "HAVING → WHERE → GROUP BY → ORDER BY",
+      "WHERE → HAVING → GROUP BY → ORDER BY"
+    ],
+    "correct": [0],
+    "explanation": "The logical execution order is: WHERE filters individual rows, then GROUP BY groups them, then HAVING filters the groups, and finally ORDER BY sorts the output."
   },
   {
     "id": 3,
-    "question": "What does the DISTINCT keyword do in a SELECT statement?",
-    "options": ["Sorts the result set", "Removes duplicate rows from the result", "Filters NULL values", "Groups rows by a column"],
-    "correct": [1],
-    "explanation": "DISTINCT eliminates duplicate rows from the result set of a SELECT query."
+    "question": "Which DDL constraints are correctly described?",
+    "options": [
+      "PRIMARY KEY: Ensures uniqueness and non-null values",
+      "DEFAULT: Validates data based on a condition",
+      "CHECK: Sets a default value if none provided",
+      "UNIQUE: Ensures all values in a column are unique, but allows NULLs"
+    ],
+    "correct": [0, 3],
+    "explanation": "PRIMARY KEY implies UNIQUE and NOT NULL. UNIQUE alone may allow NULLs depending on the database. CHECK validates a condition, while DEFAULT sets fallback values."
   },
   {
     "id": 4,
-    "question": "Which SQL command is used to remove all rows from a table without deleting the table structure?",
-    "options": ["DROP", "DELETE", "TRUNCATE", "REMOVE"],
-    "correct": [2],
-    "explanation": "TRUNCATE removes all rows quickly without logging individual row deletions and retains the table structure. DELETE can also remove all rows but logs each deletion."
+    "question": "Which of the following commands removes the entire table structure and data, and cannot be rolled back?",
+    "options": [
+      "DROP TABLE",
+      "TRUNCATE TABLE",
+      "DELETE FROM",
+      "ALTER TABLE"
+    ],
+    "correct": [0],
+    "explanation": "DROP TABLE completely removes the entire structure and data of the table and cannot be rolled back in most databases. TRUNCATE and DELETE keep the structure."
   },
   {
     "id": 5,
-    "question": "Which of the following aggregate functions ignore NULL values?",
-    "options": ["COUNT(*)", "SUM()", "AVG()", "MAX()"],
-    "correct": [1, 2, 3],
-    "explanation": "SUM(), AVG(), and MAX() ignore NULL values. COUNT(*) counts all rows including those with NULLs; only COUNT(column) ignores NULLs."
+    "question": "How do DELETE, TRUNCATE, and DROP differ from each other?",
+    "options": [
+      "DELETE removes rows and can be rolled back",
+      "TRUNCATE removes all rows faster than DELETE but keeps the structure",
+      "DROP deletes the table structure and data permanently",
+      "TRUNCATE can delete specific rows using a WHERE clause"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "DELETE removes specific rows (or all and can be rolled back). TRUNCATE is faster and removes all rows but keeps the schema. DROP eliminates the table entirely. TRUNCATE does not support a WHERE clause."
   },
   {
     "id": 6,
-    "question": "What is the correct order of SQL clauses in a SELECT statement?",
+    "question": "Which of the following comprise the standard transaction commands?",
     "options": [
-      "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
-      "SELECT → WHERE → FROM → GROUP BY → HAVING → ORDER BY",
-      "FROM → SELECT → WHERE → GROUP BY → ORDER BY → HAVING",
-      "SELECT → FROM → HAVING → WHERE → GROUP BY → ORDER BY"
+      "BEGIN TRANSACTION",
+      "COMMIT",
+      "ROLLBACK",
+      "TRUNCATE"
     ],
-    "correct": [0],
-    "explanation": "The correct clause order is: SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY. The logical execution order is different (FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY)."
+    "correct": [0, 1, 2],
+    "explanation": "Transactions are managed using BEGIN (or START), COMMIT to finalize changes, and ROLLBACK to undo changes. TRUNCATE is a DDL command, not a transactional control command."
   },
   {
     "id": 7,
-    "question": "Which constraint ensures that a column cannot have NULL values?",
-    "options": ["UNIQUE", "PRIMARY KEY", "NOT NULL", "CHECK"],
+    "question": "What is the purpose of the DISTINCT keyword and the AS clause in a SELECT query?",
+    "options": [
+      "DISTINCT sorts the results uniquely",
+      "DISTINCT returns unique values, removing duplicates",
+      "AS is used to rename columns or tables in the result set",
+      "AS is used to change the data type of a column permanently"
+    ],
     "correct": [1, 2],
-    "explanation": "NOT NULL explicitly prevents NULLs. PRIMARY KEY implicitly enforces NOT NULL along with uniqueness."
+    "explanation": "DISTINCT filters out duplicate rows to return only unique results. AS provides temporary aliases for columns or tables to improve readability."
   },
   {
     "id": 8,
-    "question": "What does a LEFT JOIN return?",
+    "question": "Which of the following WHERE clause operators are correctly described?",
     "options": [
-      "Only matching rows from both tables",
-      "All rows from the left table and matching rows from the right table",
-      "All rows from both tables",
-      "Only non-matching rows from the left table"
+      "BETWEEN verifies if a value is within a range",
+      "IN checks if a value exists within a provided list",
+      "LIKE 'J%' strictly matches strings comprising exactly two characters",
+      "IS NULL is used to accurately check for null values"
     ],
-    "correct": [1],
-    "explanation": "LEFT JOIN returns all rows from the left table and the matched rows from the right table. Unmatched right-table columns appear as NULL."
+    "correct": [0, 1, 3],
+    "explanation": "BETWEEN checks a range, IN checks a list of values, IS NULL checks for nulls. LIKE 'J%' matches strings starting with J followed by any number of characters (% = multiple chars)."
   },
   {
     "id": 9,
-    "question": "Which of the following SQL statements are DDL (Data Definition Language) commands?",
-    "options": ["CREATE", "ALTER", "INSERT", "DROP"],
-    "correct": [0, 1, 3],
-    "explanation": "CREATE, ALTER, and DROP are DDL commands that define or modify database structure. INSERT is a DML (Data Manipulation Language) command."
+    "question": "How are the LIMIT and OFFSET clauses used together, especially for pagination?",
+    "options": [
+      "LIMIT skips rows, OFFSET defines the maximum rows returned",
+      "LIMIT defines the maximum rows, OFFSET skips the specified number of rows",
+      "LIMIT 10 OFFSET 5 returns rows 6 through 15",
+      "OFFSET is processed before LIMIT in the logic flow"
+    ],
+    "correct": [1, 2, 3],
+    "explanation": "OFFSET skips the first N rows before the database starts counting for the LIMIT clause, extracting specific chunks of data which makes them ideal for pagination."
   },
   {
     "id": 10,
-    "question": "What will the following query return?\nSELECT * FROM employees WHERE department_id = NULL;",
+    "question": "What is the structure of a CASE statement in SQL?",
     "options": [
-      "All rows where department_id is NULL",
-      "No rows",
-      "A syntax error",
-      "All rows in the table"
+      "CASE THEN condition WHEN result END",
+      "CASE WHEN condition THEN result ELSE default END",
+      "It strictly requires a WHERE clause to function",
+      "It can evaluate multiple sequential WHEN-THEN conditions"
     ],
-    "correct": [1],
-    "explanation": "Comparing with = NULL always evaluates to UNKNOWN (not TRUE), so no rows are returned. The correct syntax is: WHERE department_id IS NULL."
+    "correct": [1, 3],
+    "explanation": "A CASE statement handles conditional logic following the format: CASE WHEN condition THEN result ELSE default END. It can manage multiple WHEN-THEN branches sequentially."
   },
   {
     "id": 11,
-    "question": "Which of the following are properties of a PRIMARY KEY?",
-    "options": ["Uniqueness", "NOT NULL", "Only one per table", "Can be composite"],
-    "correct": [0, 1, 2, 3],
-    "explanation": "A PRIMARY KEY must be unique, cannot be NULL, there can be only one per table, and it can be a composite key (made of multiple columns)."
+    "question": "Which SQL JOIN types are matched with their correct definitions?",
+    "options": [
+      "INNER JOIN: Returns only matching rows from both tables",
+      "LEFT JOIN: Returns all rows from the right table",
+      "RIGHT JOIN: Returns all rows from the right table and matching rows from the left",
+      "FULL OUTER JOIN: Returns all rows from both tables, with NULLs for non-matches"
+    ],
+    "correct": [0, 2, 3],
+    "explanation": "INNER JOIN returns only matches, RIGHT JOIN returns all from the right, FULL OUTER returns all from both. LEFT JOIN returns all from the left table, not right."
   },
   {
     "id": 12,
-    "question": "What is the difference between UNION and UNION ALL?",
+    "question": "What occurs when a CROSS JOIN is executed on two tables?",
     "options": [
-      "UNION removes duplicates; UNION ALL includes duplicates",
-      "UNION ALL removes duplicates; UNION includes duplicates",
-      "UNION sorts results; UNION ALL does not",
-      "There is no difference"
+      "It joins tables on columns with exactly the same name automatically",
+      "It returns a Cartesian product of both tables",
+      "The result size is the number of rows in table 1 multiplied by table 2",
+      "It fundamentally requires an ON clause to evaluate"
     ],
-    "correct": [0],
-    "explanation": "UNION combines result sets and removes duplicate rows. UNION ALL combines result sets and retains all duplicates, making it faster."
+    "correct": [1, 2],
+    "explanation": "A CROSS JOIN produces a Cartesian product (combining every row of table1 with every row of table2) and does not use or need an ON clause."
   },
   {
     "id": 13,
-    "question": "Which SQL function returns the number of rows in a result set?",
-    "options": ["SUM()", "TOTAL()", "COUNT()", "NUM()"],
+    "question": "Which aggregate function is used to count the number of unique, non-null values in a specific column?",
+    "options": [
+      "COUNT(*)",
+      "COUNT(column)",
+      "COUNT(DISTINCT column)",
+      "SUM(column)"
+    ],
     "correct": [2],
-    "explanation": "COUNT() returns the number of rows. COUNT(*) counts all rows; COUNT(column) counts non-NULL values in that column."
+    "explanation": "COUNT(DISTINCT column) precisely counts the number of unique, non-null values exclusively recorded in that specific column. COUNT(*) counts all rows including duplicates and NULLs."
   },
   {
     "id": 14,
-    "question": "A FOREIGN KEY in a table references which of the following in another table?",
-    "options": ["Any column", "A UNIQUE KEY or PRIMARY KEY", "Only a PRIMARY KEY", "An indexed column"],
-    "correct": [1],
-    "explanation": "A FOREIGN KEY must reference a PRIMARY KEY or a UNIQUE KEY in the referenced (parent) table."
+    "question": "What is the key difference between the WHERE and HAVING clauses?",
+    "options": [
+      "HAVING can be frequently used without GROUP BY without syntax errors",
+      "WHERE filters individual rows before grouping occurs",
+      "HAVING filters aggregated groups after grouping occurs",
+      "They are identical in mechanical function and interchangeable"
+    ],
+    "correct": [1, 2],
+    "explanation": "WHERE filters rows before the GROUP BY aggregation phase, while HAVING filters the specific aggregated groups established by the GROUP BY phase. They serve distinct purposes at different stages."
   },
   {
     "id": 15,
-    "question": "Which of the following correctly describes a CROSS JOIN?",
+    "question": "In a complete SELECT query with grouping and ordering, in what order does the engine logically execute the clauses?",
     "options": [
-      "Returns only matching rows from both tables",
-      "Returns the Cartesian product of two tables",
-      "Returns rows from the left table with no match in the right",
-      "Joins tables on a common column automatically"
+      "FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY",
+      "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+      "FROM → WHERE → HAVING → GROUP BY → SELECT → ORDER BY",
+      "WHERE → FROM → SELECT → GROUP BY → HAVING → ORDER BY"
     ],
-    "correct": [1],
-    "explanation": "A CROSS JOIN returns the Cartesian product — every row from the first table combined with every row from the second table. No join condition is specified."
+    "correct": [0],
+    "explanation": "The logical execution order resolves the data source (FROM), filters rows (WHERE), groups data (GROUP BY), filters groups (HAVING), selects relevant expressions (SELECT), and finally sorts (ORDER BY)."
   },
   {
     "id": 16,
-    "question": "Which of the following SQL clauses can use window functions?",
-    "options": ["SELECT", "WHERE", "HAVING", "ORDER BY"],
-    "correct": [0, 3],
-    "explanation": "Window functions (e.g., ROW_NUMBER(), RANK()) can only be used in SELECT and ORDER BY clauses, not in WHERE or HAVING."
+    "question": "What are the characteristics of different types of standard inline Subqueries?",
+    "options": [
+      "Scalar subquery: Returns a single value",
+      "Row subquery: Returns a single row with multiple columns",
+      "Table subquery: Returns multiple rows and columns",
+      "Inline View Subquery: Permanently alters table structure"
+    ],
+    "correct": [0, 1, 2],
+    "explanation": "A Scalar subquery yields one value, a Row subquery yields one row of columns, and a Table subquery yields multiple rows. Subqueries only retrieve data temporarily; they do not alter permanent structures."
   },
   {
     "id": 17,
-    "question": "What does the COALESCE() function do?",
+    "question": "What best describes a Correlated Subquery and the EXISTS operator?",
     "options": [
-      "Returns the maximum value from a list",
-      "Returns the first non-NULL value from a list",
-      "Converts NULL to zero",
-      "Concatenates strings"
+      "A Correlated Subquery executes completely before the outer query starts",
+      "A Correlated Subquery references columns from the outer query",
+      "EXISTS checks if a subquery returns any rows and is efficient for large datasets",
+      "A Correlated Subquery executes once per row evaluated by the outer query"
     ],
-    "correct": [1],
-    "explanation": "COALESCE(val1, val2, ...) returns the first non-NULL value in the list. It is commonly used for NULL handling."
+    "correct": [1, 2, 3],
+    "explanation": "A correlated subquery references columns from the outer query, forcing it to execute once for every row processed by the outer query. EXISTS efficiently evaluates whether any row meets a condition."
   },
   {
     "id": 18,
-    "question": "Which isolation level prevents dirty reads but allows non-repeatable reads?",
-    "options": ["READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE"],
-    "correct": [1],
-    "explanation": "READ COMMITTED prevents dirty reads (reading uncommitted data) but allows non-repeatable reads (same query returning different results within a transaction)."
+    "question": "What are the practical advantages of using Views in a database?",
+    "options": [
+      "They significantly increase database disk storage requirements",
+      "They simplify complex queries into a single virtual table",
+      "They provide security by hiding underlying schema details",
+      "They ensure consistency by providing the same pre-defined logic everywhere"
+    ],
+    "correct": [1, 2, 3],
+    "explanation": "Views simplify operations by abstracting complexity, enhance security by obscuring tables, and unify logic. Being virtual tables (unless materialized), they do not consume significant storage themselves."
   },
   {
     "id": 19,
-    "question": "Which of the following statements about indexes are TRUE?",
+    "question": "Which of the following are valid index types implemented in relational databases?",
     "options": [
-      "Indexes speed up SELECT queries",
-      "Indexes slow down INSERT and UPDATE operations",
-      "A table can have only one index",
-      "Indexes reduce the need for full table scans"
+      "Primary Key Index",
+      "Composite Index",
+      "Full-Text Index",
+      "Partial Index"
     ],
-    "correct": [0, 1, 3],
-    "explanation": "Indexes speed up reads and reduce full table scans, but they add overhead to write operations (INSERT/UPDATE/DELETE). A table can have multiple indexes."
+    "correct": [0, 1, 2, 3],
+    "explanation": "Primary keys implicitly create unique indexes. Composite indexes span aggregate columns. Full-text indexes optimize heavy text searches. Partial indexes apply to rows explicitly meeting a WHERE condition."
   },
   {
     "id": 20,
-    "question": "What is the result of the following?\nSELECT 5 + NULL;",
-    "options": ["5", "NULL", "0", "Error"],
-    "correct": [1],
-    "explanation": "Any arithmetic operation involving NULL returns NULL in SQL, because NULL represents an unknown value."
+    "question": "What are the common tradeoffs involved with adding indexes to a database table?",
+    "options": [
+      "They drastically speed up SELECT, WHERE, and JOIN operations",
+      "They slow down INSERT, UPDATE, and DELETE operations",
+      "They reduce the amount of disk space consumed by the database engine",
+      "They require continuous maintenance by the database system"
+    ],
+    "correct": [0, 1, 3],
+    "explanation": "Indexes drastically improve read performance but penalize write speeds and consume extra disk space because they represent separate parallel data structures that must be constantly maintained during writes."
   },
   {
     "id": 21,
-    "question": "Which of the following are valid ways to handle NULL values in SQL?",
-    "options": ["IS NULL", "IS NOT NULL", "COALESCE()", "NULLIF()"],
-    "correct": [0, 1, 2, 3],
-    "explanation": "IS NULL and IS NOT NULL check for NULLs. COALESCE() returns the first non-NULL value. NULLIF(a, b) returns NULL if a equals b, otherwise returns a."
+    "question": "What are the foundational rules required for a table to be in First Normal Form (1NF)?",
+    "options": [
+      "Each intersection of column and row must contain atomic (indivisible) values",
+      "It must not contain repeating groups or arrays of data",
+      "All non-key columns must strictly depend on the entire primary key",
+      "It must explicitly incorporate a foreign key reference"
+    ],
+    "correct": [0, 1],
+    "explanation": "1NF simply demands atomic values in all fields and eliminating repeating groups. The condition about non-key columns depending on the full primary key is the step to 2NF."
   },
   {
     "id": 22,
-    "question": "What does the ROLLBACK statement do in SQL?",
+    "question": "What conceptually distinguishes Third Normal Form (3NF) from Second Normal Form (2NF)?",
     "options": [
-      "Saves the current transaction permanently",
-      "Undoes all changes made in the current transaction",
-      "Deletes all rows in a table",
-      "Reverts the schema to a previous version"
+      "3NF explicitly permits localized repeating groups",
+      "3NF eliminates transitive dependencies (non-key columns depending on other non-key columns)",
+      "2NF eliminates partial dependencies on a composite primary key",
+      "3NF mandates that every determinant must be a candidate key"
     ],
-    "correct": [1],
-    "explanation": "ROLLBACK undoes all changes made during the current transaction, reverting the database to its state before the transaction began."
+    "correct": [1, 2],
+    "explanation": "2NF requires wiping out partial dependencies upon a composite key, while 3NF progresses further to dissolve transitive dependencies, demanding that non-key pieces depend EXCLUSIVELY on the primary key."
   },
   {
     "id": 23,
-    "question": "Which SQL keyword is used to create an alias for a table or column?",
-    "options": ["ALIAS", "AS", "RENAME", "LABEL"],
-    "correct": [1],
-    "explanation": "The AS keyword is used to assign an alias to a column or table in a query (e.g., SELECT salary AS monthly_pay). The AS keyword is optional in many databases."
+    "question": "Why might a database architect intentionally utilize Denormalization?",
+    "options": [
+      "To categorically eliminate structural data redundancy",
+      "To improve high-volume read query performance by minimizing costly JOINs",
+      "To optimize the tables for constant heavy transactional writes",
+      "It is a core necessity in analytics infrastructures and data warehouses"
+    ],
+    "correct": [1, 3],
+    "explanation": "Denormalization accepts the intentional re-introduction of redundancy to trim down required JOINs, maximizing read speeds. This reflects a strategic trade-off common within analytics platforms."
   },
   {
     "id": 24,
-    "question": "In which of the following scenarios would you use a subquery instead of a JOIN?",
+    "question": "How are NULL values mechanically processed in SQL expressions?",
     "options": [
-      "When you need the result of one query as input to another",
-      "When checking existence with EXISTS",
-      "When joining large tables for performance",
-      "When filtering with IN using a dynamic list from another table"
+      "NULL accurately acts as an empty string or the number zero",
+      "NULL essentially signifies a missing, undefined, or strictly unknown value",
+      "Arithmetic operators yield NULL when engaging a NULL metric (e.g., 5 + NULL = NULL)",
+      "Standard operators like '=' natively equate NULL with NULL"
     ],
-    "correct": [0, 1, 3],
-    "explanation": "Subqueries are ideal when using the output of one query as input to another, with EXISTS for existence checks, and with IN for dynamic filtering. JOINs are generally preferred for performance on large tables."
+    "correct": [1, 2],
+    "explanation": "NULL is fundamentally a state of unknown variation; it isn't an empty string or zero. Math calculations touching it collapse to NULL, and querying them demands IS NULL instead of equals (=)."
   },
   {
     "id": 25,
-    "question": "What is a VIEW in SQL?",
+    "question": "What defines the technical difference between ALTER TABLE and UPDATE commands?",
     "options": [
-      "A physical copy of a table",
-      "A stored virtual table based on a SELECT query",
-      "A type of index",
-      "A temporary table that expires after the session"
+      "ALTER TABLE fundamentally modifies the structural schema (e.g., column adding/dropping)",
+      "UPDATE specifically manipulates populated data elements within rows",
+      "ALTER TABLE is characterized as a DML command",
+      "UPDATE is widely considered a DDL command"
     ],
-    "correct": [1],
-    "explanation": "A VIEW is a virtual table defined by a SELECT query. It does not store data physically (unless it's a materialized view) and reflects real-time data from the underlying tables."
+    "correct": [0, 1],
+    "explanation": "ALTER TABLE functions as a Data Definition Language (DDL) command that updates architecture layouts, whereas UPDATE reigns as a Data Manipulation Language (DML) protocol handling individual cellular row data."
   },
   {
     "id": 26,
-    "question": "Which of the following window functions assign a unique rank to each row without gaps?",
-    "options": ["RANK()", "DENSE_RANK()", "ROW_NUMBER()", "NTILE()"],
+    "question": "When chaining multiple JOINs to combine three tables (t1, t2, t3), what variables must be considered?",
+    "options": [
+      "Only standardized INNER JOINs can be universally chained",
+      "The relational syntax reads: t1 JOIN t2 ON cond JOIN t3 ON cond",
+      "The sequence or ordering of these chains heavily influences execution performance",
+      "Mixing disparate JOIN variants (LEFT, INNER) crashes the statement"
+    ],
     "correct": [1, 2],
-    "explanation": "DENSE_RANK() assigns ranks without gaps (e.g., 1,2,2,3). ROW_NUMBER() assigns a unique sequential number to every row. RANK() skips numbers after ties (e.g., 1,2,2,4)."
+    "explanation": "Dissimilar JOIN styles seamlessly interlock within single queries to trace complex structures. Appropriate syntactical linking connects adjacent tables, where ordering heavily throttles ultimate efficiency."
   },
   {
     "id": 27,
-    "question": "What is the purpose of the GROUP BY clause?",
+    "question": "Which delineates the relationship protocols tying a Primary Key to a Foreign Key?",
     "options": [
-      "To sort the result set",
-      "To group rows sharing a common value for aggregate functions",
-      "To filter rows based on a condition",
-      "To eliminate duplicate rows"
+      "A Foreign Key structurally references the matched Primary Key stationed in an alternate table",
+      "Databases limit a table to hosting solely one Foreign Key",
+      "Foreign Keys assert strict referential alignment and validation across connected entities",
+      "Foreign Keys naturally secure dependent records by barring isolated parent deletion"
     ],
-    "correct": [1],
-    "explanation": "GROUP BY groups rows that have the same values in specified columns so that aggregate functions (COUNT, SUM, AVG, etc.) can be applied to each group."
+    "correct": [0, 2, 3],
+    "explanation": "A Foreign Key establishes dependency links mapping backward to a master Primary Key to cement structural integrity. Safeguards block invalid removals to avert orphaned dependencies, and tables can harbor many."
   },
   {
     "id": 28,
-    "question": "Which of the following statements about STORED PROCEDURES are TRUE?",
+    "question": "What characterizes the foundational execution differences spanning DDL and DML paradigms?",
     "options": [
-      "They can accept input parameters",
-      "They can return multiple result sets",
-      "They are precompiled and cached",
-      "They can only perform SELECT operations"
+      "DML protocols implicitly embed auto-commits inside generalized systems",
+      "DDL modifications (CREATE, DROP, ALTER) execute automatic, unrestorable commits within most database systems",
+      "DML modifications (INSERT, UPDATE, DELETE) integrate gracefully inside rolling, restorable transactions",
+      "DDL implementations must exclusively route through secondary subqueries"
     ],
-    "correct": [0, 1, 2],
-    "explanation": "Stored procedures accept input/output parameters, can return multiple result sets, and are precompiled for performance. They can perform any SQL operation — not just SELECT."
+    "correct": [1, 2],
+    "explanation": "Major operational SQL databases (like MySQL) inherently auto-commit DDL changes seamlessly prohibiting rollbacks. Alternatively, DML writes are actively tailored to harness extensive transactional flow protections."
   },
   {
     "id": 29,
-    "question": "What is the difference between DELETE and TRUNCATE?",
+    "question": "What ensues following an execution of an UPDATE or DELETE command lacking a WHERE specification?",
     "options": [
-      "DELETE can have a WHERE clause; TRUNCATE cannot",
-      "TRUNCATE is faster than DELETE for removing all rows",
-      "DELETE fires triggers; TRUNCATE generally does not",
-      "TRUNCATE can be rolled back in all databases"
+      "The database console yields a blocking syntax error exception",
+      "The command recursively removes the hosting table schema completely",
+      "The operation cascades blindly affecting every isolated row populating the table",
+      "The targeted sequence updates uniquely merely the highest index value sequentially"
     ],
-    "correct": [0, 1, 2],
-    "explanation": "DELETE supports WHERE, fires triggers, and is logged row-by-row. TRUNCATE removes all rows faster by deallocating data pages, and generally does not fire row-level triggers. TRUNCATE cannot always be rolled back (database-dependent)."
+    "correct": [2],
+    "explanation": "Omission of a functional WHERE constraint syntactically defaults targeting bounds globally. This inadvertently signals engines to forcibly wipe or overwrite every single isolated data row throughout existence."
   },
   {
     "id": 30,
-    "question": "Which of the following are TRUE about the ACID properties of a transaction?",
+    "question": "Under what precise architectural scenarios is the application of indexes strongly discouraged?",
     "options": [
-      "Atomicity ensures all operations complete or none do",
-      "Consistency ensures the database moves from one valid state to another",
-      "Isolation means transactions are executed sequentially always",
-      "Durability ensures committed data persists even after a crash"
+      "When columns undergo persistent calls within cross-table foreign key mappings",
+      "When optimizing extremely limited datasets housing mere handfuls of internal rows",
+      "When assigning over drastically low-cardinality values encompassing tiny categorical ranges like binaries",
+      "When assigned to entities constantly flooded by sustained massive write operations"
     ],
-    "correct": [0, 1, 3],
-    "explanation": "Atomicity = all or nothing. Consistency = valid state transitions. Durability = committed changes are permanent. Isolation does NOT mean sequential execution — it means concurrent transactions don't interfere, but they can execute concurrently at various isolation levels."
+    "correct": [1, 2, 3],
+    "explanation": "Indexes perfectly optimize massive read-centric inquiries parsing high-cardinality keys. Conversely, they inflict catastrophic overheads over tiny tables, minute unique values (binary switches), and crush heavily manipulated insertion records."
   }
 ]
